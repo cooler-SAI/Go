@@ -18,7 +18,9 @@ func main() {
 
 	fmt.Println("")
 
-	var music, songNumber = "Metal", 25
+	var (
+		music, songNumber = "Metal", 25
+	)
 	release := fmt.Sprintf("Music style is %s. And number of this song style is %d",
 		music, songNumber)
 
