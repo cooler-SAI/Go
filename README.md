@@ -2,4 +2,5 @@
 # Learning Simple Project
 #
 #
-https://miro.medium.com/v2/resize:fit:2000/format:webp/1*8bPiDNL1K1ZdK9O_T5IVKw.png
+
+![1_8bPiDNL1K1ZdK9O_T5IVKw](https://github.com/cooler-SAI/Go/assets/812439/e1820054-11c0-4deb-bfc7-b1ceb7b19e85)
