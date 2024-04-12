@@ -1,8 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	fmt.Println("Ok, Let's GO!")
+	var hello string = "Hello World"
+	fmt.Println(hello)
+
+	fmt.Printf("Type  %T Data is: %v\n\n", hello, hello)
 
 }
