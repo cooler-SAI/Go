@@ -26,6 +26,6 @@ func main() {
 
 	fmt.Println(release)
 
-	fmt.Println(`Another test one`)
+	fmt.Println("Another test one")
 
 }
