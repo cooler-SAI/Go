@@ -10,4 +10,6 @@ func main() {
 	var Name = "The time is: "
 
 	fmt.Print(Name, time.Now())
+
+	fmt.Print("\n warning")
 }
