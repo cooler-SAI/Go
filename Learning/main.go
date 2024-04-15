@@ -2,28 +2,18 @@ package main
 
 import "fmt"
 
-const nameBase string = "ANDRE"
-
 func main() {
 
-	fmt.Print(
-		nameBase)
-	fmt.Print("\n")
-	s, s2 := test()
+	result := 0
 
-	fmt.Println(s, s2)
+	for i := 0; i < 10; i++ {
+		result += i
+	}
+	fmt.Println(result)
 
-	result()
-
-}
-
-func test() (string, string) {
-
-	a := "hello"
-	b := " good"
-	return a, b
-}
-
-func result() {
-	fmt.Print(test())
+	nextResult := 0
+	for nextResult < 5000 {
+		nextResult += 10
+	}
+	fmt.Println(nextResult)
 }
