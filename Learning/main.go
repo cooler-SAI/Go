@@ -1,32 +1,22 @@
 package main
 
-import (
-	"fmt"
-	"math/rand"
-)
+import "fmt"
 
 func main() {
 	for {
-		randomNumber := rand.Intn(5) + 1
+		fmt.Print("Please enter your name:")
+		var name string
+		fmt.Scanln(&name)
 
-		fmt.Print("Please Enter the Random Number ( from 1 to 5) : \n")
-		var guess int
-		fmt.Scanln(&guess)
+		fmt.Println("You are: \n ", name)
+		fmt.Print("Nice to meet you, ", name)
 
-		if guess == randomNumber {
-			fmt.Println("You Win! \n ")
-			fmt.Println("Right number was: \n", randomNumber)
-			fmt.Println("Press Enter 2 to restart or type 'quit' to quit. ")
-			var input string
-			fmt.Scanln(&input)
-		} else {
-			fmt.Println("You Lose! \n ")
-			fmt.Println("Right number was: \n", randomNumber)
-			fmt.Println("Press Enter 2 to restart or type 'quit' to quit. ")
-			var input string
-			fmt.Scanln(&input)
+		fmt.Print("\n Print 'quit' to quit.\n")
+		var input string
+		fmt.Scanln(&input)
+		if input == "quit" {
+			break
 		}
-
 	}
 
 }
