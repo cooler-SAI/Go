@@ -13,9 +13,8 @@ func main() {
 	var valueA = 256
 	var valueB = 345
 	var result = valueA * valueB
+	var medium = 45
 
-	fmt.Printf("\n\n"+
-		"Result is: "+
-		"Main result is: %v\n\n", result)
+	fmt.Printf("\n\nResult is:\n %s Main result is: %v\n\n", medium, result)
 
 }
