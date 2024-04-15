@@ -1,20 +1,29 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
+
+const nameBase string = "ANDRE"
 
 func main() {
-	var hello = "Hello World"
-	fmt.Println(hello)
 
-	fmt.Printf("Type  %T Data is: %v\n\n", hello, hello)
+	fmt.Print(
+		nameBase)
+	fmt.Print("\n")
+	s, s2 := test()
 
-	var valueA = 256
-	var valueB = 345
-	var result = valueA * valueB
-	var medium = 45
+	fmt.Println(s, s2)
 
-	fmt.Printf("\n\nResult is:\n %s Main result is: %v\n\n", medium, result)
+	result()
 
+}
+
+func test() (string, string) {
+
+	a := "hello"
+	b := " good"
+	return a, b
+}
+
+func result() {
+	fmt.Print(test())
 }
