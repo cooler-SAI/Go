@@ -14,5 +14,8 @@ func pointers() {
 	c = a + b
 	p := &c
 
-	fmt.Println(*p) // Dereference p to print the value it points to
+	fmt.Println(*p)
+	fmt.Println(p)
+	*p = 10000
+	fmt.Println(c)
 }
