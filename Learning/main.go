@@ -5,6 +5,10 @@ import "fmt"
 func main() {
 	pointers()
 
+	defer fmt.Println("Oh My!")
+
+	fmt.Println("Hello World")
+
 }
 
 func pointers() {
