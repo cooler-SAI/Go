@@ -1,16 +1,18 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	defer fmt.Println("3")
-	defer fmt.Println("2")
-	defer fmt.Println("1")
-	defer fmt.Println("0")
-	defer fmt.Println("Start")
+	pointers()
 
-	fmt.Println("hello world")
+}
 
+func pointers() {
+	a := 256
+	b := 325
+	var c int
+	c = a + b
+	p := &c
+
+	fmt.Println(*p) // Dereference p to print the value it points to
 }
