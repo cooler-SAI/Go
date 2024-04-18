@@ -11,5 +11,12 @@ func main() {
 	fmt.Println(slice)
 	slice = test[:]
 	fmt.Println(slice)
+	slice = test[5:]
+
+	if len(slice) != len(test) {
+		fmt.Println("Slice length not equal")
+	} else {
+		fmt.Println("YOU ROCK!!")
+	}
 
 }
