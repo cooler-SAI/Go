@@ -4,34 +4,19 @@ import (
 	"fmt"
 )
 
+type point struct {
+	X int
+	Y int
+}
+
 func main() {
-	pointers()
-
-	deferProcess()
-
-	welcome()
+	structs()
 
 	fmt.Scanln()
 
 }
 
-func pointers() {
-	a := 256
-	b := 325
-	var c int
-	c = a + b
-	p := &c
-
-	fmt.Println(*p)
-	/*fmt.Println(p)*/
-	*p = 10000
-	fmt.Println(c)
-}
-
-func deferProcess() {
-	defer fmt.Println("Oh My!")
-}
-
-func welcome() {
-	fmt.Println("Hello World")
+func structs() {
+	p1 := point{1, 2}
+	fmt.Println(p1)
 }
