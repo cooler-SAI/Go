@@ -5,9 +5,9 @@ import "fmt"
 func main() {
 	pointers()
 
-	defer fmt.Println("Oh My!")
+	deferProcess()
 
-	fmt.Println("Hello World")
+	welcome()
 
 }
 
@@ -22,4 +22,12 @@ func pointers() {
 	/*fmt.Println(p)*/
 	*p = 10000
 	fmt.Println(c)
+}
+
+func deferProcess() {
+	defer fmt.Println("Oh My!")
+}
+
+func welcome() {
+	fmt.Println("Hello World")
 }
