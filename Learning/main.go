@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	pointers()
@@ -8,6 +10,8 @@ func main() {
 	deferProcess()
 
 	welcome()
+
+	fmt.Scanln()
 
 }
 
