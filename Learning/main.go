@@ -19,7 +19,7 @@ func pointers() {
 	p := &c
 
 	fmt.Println(*p)
-	fmt.Println(p)
+	/*fmt.Println(p)*/
 	*p = 10000
 	fmt.Println(c)
 }
