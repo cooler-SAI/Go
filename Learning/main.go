@@ -15,4 +15,10 @@ func main() {
 	result := doSomething(sumCallback, "hello world")
 	fmt.Println(result)
 
+	multipleCallBack := func(a, b int) int {
+		return a * b
+	}
+	result = doSomething(multipleCallBack, "hello world")
+	fmt.Println(result)
+
 }
