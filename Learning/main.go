@@ -12,8 +12,13 @@ func totalPrice(initPrice int) func(int) int {
 
 func main() {
 
-	orderPrice := totalPrice(4)
-	fmt.Println(orderPrice(6))
+	startNumber := 2
+	endNumber := startNumber * 2
+	orderPrice := totalPrice(startNumber)
+	firstResult := orderPrice(endNumber)
+	fmt.Println(firstResult)
+
+	fmt.Println()
 	base := 10
 	multiple := 10
 	nextOrderPrice := totalPrice(base)
