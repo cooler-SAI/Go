@@ -12,6 +12,6 @@ func totalPrice(initPrice int) func(int) int {
 
 func main() {
 
-	totalPrice := totalPrice(4)
-	fmt.Println(totalPrice(6))
+	orderPrice := totalPrice(4)
+	fmt.Println(orderPrice(6))
 }
