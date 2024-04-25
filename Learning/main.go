@@ -29,4 +29,13 @@ func main() {
 	basePoint.movePointPtr(1, 1)
 	fmt.Println(basePoint)
 
+	nextPoint := &basePoint
+	nextPoint.movePointPtr(100, 100)
+	fmt.Println(basePoint)
+
+	basePoint.movePointPtr(200, 200)
+	fmt.Println(basePoint)
+	basePoint.movePoint(1000, 1000)
+	fmt.Println(basePoint)
+
 }
