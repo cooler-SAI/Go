@@ -9,6 +9,12 @@ type Point struct {
 
 func main() {
 	pointsMap := map[string]Point{}
+	if pointsMap == nil {
+		pointsMap = map[string]Point{
+			"name": {20, 30},
+		}
+	}
+
 	otherMap := map[string]int{}
 	pointsMap["A"] = Point{X: 1, Y: 2}
 	otherMap["B"] = 20
