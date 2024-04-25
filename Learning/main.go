@@ -24,6 +24,9 @@ func main() {
 	fmt.Println(basePoint.movePoint(4, 5))
 	fmt.Println(basePoint.movePoint(20, 25))
 
+	test := "Hello!"
+	defer fmt.Println(test)
+
 	fmt.Println(basePoint)
 
 	basePoint.movePointPtr(1, 1)
