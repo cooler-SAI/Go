@@ -18,4 +18,10 @@ func main() {
 	for key, value := range pointsMap {
 		fmt.Println(key, value)
 	}
+
+	point := Point{
+		X: 20,
+		Y: 32,
+	}
+	fmt.Println(point)
 }
