@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/mitchellh/mapstructure"
 )
 
 type Point struct {
@@ -13,14 +12,10 @@ type Point struct {
 func main() {
 	pointsMap := map[string]int{
 		"A": 150,
-		"B": 2,
+		"B": 200,
 	}
 
-	point1 := Point{}
-
-	check := mapstructure.Decode(pointsMap, &point1)
-	if check != nil {
-		return
+	for key, value := range pointsMap {
+		fmt.Println(key, value)
 	}
-	fmt.Println(point1)
 }
