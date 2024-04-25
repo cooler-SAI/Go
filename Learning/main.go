@@ -2,12 +2,16 @@ package main
 
 import "fmt"
 
+type Point struct {
+	X int
+	Y int
+}
+
 func main() {
-
-	array := []string{"a", "b", "c", "d", "e", "f"}
-	fmt.Println(array)
-
-	for i, l := range array {
-		fmt.Println(i, l)
-	}
+	pointsMap := map[string]Point{}
+	otherMap := map[string]int{}
+	pointsMap["A"] = Point{X: 1, Y: 2}
+	otherMap["B"] = 20
+	pointsMap["B"] = Point{X: 2, Y: 3}
+	fmt.Println(pointsMap)
 }
