@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+	_ "os"
+)
 
 type structNumber struct {
 	N1, N2 int
@@ -14,27 +18,7 @@ type InterfaceNumber interface {
 	Sum() int
 }
 
-func main() {
-	var _ InterfaceNumber
-	sn := &structNumber{1, 2}
-	fmt.Println(sn.Sum())
-
-	os := otherNumbers{10, 20}
-	fmt.Println(os.Multiply())
-
-	bn := baseNumbers{10000, 20000}
-	fmt.Println(bn.Sum())
-
-	newNumber := &os
-	fmt.Println(newNumber.Multiply())
-
-}
-
 type otherNumbers struct {
-	A, B int
-}
-
-type baseNumbers struct {
 	A, B int
 }
 
@@ -42,6 +26,26 @@ func (o otherNumbers) Multiply() int {
 	return o.A * o.B
 }
 
+type baseNumbers struct {
+	A, B int
+}
+
 func (b baseNumbers) Sum() int {
 	return b.A + b.B
+}
+
+func main() {
+	var _ InterfaceNumber
+	sn := &structNumber{1, 2}
+	fmt.Println(sn.Sum())
+
+	on := otherNumbers{10, 20}
+	fmt.Println(on.Multiply())
+
+	bn := baseNumbers{10000, 20000}
+	fmt.Println(bn.Sum())
+
+	fmt.Println("Press Enter to Exit....")
+	fmt.Scanln()
+	os.Exit(0)
 }
