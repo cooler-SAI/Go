@@ -1,36 +1,44 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-type Point struct {
-	X int `mapstructure:"A"`
-	Y int `mapstructure:"B"`
+type structNumber struct {
+	N1, N2 int
+}
+
+func (s *structNumber) Sum() int {
+	return s.N1 + s.N2
+}
+
+type InterfaceNumber interface {
+	Sum() int
 }
 
 func main() {
-	defer pointMap()
-	PrintResult(Point{25, 40})
+	var _ InterfaceNumber
+	sn := &structNumber{1, 2}
+	fmt.Println(sn.Sum())
+
+	os := otherNumbers{10, 20}
+	fmt.Println(os.Multiply())
+
+	bn := baseNumbers{10000, 20000}
+	fmt.Println(bn.Sum())
+
 }
 
-func PrintResult(point Point) {
-	fmt.Println(point)
+type otherNumbers struct {
+	A, B int
 }
 
-func pointMap() {
-	pointsMap := map[string]int{
-		"A": 150,
-		"B": 200,
-	}
+type baseNumbers struct {
+	A, B int
+}
 
-	for key, value := range pointsMap {
-		fmt.Println(key, value)
-	}
+func (o otherNumbers) Multiply() int {
+	return o.A * o.B
+}
 
-	point := Point{
-		X: 20,
-		Y: 32,
-	}
-	fmt.Println(point)
+func (b baseNumbers) Sum() int {
+	return b.A + b.B
 }
