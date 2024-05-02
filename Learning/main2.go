@@ -12,7 +12,11 @@ func main() {
 	d := b.(string)
 	fmt.Println(d)
 
-	test, ok := a.(int)
-	fmt.Println(test, ok)
+	test, ok := a.(float32)
+	if ok {
+		fmt.Println("We Good!", test, ok)
+	} else {
+		fmt.Println("We Bad!")
+	}
 
 }
