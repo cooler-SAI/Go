@@ -25,6 +25,9 @@ func main() {
 	bn := baseNumbers{10000, 20000}
 	fmt.Println(bn.Sum())
 
+	newNumber := &os
+	fmt.Println(newNumber.Multiply())
+
 }
 
 type otherNumbers struct {
