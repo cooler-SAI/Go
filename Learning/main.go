@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-	_ "os"
 )
 
 type structNumber struct {
