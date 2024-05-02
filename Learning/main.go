@@ -10,6 +10,15 @@ type Point struct {
 }
 
 func main() {
+	defer pointMap()
+	PrintResult(Point{25, 40})
+}
+
+func PrintResult(point Point) {
+	fmt.Println(point)
+}
+
+func pointMap() {
 	pointsMap := map[string]int{
 		"A": 150,
 		"B": 200,
