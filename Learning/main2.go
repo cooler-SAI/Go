@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 var _ User = &user{}
 
 type user struct {
@@ -28,6 +30,17 @@ type User interface {
 	ChangeEmail(newEmail string)
 }
 
+func NewUser(name string, surname string, email string) User {
+	return &user{
+		Name:    name,
+		Surname: surname,
+		Email:   email,
+	}
+}
+
 func main() {
+
+	ander := NewUser("Ander", "Ander", "ander@ander.net")
+	fmt.Println(ander)
 
 }
