@@ -3,13 +3,16 @@ package main
 import "fmt"
 
 func main() {
-	var a interface {
-	}
+	var a interface{} = 120
 
-	a = "nice"
-	fmt.Println(a)
-	fmt.Printf("(%v,%T)\n\n", a, a)
-	a = 42
-	fmt.Println(a)
-	fmt.Printf("(%v,%T)\n\n", a, a)
+	var b interface{} = "world"
+
+	c := a.(int)
+	fmt.Println(c)
+	d := b.(string)
+	fmt.Println(d)
+
+	test, ok := a.(int)
+	fmt.Println(test, ok)
+
 }
