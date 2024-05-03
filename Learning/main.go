@@ -11,7 +11,7 @@ func main() {
 	array := make([]byte, 8)
 	fmt.Println(array)
 
-	err := fmt.Errorf("Error....")
+	var err = fmt.Errorf("error")
 	fmt.Println(reader)
 	fmt.Println(err)
 }
