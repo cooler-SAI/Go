@@ -10,19 +10,23 @@ type name struct {
 	B string
 }
 
-func (receiver *name) String() string {
-	return receiver.B
+func (receiver name) String() string {
+
+	fmt.Println(receiver.B)
+	return receiver.String()
+
 }
 
-func (numbers *name) Numbers() int {
-	return numbers.A
+func (receiver *name) Numbers() int {
+	return receiver.A
 }
 
 func main() {
 
 	var reader = strings.NewReader("hello guys!")
 	array := make([]byte, 8)
-	fmt.Println(array)
+	_, _ = reader.Read(array) // Read operation to avoid unused variable warning
+	fmt.Println(string(array))
 
 	var err = fmt.Errorf("error")
 	fmt.Println(reader)
