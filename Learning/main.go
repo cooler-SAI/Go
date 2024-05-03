@@ -1,21 +1,22 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func Read(number int) int {
-	check := number * 250
-	if check > 1000 {
-		fmt.Println("We good")
+type error interface {
+	Error() string
+}
 
-	} else {
-		fmt.Println("We too bad")
-	}
-	return check
+type AppError struct {
+	Message string
+	Err     error
+	Field   int
+}
+
+func (e *AppError) Error() string {
+	err := fmt.Errorf("new error...%s", e.Err)
+	return err.Error()
 }
 
 func main() {
-	Read(100)
 
 }
