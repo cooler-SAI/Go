@@ -5,6 +5,19 @@ import (
 	"strings"
 )
 
+type name struct {
+	A int
+	B string
+}
+
+func (receiver *name) String() string {
+	return receiver.B
+}
+
+func (numbers *name) Numbers() int {
+	return numbers.A
+}
+
 func main() {
 
 	var reader = strings.NewReader("hello guys!")
