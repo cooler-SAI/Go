@@ -5,15 +5,15 @@ import (
 	"time"
 )
 
-func Say(word string, ch chan int) {
-	time.Sleep(1 * time.Second)
-	fmt.Println("Hello", word)
-	ch <- 1
+func Say(word string, ch chan string) {
+	time.Sleep(10 * time.Second)
+	fmt.Println(word)
+	ch <- "exit..."
 }
 
 func main() {
 
-	ch := make(chan int)
+	ch := make(chan string)
 
 	go Say("Ander", ch)
 	fmt.Println("1")
@@ -21,8 +21,7 @@ func main() {
 	fmt.Println("3")
 	fmt.Println("4")
 	fmt.Println("5")
-	time.Sleep(10 * time.Second)
 
-	<-ch
+	fmt.Println(<-ch)
 
 }
