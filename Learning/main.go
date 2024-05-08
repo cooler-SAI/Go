@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func selectOne(data, exit chan int) {
@@ -13,6 +14,9 @@ func selectOne(data, exit chan int) {
 		case <-exit:
 			fmt.Println("exit")
 			return
+		default:
+			fmt.Println("data is full")
+			time.Sleep(10 * time.Second)
 		}
 
 	}
