@@ -1,39 +1,52 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
 
-func selectOne(data, exit chan int) {
-	x := 0
-	for {
-		select {
-		case data <- x:
-			x += 1
-		case <-exit:
-			fmt.Println("exit")
-			return
-		default:
-			fmt.Println("data is full")
-			time.Sleep(10 * time.Second)
-		}
+func add(a, b int, result chan int) {
+	result <- a + b
+}
 
+func subtract(a, b int, result chan int) {
+	result <- a - b
+}
+
+func multiply(a, b int, result chan int) {
+	result <- a * b
+}
+
+func divide(a, b int, result chan int) {
+	if b == 0 {
+		fmt.Println("Can not divide by zero")
+		result <- 0
+	} else {
+		result <- a / b
 	}
 }
+
+func thanks(first, second string, result chan string) {
+	result <- first + second
+}
+
 func main() {
+	a, b := 10, 5
+	resultChan := make(chan int)
 
-	data := make(chan int)
-	exit := make(chan int)
-	go func() {
-		for i := 0; i < 10; i++ {
-			fmt.Println(<-data)
+	first, second := "Ander", " Cool"
+	allinOne := make(chan string)
 
-		}
-		exit <- 0
-		fmt.Println("exit")
-	}()
-	go selectOne(data, exit)
+	go add(a, b, resultChan)
+	fmt.Printf("%d + %d = %d\n", a, b, <-resultChan)
 
-	<-exit
+	go subtract(a, b, resultChan)
+	fmt.Printf("%d - %d = %d\n", a, b, <-resultChan)
+
+	go multiply(a, b, resultChan)
+	fmt.Printf("%d * %d = %d\n", a, b, <-resultChan)
+
+	go divide(a, b, resultChan)
+	fmt.Printf("%d / %d = %d\n", a, b, <-resultChan)
+
+	go thanks(first, second, allinOne)
+	fmt.Printf("%s + %s = %s\n", first, second, <-allinOne)
+
 }
