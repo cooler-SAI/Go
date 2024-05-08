@@ -6,9 +6,10 @@ import (
 )
 
 func Say(word string, ch chan string) {
-	time.Sleep(10 * time.Second)
+	time.Sleep(8 * time.Second)
 	fmt.Println(word)
 	ch <- "exit..."
+	ch <- "Dude"
 }
 
 func main() {
@@ -22,6 +23,7 @@ func main() {
 	fmt.Println("4")
 	fmt.Println("5")
 
+	fmt.Println(<-ch)
 	fmt.Println(<-ch)
 
 }
