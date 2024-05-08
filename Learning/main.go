@@ -2,29 +2,34 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
-func Say(word string) {
-	fmt.Println(word)
-}
+func selectOne(data, exit chan int) {
+	x := 0
+	for {
+		select {
+		case data <- x:
+			x += 1
+		case <-exit:
+			fmt.Println("exit")
+			return
+		}
 
-func sayHello(exit chan string) {
-	for i := 0; i < 5; i++ {
-		Say("hello " + strconv.Itoa(i))
 	}
-	exit <- "yes..."
-
-	exit <- "cool"
-	close(exit)
 }
-
 func main() {
-	ch := make(chan string, 5)
 
-	go sayHello(ch)
+	data := make(chan int)
+	exit := make(chan int)
+	go func() {
+		for i := 0; i < 10; i++ {
+			fmt.Println(<-data)
 
-	for i := range ch {
-		fmt.Println(i)
-	}
+		}
+		exit <- 0
+		fmt.Println("exit")
+	}()
+	go selectOne(data, exit)
+
+	<-exit
 }
