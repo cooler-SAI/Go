@@ -8,19 +8,21 @@ import (
 func Say(word string) {
 	fmt.Println(word)
 }
+
 func sayHello(exit chan string) {
 	for i := 0; i < 5; i++ {
 		Say("hello " + strconv.Itoa(i))
-
 	}
 	exit <- "yes..."
+	close(exit)
 }
 
 func main() {
-
-	ch := make(chan string)
+	ch := make(chan string, 5)
 
 	go sayHello(ch)
-	fmt.Println(<-ch)
 
+	for i := range ch {
+		fmt.Println(i)
+	}
 }
