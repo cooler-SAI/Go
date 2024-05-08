@@ -14,6 +14,8 @@ func sayHello(exit chan string) {
 		Say("hello " + strconv.Itoa(i))
 	}
 	exit <- "yes..."
+
+	exit <- "cool"
 	close(exit)
 }
 
