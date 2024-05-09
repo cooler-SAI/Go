@@ -27,12 +27,19 @@ func thanks(first, second string, result chan string) {
 	result <- first + second
 }
 
+func test(one, two int, result chan int) {
+	result <- one - two
+}
+
 func main() {
 	a, b := 10, 5
 	resultChan := make(chan int)
 
 	first, second := "Ander", " Cool"
 	allinOne := make(chan string)
+
+	one, two := 100, 100
+	resultLast := make(chan int)
 
 	go add(a, b, resultChan)
 	fmt.Printf("%d + %d = %d\n", a, b, <-resultChan)
@@ -48,5 +55,8 @@ func main() {
 
 	go thanks(first, second, allinOne)
 	fmt.Printf("%s + %s = %s\n", first, second, <-allinOne)
+
+	go test(one, two, resultLast)
+	fmt.Printf("%d - %d = %d\n", one, two, <-resultLast)
 
 }
