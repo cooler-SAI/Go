@@ -7,32 +7,33 @@ import (
 )
 
 type Counter struct {
-	mu sync.Mutex
+	mu sync.RWMutex
 	c  map[string]int
 }
 
-func (c *Counter) increment(key string) {
-	c.mu.Lock()
-	c.c[key]++
-	c.mu.Unlock()
-}
-
-func (c *Counter) Value(key string) int {
+func (c *Counter) CountMe() {
 	c.mu.Lock()
 	defer c.mu.Unlock()
-	return c.c[key]
+	c.c["test"]++
+}
+
+func (c *Counter) CountMeAgain() map[string]int {
+	c.mu.RLock()
+	defer c.mu.RUnlock()
+	copyMap := make(map[string]int, len(c.c))
+	for k, v := range c.c {
+		copyMap[k] = v
+	}
+	return copyMap
 }
 
 func main() {
-
-	key := "test"
-
 	c := Counter{c: make(map[string]int)}
 	for i := 0; i < 1000; i++ {
-		go c.increment(key)
+		go c.CountMe()
 	}
 
 	time.Sleep(time.Second * 3)
-	fmt.Println(c.Value(key))
 
+	fmt.Println(c.CountMeAgain())
 }
