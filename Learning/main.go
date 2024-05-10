@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"sync"
-	"sync/atomic"
 )
 
 func main() {
@@ -17,7 +16,8 @@ func main() {
 		go func() {
 			defer wg.Done()
 			for j := 0; j < 1000; j++ {
-				atomic.AddUint64(&counter, 1)
+				counter++
+				//atomic.AddUint64(&counter, 1)
 
 			}
 		}()
