@@ -10,7 +10,7 @@ func main() {
 
 	var waitGroup sync.WaitGroup
 	for i := 0; i < 10; i++ {
-		waitGroup.Add(2)
+		waitGroup.Add(1)
 		key := i
 		go func() {
 			defer waitGroup.Done()
@@ -18,5 +18,7 @@ func main() {
 			time.Sleep(300 * time.Millisecond)
 		}()
 	}
+	waitGroup.Wait()
+	fmt.Println("Done")
 
 }
