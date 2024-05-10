@@ -1,6 +1,10 @@
 package main
 
-import "sync"
+import (
+	"fmt"
+	"sync"
+	"time"
+)
 
 type Counter struct {
 	mu sync.Mutex
@@ -8,7 +12,9 @@ type Counter struct {
 }
 
 func (c *Counter) increment(key string) {
+	c.mu.Lock()
 	c.c[key]++
+	c.mu.Unlock()
 }
 
 func (c *Counter) Value(key string) int {
@@ -23,5 +29,8 @@ func main() {
 	for i := 0; i < 1000; i++ {
 		go c.increment(key)
 	}
+
+	time.Sleep(time.Second * 3)
+	fmt.Println(c.Value(key))
 
 }
