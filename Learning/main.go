@@ -18,6 +18,8 @@ func (c *Counter) increment(key string) {
 }
 
 func (c *Counter) Value(key string) int {
+	c.mu.Lock()
+	defer c.mu.Unlock()
 	return c.c[key]
 }
 
