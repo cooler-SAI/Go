@@ -3,13 +3,13 @@ package main
 import (
 	"fmt"
 	"sync"
+	"sync/atomic"
 )
 
 func main() {
 
 	var wg sync.WaitGroup
-	var counter uint64
-	var mutex sync.Mutex
+	var counter int32
 
 	for i := 0; i < 10; i++ {
 		wg.Add(1)
@@ -17,10 +17,7 @@ func main() {
 		go func() {
 			defer wg.Done()
 			for j := 0; j < 1000; j++ {
-				mutex.Lock()
-				counter++
-				//atomic.AddUint64(&counter, 1)
-				mutex.Unlock()
+				atomic.AddInt32(&counter, 1)
 
 			}
 		}()
