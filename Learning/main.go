@@ -7,9 +7,12 @@ import (
 
 func main() {
 	var once sync.Once
+	var checker = 25
+
 	onceBody := func() {
 		once.Do(func() {
-			fmt.Println("Hello World")
+
+			fmt.Printf("Number is: %d\n", checker)
 		})
 	}
 	fmt.Println("Before calling onceBody")
