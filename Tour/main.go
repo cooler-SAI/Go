@@ -1,14 +1,12 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func add(x, y int) int {
-	return x + y
+func base(x, y string) (string, string) {
+	return x, y
 }
 
 func main() {
-	fmt.Println(add(10, 20))
-
+	x, y := base("hello", "world")
+	fmt.Println(x, y)
 }
