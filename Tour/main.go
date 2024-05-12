@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println("My favorite number is", math.Sqrt(10))
+	fmt.Println(math.Pi)
 
 }
