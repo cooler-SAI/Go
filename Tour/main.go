@@ -2,11 +2,12 @@ package main
 
 import "fmt"
 
-func base(x, y string) (string, string) {
-	return x, y
+func split(sum int) (x, y int) {
+	x = sum * 4 / 9
+	y = sum - x
+	return
 }
 
 func main() {
-	x, y := base("hello", "world")
-	fmt.Println(x, y)
+	fmt.Println(split(15))
 }
