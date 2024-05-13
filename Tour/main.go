@@ -5,14 +5,15 @@ import (
 )
 
 func testValue() {
-	fmt.Println("hello world")
+	var i int
+	var f float64
+	var b bool
+	var s string
+	fmt.Printf("%v %v %v %q\n", i, f, b, s)
 
 }
 
 func main() {
-	i, j, k := 1000, 250, 25
-	c, python, java := false, true, "No!"
-	fmt.Println(i, j, k, c, python, java)
 	testValue()
 
 }
