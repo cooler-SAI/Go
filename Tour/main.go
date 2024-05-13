@@ -1,11 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-var i, j, k int = 25, 100, 342
+func testValue() {
+	fmt.Println("hello world")
+
+}
 
 func main() {
-	var c, python, java = false, true, "No!"
+	i, j, k := 1000, 250, 25
+	c, python, java := false, true, "No!"
 	fmt.Println(i, j, k, c, python, java)
+	testValue()
 
 }
