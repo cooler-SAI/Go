@@ -4,9 +4,11 @@ import "fmt"
 
 func testValue() {
 	i := 42
-	f := float64(i)
-	u := uint(f)
-	fmt.Println(i, f, u)
+	fmt.Printf("i is of type %T\n", i)
+	j := 526.32
+	fmt.Printf("j is of type %T\n", j)
+	s := "Hello"
+	fmt.Printf("s is of type %T\n", s)
 }
 
 func main() {
