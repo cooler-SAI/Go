@@ -1,19 +1,33 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func testValue() {
-	sum := 100
-	if false {
-		fmt.Printf("%d\t", sum)
-	} else {
-		fmt.Printf("%d\t", sum)
+func Sqrt(x float64) float64 {
+	if x < 0 {
+		return -1
 	}
 
-	fmt.Printf("%d\t", sum)
+	const epsilon = 1e-10
+	z := x
+	for {
+		nextZ := z - (z*z-x)/(2*z)
+		if abs(nextZ-z) < epsilon {
+			break
+		}
+		z = nextZ
+	}
+	return z
+}
+
+func abs(x float64) float64 {
+	if x < 0 {
+		return -x
+	}
+	return x
 }
 
 func main() {
-	testValue()
-
+	fmt.Println(Sqrt(2))
 }
