@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func testValue() {
-	sum := 0
-	for i := 0; i < 10; i++ {
-		sum += i
+	sum := 1
+	for sum < 10 {
+		sum += sum
 
 	}
 	fmt.Printf("%d\t", sum)
