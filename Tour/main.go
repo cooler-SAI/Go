@@ -4,7 +4,7 @@ import "fmt"
 
 func testValue() {
 	sum := 100
-	if sum < 100 {
+	if false {
 		fmt.Printf("%d\t", sum)
 	} else {
 		fmt.Printf("%d\t", sum)
