@@ -2,32 +2,24 @@ package main
 
 import (
 	"fmt"
+	"runtime"
 )
 
-func Sqrt(x float64) float64 {
-	if x < 0 {
-		return -1
+func testValue() {
+	fmt.Print("Go runs on ")
+	switch os := runtime.GOOS; os {
+	case "darwin":
+		fmt.Println("OS X")
+	case "linux":
+		fmt.Println("Linux")
+	case "windows":
+		fmt.Println("Windows")
+	default:
+		fmt.Printf("%s.\n", os)
 	}
-
-	const epsilon = 1e-10
-	z := x
-	for {
-		nextZ := z - (z*z-x)/(2*z)
-		if abs(nextZ-z) < epsilon {
-			break
-		}
-		z = nextZ
-	}
-	return z
-}
-
-func abs(x float64) float64 {
-	if x < 0 {
-		return -x
-	}
-	return x
 }
 
 func main() {
-	fmt.Println(Sqrt(2))
+	testValue()
+
 }
