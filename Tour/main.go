@@ -2,19 +2,16 @@ package main
 
 import "fmt"
 
-func testRange() {
-	pow := make([]int, 10)
-	for i := 0; i < 10; i++ {
-		pow[i] = 1 << uint(i)
-
-	}
-	for _, v := range pow {
-		fmt.Println(v)
-	}
-
+type Vertex struct {
+	Lat, Long float64
 }
 
-func main() {
-	testRange()
+var m map[string]Vertex
 
+func main() {
+	m = make(map[string]Vertex)
+	m["Bell Labs"] = Vertex{
+		40.68433, -74.39967,
+	}
+	fmt.Println(m["Bell Labs"])
 }
