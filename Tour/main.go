@@ -2,23 +2,15 @@ package main
 
 import "fmt"
 
-func printSlices(s []int) {
-	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
-}
-
 func testSlices() {
 
-	primes := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-	printSlices(primes)
+	var s []int
+	fmt.Println(s, len(s), cap(s))
 
-	primes = primes[1:4]
-	printSlices(primes)
+	if s == nil {
+		fmt.Println("slice is nil")
 
-	primes = primes[2:6]
-	printSlices(primes)
-
-	primes = primes[:6]
-	printSlices(primes)
+	}
 
 }
 
