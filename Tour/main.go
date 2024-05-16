@@ -8,9 +8,10 @@ type Values struct {
 
 func testStruct() {
 	v := Values{1, 2}
-	v.X = 4
-	v.Y = 5
-	fmt.Println(v.X, v.Y)
+	p := &v
+	p.X = 1e9
+	fmt.Println(v)
+
 	fmt.Printf("type is %T\n", v.Y)
 	fmt.Printf("type is %T\n", v.X)
 
