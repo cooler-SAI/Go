@@ -7,13 +7,11 @@ type Values struct {
 }
 
 func testStruct() {
-	v := Values{1, 2}
-	p := &v
-	p.X = 1e9
-	fmt.Println(v)
-
-	fmt.Printf("type is %T\n", v.Y)
-	fmt.Printf("type is %T\n", v.X)
+	v1 := Values{1, 2}
+	v2 := Values{X: 20}
+	v3 := Values{Y: 30}
+	v4 := Values{}
+	fmt.Println(v1, v2, v3, v4)
 
 }
 
