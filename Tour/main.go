@@ -2,24 +2,23 @@ package main
 
 import "fmt"
 
-func testArray() {
+func testSlices() {
 
 	primes := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 	fmt.Println(primes)
 
-	s := []struct {
-		i int
-		b bool
-	}{
-		{2, true},
-		{3, false},
-		{5, false},
-	}
-	fmt.Println(s)
+	slice1 := primes[1:3]
+	fmt.Println(slice1)
+	slice2 := primes[:5]
+	fmt.Println(slice2)
+	slice3 := primes[3:]
+	fmt.Println(slice3)
+	slice4 := primes[:]
+	fmt.Println(slice4)
 
 }
 
 func main() {
-	testArray()
+	testSlices()
 
 }
