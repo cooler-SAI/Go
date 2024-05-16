@@ -2,20 +2,19 @@ package main
 
 import "fmt"
 
-type Values struct {
-	X, Y int
-}
+func testArray() {
+	var a [2]string
+	a[0] = "Hello"
+	a[1] = "All"
+	fmt.Println(a[0], a[1])
+	fmt.Println(a)
 
-func testStruct() {
-	v1 := Values{1, 2}
-	v2 := Values{X: 20}
-	v3 := Values{Y: 30}
-	v4 := Values{}
-	fmt.Println(v1, v2, v3, v4)
+	primes := [3]int{1, 2, 3}
+	fmt.Println(primes)
 
 }
 
 func main() {
-	testStruct()
+	testArray()
 
 }
