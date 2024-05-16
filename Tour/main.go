@@ -3,14 +3,12 @@ package main
 import "fmt"
 
 func testArray() {
-	var a [2]string
-	a[0] = "Hello"
-	a[1] = "All"
-	fmt.Println(a[0], a[1])
-	fmt.Println(a)
 
-	primes := [3]int{1, 2, 3}
+	primes := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 	fmt.Println(primes)
+
+	var s = primes[0:4]
+	fmt.Println(s)
 
 }
 
