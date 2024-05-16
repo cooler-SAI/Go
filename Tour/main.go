@@ -9,6 +9,11 @@ func testArray() {
 
 	var s = primes[0:4]
 	fmt.Println(s)
+	var s2 = primes[4:6]
+	fmt.Println(s2)
+	primes[0] = 200
+	fmt.Println(primes)
+	fmt.Println(s)
 
 }
 
