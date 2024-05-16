@@ -2,15 +2,20 @@ package main
 
 import "fmt"
 
+func printSlices(s string, x []int) {
+
+	fmt.Printf("%s len=%d cap=%d %v\n", s, len(x), cap(x), x)
+}
+
 func testSlices() {
 
-	var s []int
-	fmt.Println(s, len(s), cap(s))
+	a := make([]int, 10)
 
-	if s == nil {
-		fmt.Println("slice is nil")
-
-	}
+	b := make([]int, 0, 10)
+	c := make([]int, 10)
+	printSlices("a:", a)
+	printSlices("b:", b)
+	printSlices("c:", c)
 
 }
 
