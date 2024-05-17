@@ -2,23 +2,17 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
-type Coordinates struct {
-	x float64
-	y float64
-}
+type testInt int
 
-func Abs(cord Coordinates) float64 {
-	return math.Abs(cord.x) + math.Abs(cord.y)
-
+func (i testInt) test() int {
+	return int(i)
 }
 
 func main() {
+	var minus = -10
 
-	coordinates := Coordinates{x: 10, y: 20}
-
-	fmt.Println(Abs(coordinates))
-
+	var test = testInt(500 * minus)
+	fmt.Println(test.test())
 }
