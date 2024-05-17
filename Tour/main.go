@@ -10,7 +10,7 @@ type Coordinates struct {
 	y float64
 }
 
-func (coord Coordinates) Abs() float64 {
+func Abs(coord Coordinates) float64 {
 	return math.Abs(coord.x) + math.Abs(coord.y)
 
 }
@@ -18,6 +18,7 @@ func (coord Coordinates) Abs() float64 {
 func main() {
 
 	coordinates := Coordinates{x: 10, y: 20}
-	fmt.Println(coordinates.Abs())
+
+	fmt.Println(Abs(coordinates))
 
 }
