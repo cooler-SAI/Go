@@ -10,8 +10,8 @@ type Coordinates struct {
 	y float64
 }
 
-func Abs(coord Coordinates) float64 {
-	return math.Abs(coord.x) + math.Abs(coord.y)
+func Abs(cord Coordinates) float64 {
+	return math.Abs(cord.x) + math.Abs(cord.y)
 
 }
 
