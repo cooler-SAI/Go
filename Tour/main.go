@@ -1,20 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
-func fibonacci() func() int {
-	a, b := 0, 1
+type Coordinates struct {
+	x float64
+	y float64
+}
 
-	return func() int {
-		current := a
-		a, b = b, a+b
-		return current
-	}
+func (coord Coordinates) Abs() float64 {
+	return math.Abs(coord.x) + math.Abs(coord.y)
+
 }
 
 func main() {
-	f := fibonacci()
-	for i := 0; i < 10; i++ {
-		fmt.Println(f())
-	}
+
+	coordinates := Coordinates{x: 10, y: 20}
+	fmt.Println(coordinates.Abs())
+
 }
