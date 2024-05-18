@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 
 	helloGo := "Hello Go!"
-	fmt.Println(helloGo)
+	continueWords := "You are damn right"
+	fmt.Println(helloGo + " " + continueWords)
 
 }
