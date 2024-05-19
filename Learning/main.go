@@ -6,5 +6,7 @@ func main() {
 
 	var numbers = [5]int{1, 2, 3, 4, 5}
 	fmt.Println(numbers)
+	fmt.Println(numbers[1:3])
+	fmt.Println(numbers[:3])
 
 }
