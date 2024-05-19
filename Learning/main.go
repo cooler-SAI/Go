@@ -4,9 +4,13 @@ import "fmt"
 
 func main() {
 
-	var numbers = [5]int{1, 2, 3, 4, 5}
-	fmt.Println(numbers)
-	fmt.Println(numbers[1:3])
-	fmt.Println(numbers[:3])
+	a := 100
+	b := 250
+	if a > b {
+		fmt.Printf("%d is greater than %d\n", a, b)
+
+	} else {
+		fmt.Printf("%d is less than %d\n", a, b)
+	}
 
 }
