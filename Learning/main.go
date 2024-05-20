@@ -16,4 +16,15 @@ func main() {
 		fmt.Println(value)
 	}
 
+	var numbers = [10]int{1, 2, 3, 10, 22, 33, 20, 42, 9, 10}
+	var sum = 0
+	for _, value := range numbers {
+		if value < 100 {
+			continue
+		}
+		sum += value
+
+	}
+	fmt.Println(sum)
+
 }
