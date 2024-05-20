@@ -4,11 +4,11 @@ import "fmt"
 
 func main() {
 
-	i := 1
-	for i < 10 {
-		fmt.Println(i)
-		i++
-
+	for i := 1; i < 10; i++ {
+		for j := 1; j < 10; j++ {
+			fmt.Printf("%d * %d = %d\n", i, j, i*j)
+		}
+		fmt.Println()
 	}
 
 }
