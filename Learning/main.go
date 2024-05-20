@@ -12,8 +12,8 @@ func main() {
 	}
 
 	var users = [3]string{"annie", "jess", "tilda"}
-	for index, value := range users {
-		fmt.Println(index, value)
+	for _, value := range users {
+		fmt.Println(value)
 	}
 
 }
