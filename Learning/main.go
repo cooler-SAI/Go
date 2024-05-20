@@ -19,8 +19,8 @@ func main() {
 	var numbers = [10]int{1, 2, 3, 10, 22, 33, 20, 42, 9, 10}
 	var sum = 0
 	for _, value := range numbers {
-		if value < 100 {
-			continue
+		if value > 10 {
+			break
 		}
 		sum += value
 
