@@ -25,6 +25,10 @@ func resultMath(x, y float64) float64 {
 	return z
 }
 
+func add(x, y int, firstName, LastName string) (int, string) {
+	return x + y, firstName + " " + LastName
+}
+
 func main() {
 	simple()
 	math(1, 2)
@@ -34,5 +38,9 @@ func main() {
 	fmt.Println(mathResult)
 	multiResult := resultMath(1.5, 2.8)
 	fmt.Println(multiResult)
+
+	var age, name = add(4, 5, "ander", "me")
+	fmt.Println(age)
+	fmt.Printf(name)
 
 }
