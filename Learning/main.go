@@ -11,4 +11,9 @@ func main() {
 		fmt.Println()
 	}
 
+	var users = [3]string{"annie", "jess", "tilda"}
+	for index, value := range users {
+		fmt.Println(index, value)
+	}
+
 }
