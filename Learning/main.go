@@ -3,24 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	baseUsers := []string{"mike", "Jeff", "Arno", "John"}
-	group1 := baseUsers[:2]
-	group2 := baseUsers[2:4]
-	fmt.Println("baseUsers:", baseUsers)
-	fmt.Println("group1:", group1)
-	fmt.Println("group2:", group2)
 
-	baseUsers = append(baseUsers, "Jeff")
-	fmt.Println("baseUsers:", baseUsers)
-
-	var newUsers []string
-	for _, user := range baseUsers {
-		if user != "Jeff" {
-			newUsers = append(newUsers, user)
-		}
-
+	var people = map[string]int{
+		"James": 32,
+		"Jose":  12,
+		"Sam":   20,
 	}
-	baseUsers = newUsers
-	fmt.Println("baseUsers:", baseUsers)
+	fmt.Println(people["James"])
+
+	var numbers = map[int]int{150: 32, 350: 12, 250: 20}
+	fmt.Println(numbers[350])
 
 }
