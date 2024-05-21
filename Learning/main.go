@@ -2,16 +2,12 @@ package main
 
 import "fmt"
 
-func Start() {
-	fmt.Println("Program has been started")
-}
-func Finished() {
-	fmt.Println("Program has been finished")
-}
-
 func main() {
-
-	defer Finished()
-	Start()
+	baseUsers := []string{"mike", "Jeff", "Arno", "John"}
+	group1 := baseUsers[:2]
+	group2 := baseUsers[2:4]
+	fmt.Println("baseUsers:", baseUsers)
+	fmt.Println("group1:", group1)
+	fmt.Println("group2:", group2)
 
 }
