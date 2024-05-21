@@ -2,8 +2,16 @@ package main
 
 import "fmt"
 
+func Start() {
+	fmt.Println("Program has been started")
+}
+func Finished() {
+	fmt.Println("Program has been finished")
+}
+
 func main() {
-	f := func(x, y int) int { return y*x + y }
-	fmt.Println(f(3, 4))
+
+	defer Finished()
+	Start()
 
 }
