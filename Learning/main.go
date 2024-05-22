@@ -6,7 +6,8 @@ func main() {
 
 	x := 10
 	p := &x
-	fmt.Println("Adress: ", p)
-	fmt.Println("Valor: ", *p)
+	m := &x
+	fmt.Println("Address: ", p)
+	fmt.Println("Valor: ", *m)
 
 }
