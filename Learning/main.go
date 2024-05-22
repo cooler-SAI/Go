@@ -2,13 +2,15 @@ package main
 
 import "fmt"
 
+func change(x *int) {
+	*x = *x * *x
+}
+
 func main() {
 
-	p := new(int)
-	*p = 1
-	fmt.Println(*p)
-
-	*p = 2
-	fmt.Println(*p)
+	d := 10
+	fmt.Println("d on start: ", d)
+	change(&d)
+	fmt.Println("d on end: ", d)
 
 }
