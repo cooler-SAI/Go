@@ -4,10 +4,11 @@ import "fmt"
 
 func main() {
 
-	x := 10
-	p := &x
-	m := &x
-	fmt.Println("Address: ", p)
-	fmt.Println("Valor: ", *m)
+	p := new(int)
+	*p = 1
+	fmt.Println(*p)
+
+	*p = 2
+	fmt.Println(*p)
 
 }
