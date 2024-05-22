@@ -7,6 +7,7 @@ func main() {
 	x := 10
 	var p *int
 	p = &x
-	fmt.Println(p)
+	fmt.Println("Adress: ", p)
+	fmt.Println("Valor: ", *p)
 
 }
