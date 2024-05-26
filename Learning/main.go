@@ -20,4 +20,9 @@ func main() {
 	tomPointer.name = "Tom Super Shadow"
 	fmt.Println("Old person added: ", tomPointer.name, tomPointer.age)
 
+	ander := person{"Ander", 20}
+	var agePointer = &tom.age
+	*agePointer = 38
+	fmt.Println("Ander person added: ", ander.name, ander.age)
+
 }
