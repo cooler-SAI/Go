@@ -2,19 +2,17 @@ package main
 
 import "fmt"
 
-type binaryFunc func(int, int) int
+type distance = uint
+type kilometer = float64
 
-func action(n1 int, n2 int, op binaryFunc) {
-	result := op(n1, n2)
-	fmt.Println(result)
-}
-func add(x int, y int) int {
-	return x + y
+func realDistance(p, q kilometer) distance {
+	return distance(p*p + q*q)
+
 }
 
 func main() {
 
-	var myOperation binaryFunc = add
-	action(10, 20, myOperation)
+	realDistance(25, 35)
+	fmt.Println(realDistance(25, 35))
 
 }
