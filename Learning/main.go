@@ -2,25 +2,19 @@ package main
 
 import "fmt"
 
-type mile uint
-type kilometer uint
+type binaryFunc func(int, int) int
 
-func distanceToEnemy(distance mile) {
-	fmt.Println("Distance to enemy: ")
-	fmt.Println(distance, "miles")
+func action(n1 int, n2 int, op binaryFunc) {
+	result := op(n1, n2)
+	fmt.Println(result)
 }
-
-func fullDistance(distance mile, kilometer kilometer) {
-	realDistance := kilometer * kilometer
-	distance = 0
-	fmt.Println("Real distance to enemy is: ")
-	fmt.Println(realDistance, "miles")
+func add(x int, y int) int {
+	return x + y
 }
 
 func main() {
 
-	var distance mile = 100
-	distanceToEnemy(distance)
-	fullDistance(distance, 500)
+	var myOperation binaryFunc = add
+	action(10, 20, myOperation)
 
 }
