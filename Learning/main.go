@@ -3,12 +3,15 @@ package main
 import "fmt"
 
 type mile uint
+type kilometer uint
+
+func distanceToEnemy(distance mile) {
+	fmt.Println("Distance to enemy: ")
+	fmt.Println(distance, "miles")
+}
 
 func main() {
 
-	var m mile = 100
-	fmt.Println(m)
-	m += 5
-	fmt.Println(m)
-
+	var distance mile = 100
+	distanceToEnemy(distance)
 }
