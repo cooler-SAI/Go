@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"main.go/computation"
 	"rsc.io/quote"
 )
 
@@ -11,5 +12,6 @@ func main() {
 	fmt.Println(message)
 	message2 := quote.Glass()
 	fmt.Println(message2)
+	fmt.Println(computation.PrintSimple())
 
 }
