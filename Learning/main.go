@@ -21,8 +21,11 @@ func (b Bicycle) move() {
 
 func main() {
 	var X36512 Vehicle = Moto{"X36512"}
-	X36512.move()
 	var V12 Vehicle = Bicycle{"V12"}
-	V12.move()
+
+	vehicles := []Vehicle{X36512, V12}
+	for _, vehicle := range vehicles {
+		vehicle.move()
+	}
 
 }
