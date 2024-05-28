@@ -12,6 +12,6 @@ func main() {
 	fmt.Println(message)
 	message2 := quote.Glass()
 	fmt.Println(message2)
-	fmt.Println(computation.PrintSimple())
+	fmt.Println(computation.PrintSimple("Ander"))
 
 }

@@ -2,6 +2,7 @@ package computation
 
 import "fmt"
 
-func PrintSimple() string {
-	return fmt.Sprintf("Hello all here, test one")
+func PrintSimple(name string) string {
+
+	return fmt.Sprintf("Hello all here, test one: %s", name)
 }
