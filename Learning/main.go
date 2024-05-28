@@ -13,6 +13,6 @@ func main() {
 	message2 := quote.Glass()
 	fmt.Println(message2)
 	fmt.Println(computation.PrintSimple("Ander"))
-	fmt.Println(computation.PrintSimple("Alex.."))
+	fmt.Println(computation.PrintSimple("Alex Shatohin.."))
 
 }
