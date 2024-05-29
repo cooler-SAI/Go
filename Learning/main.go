@@ -4,17 +4,12 @@ import "fmt"
 
 func main() {
 
-	intChan := make(chan int)
+	intChan := make(chan int, 3)
+	intChan <- 10
 
-	go square(intChan)
-	intChan <- 14
-	fmt.Println("Result is: ", <-intChan)
-	fmt.Println("The End")
+	fmt.Println(cap(intChan))
+	fmt.Println(len(intChan))
 
-}
+	fmt.Println(<-intChan)
 
-func square(intChan chan int) {
-	x := <-intChan
-	fmt.Println("Square: ", x)
-	intChan <- x * x
 }
