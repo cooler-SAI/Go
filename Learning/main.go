@@ -4,12 +4,15 @@ import "fmt"
 
 func main() {
 
-	intChan := make(chan int, 3)
-	intChan <- 10
+	fmt.Println("Start")
+	fmt.Println(<-createChan(5))
+	fmt.Println("End")
 
-	fmt.Println(cap(intChan))
-	fmt.Println(len(intChan))
-
-	fmt.Println(<-intChan)
-
+}
+func createChan(n int) chan int {
+	c := make(chan int)
+	go func() {
+		c <- n
+	}()
+	return c
 }
