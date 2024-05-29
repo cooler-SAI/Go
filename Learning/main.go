@@ -1,28 +1,26 @@
 package main
 
-import "fmt"
-
-var counter int = 0
+import (
+	"fmt"
+	"sync"
+	"time"
+)
 
 func main() {
 
-	ch := make(chan bool)
-	for i := 0; i < 10; i++ {
-		go work(i, ch)
-
+	var wg sync.WaitGroup
+	wg.Add(1)
+	work := func(id int) {
+		defer wg.Done()
+		fmt.Printf("Worker %d\n", id)
+		time.Sleep(2 * time.Second)
+		fmt.Printf("Worker %d\n", id)
 	}
-	for i := 0; i < 10; i++ {
-		<-ch
-	}
-	fmt.Println("The End")
 
-}
+	go work(1)
+	go work(2)
 
-func work(i int, ch chan bool) {
-	counter = 0
-	for k := 1; k <= 10; k++ {
-		counter++
-		fmt.Printf("Goroutine: %d\n", counter)
-	}
-	ch <- true
+	wg.Wait()
+	fmt.Println("Done")
+
 }
