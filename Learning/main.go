@@ -4,9 +4,12 @@ import (
 	"fmt"
 )
 
+func myFunction() {
+	fmt.Println("I just got executed!")
+}
+
 func main() {
 
-	for i := 0; i < 6; i++ {
-		fmt.Println(i)
-	}
+	myFunction()
+
 }
