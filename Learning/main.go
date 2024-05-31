@@ -1,15 +1,11 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func myFunction(name string) {
-	fmt.Printf("%v Doe", name)
-}
+var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
 
 func main() {
-
-	myFunction("John")
-
+	for i, v := range pow {
+		fmt.Printf("2**%d = %d\n", i, v)
+	}
 }
