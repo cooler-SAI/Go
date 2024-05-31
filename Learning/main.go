@@ -4,12 +4,12 @@ import (
 	"fmt"
 )
 
-func myFunction() {
-	fmt.Println("I just got executed!")
+func myFunction(name string) {
+	fmt.Printf("%v Doe", name)
 }
 
 func main() {
 
-	myFunction()
+	myFunction("John")
 
 }
