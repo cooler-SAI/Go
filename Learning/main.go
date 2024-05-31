@@ -1,11 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
-var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+type Error interface {
+	Error() string
+}
+
+func doSomething() error {
+	return errors.New("something failed")
+
+}
 
 func main() {
-	for i, v := range pow {
-		fmt.Printf("2**%d = %d\n", i, v)
+	err := doSomething()
+	if err != nil {
+		fmt.Println(err)
 	}
+
 }
