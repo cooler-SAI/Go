@@ -14,7 +14,8 @@ func (e *errorString) Error() string {
 }
 
 func main() {
-	fmt.Errorf("math: square root of negative number %g")
+	err2 := fmt.Errorf("math: square root of negative number ")
+	fmt.Println(err2)
 
 	fmt.Println(errorString{"error here"})
 	err := &errorString{"error here"}
