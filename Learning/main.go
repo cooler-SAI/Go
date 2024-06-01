@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 type errorString struct {
 	s string
@@ -15,6 +18,18 @@ func main() {
 	fmt.Println(errorString{"error here"})
 	err := &errorString{"error here"}
 	fmt.Println(*err)
-	panic(err)
+	var x, y = 20, 35
+	z := x + y
+	if false {
+		panic(err)
+
+	} else {
+		fmt.Println(z)
+	}
+	baseError := errors.New("base error here")
+	if baseError != nil {
+		fmt.Println(baseError)
+
+	}
 
 }
