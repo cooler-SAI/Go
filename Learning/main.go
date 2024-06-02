@@ -1,35 +1,23 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func divide(a, b int) int {
-	if b == 0 {
-		panic("division by zero")
-
-	}
-	return a / b
+func panicHere() {
+	panic("panic here")
 }
 
-func safeDivide(a, b int) {
+func test() {
 	defer func() {
-		if r := recover(); r != nil {
-			fmt.Println("Recover from panic...", r)
+		if err := recover(); err != nil {
+			fmt.Println("Recovered from panic:", err)
 		}
 	}()
-
-	result := divide(a, b)
-	fmt.Printf("Result of %d / %d = %d\n", a, b, result)
+	panicHere()
 }
 
 func main() {
 
-	fmt.Println("starting program...")
-
-	safeDivide(10, 5)
-	safeDivide(20, 0)
-
-	fmt.Println("ending program...")
+	test()
+	fmt.Println("Program continues after recovery.")
 
 }
