@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 func divide(a, b int) (i int, int error) {
 	if a < b {
@@ -14,6 +17,10 @@ func doSomething(a int, b int) (int, error) {
 
 }
 
+func baseErrors(a int, b int) (int, error) {
+	return a + b, errors.New("set up base errors")
+}
+
 func main() {
 
 	i, err := divide(20, 40)
@@ -23,5 +30,6 @@ func main() {
 	fmt.Println(i)
 	fmt.Println(divide(10, 20))
 	fmt.Println(doSomething(10, 20))
+	fmt.Println(baseErrors(10, 20))
 
 }
