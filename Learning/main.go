@@ -1,35 +1,35 @@
 package main
 
 import (
-	"errors"
 	"fmt"
 )
 
-func divide(a, b int) (i int, int error) {
-	if a < b {
-		return 0, fmt.Errorf("can't divide")
+func divide(a, b int) int {
+	if b == 0 {
+		panic("division by zero")
+
 	}
-	return a / b, nil
+	return a / b
 }
 
-func doSomething(a int, b int) (int, error) {
-	return a + b, fmt.Errorf("can't doSomething")
+func safeDivide(a, b int) {
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println("Recover from panic...", r)
+		}
+	}()
 
-}
-
-func baseErrors(a int, b int) (int, error) {
-	return a + b, errors.New("set up base errors")
+	result := divide(a, b)
+	fmt.Printf("Result of %d / %d = %d\n", a, b, result)
 }
 
 func main() {
 
-	i, err := divide(20, 40)
-	if err != nil {
-		return
-	}
-	fmt.Println(i)
-	fmt.Println(divide(10, 20))
-	fmt.Println(doSomething(10, 20))
-	fmt.Println(baseErrors(10, 20))
+	fmt.Println("starting program...")
+
+	safeDivide(10, 5)
+	safeDivide(20, 0)
+
+	fmt.Println("ending program...")
 
 }
