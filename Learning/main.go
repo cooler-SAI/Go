@@ -9,4 +9,9 @@ func main() {
 	z = float64(x) + float64(y)
 	fmt.Println(z)
 
+	a := 10
+	var b float64 = 20
+	var c int = float64(a) + bfloat64(b)
+	fmt.Println(c)
+
 }
