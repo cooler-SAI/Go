@@ -1,20 +1,12 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "fmt"
 
 func main() {
 
-	info1 := strings.ToLower("HELLO GOLANG")
-	fmt.Println(info1)
-
-	info2 := strings.ToUpper("hey all here")
-	fmt.Println(info2)
-
-	stringArray := []string{"I LoveGo", "Go Programming"}
-	joinedStrings := strings.Join(stringArray, " ")
-	fmt.Println(joinedStrings)
+	x, y := 1, 2
+	var z float64
+	z = float64(x) + float64(y)
+	fmt.Println(z)
 
 }
