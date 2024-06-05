@@ -28,4 +28,11 @@ func main() {
 	for key, value := range myMap {
 		fmt.Println(key, value)
 	}
+
+	value, ok := myMap["age"]
+	if ok {
+		fmt.Println(value)
+	} else {
+		fmt.Println("Value not found")
+	}
 }
