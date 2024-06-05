@@ -30,4 +30,8 @@ func main() {
 	fmt.Println(cap(slice5))
 	slice5 = append(slice5, 25, 45)
 	fmt.Println(slice5)
+
+	slice5 = slice5[2:]
+	fmt.Println(slice5)
+	panic("We are Stop the program")
 }
