@@ -17,4 +17,7 @@ func main() {
 		"c": 3,
 	}
 	fmt.Println(newMap)
+
+	Age := myMap["age"]
+	fmt.Println(Age)
 }
