@@ -46,6 +46,6 @@ func main() {
 	fmt.Println(slice5)
 	/*panic("We are Stop the program")*/
 
-	var Ander = Person{"Ander", 20}
+	Ander := Person{"Ander", 20}
 	Ander.printName()
 }
