@@ -2,6 +2,17 @@ package main
 
 import "fmt"
 
+type Person struct {
+	name string
+	age  int
+}
+
+func (p Person) printName() {
+	fmt.Println("name:", p.name)
+	fmt.Println("age:", p.age)
+
+}
+
 func main() {
 
 	numbers := [...]int{1, 2, 3, 4, 5}
@@ -33,5 +44,8 @@ func main() {
 
 	slice5 = slice5[2:]
 	fmt.Println(slice5)
-	panic("We are Stop the program")
+	/*panic("We are Stop the program")*/
+
+	var Ander = Person{"Ander", 20}
+	Ander.printName()
 }
