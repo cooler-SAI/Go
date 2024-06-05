@@ -10,4 +10,11 @@ func main() {
 	myMap["score"] = 120
 	myMap["temp"] = 500
 	fmt.Println(myMap)
+
+	newMap := map[string]int{
+		"a": 1,
+		"b": 2,
+		"c": 3,
+	}
+	fmt.Println(newMap)
 }
