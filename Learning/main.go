@@ -22,4 +22,12 @@ func main() {
 
 	slice4 = append(slice4, 250, 450)
 	fmt.Println(slice4)
+
+	slice5 := []int{1, 2, 3, 4, 5}
+	fmt.Println(slice5)
+	slice5[2] = 100
+	fmt.Println(slice5)
+	fmt.Println(cap(slice5))
+	slice5 = append(slice5, 25, 45)
+	fmt.Println(slice5)
 }
