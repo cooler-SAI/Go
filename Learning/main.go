@@ -20,4 +20,12 @@ func main() {
 
 	Age := myMap["age"]
 	fmt.Println(Age)
+
+	for key, value := range newMap {
+		fmt.Println(key, value)
+	}
+
+	for key, value := range myMap {
+		fmt.Println(key, value)
+	}
 }
