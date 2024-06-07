@@ -14,4 +14,10 @@ func main() {
 	myMap["Bob"] = 30
 	fmt.Println("Map: ", myMap)
 
+	myChannel := make(chan int, 2)
+	myChannel <- 10
+	myChannel <- 20
+
+	fmt.Println("Channel Value 1 : ", <-myChannel)
+	fmt.Println("Channel Value 2 : ", <-myChannel)
 }
