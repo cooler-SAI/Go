@@ -9,6 +9,12 @@ func main() {
 	fmt.Println("Capability: ", cap(mySlice))
 	fmt.Println("Length", len(mySlice))
 
+	nextSlice := mySlice[:5]
+	fmt.Println("Slice: ", nextSlice)
+
+	fixedSlice := make([]int, 10)
+	fmt.Println("SliceNext: ", fixedSlice)
+
 	myMap := make(map[string]int)
 	myMap["Anna"] = 25
 	myMap["Bob"] = 30
