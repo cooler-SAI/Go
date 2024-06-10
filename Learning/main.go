@@ -12,7 +12,19 @@ func main() {
 		fmt.Println(v)
 	}
 
-	str := i.(float64)
-	fmt.Println(str)
+	f, ok := i.(float64)
+	if ok {
+		fmt.Println(f)
+	} else {
+		fmt.Println(i)
+	}
+
+	str, ok := i.(float64)
+	if ok {
+		fmt.Println(str)
+	} else {
+		err := fmt.Errorf("error Here")
+		fmt.Println(err)
+	}
 
 }
