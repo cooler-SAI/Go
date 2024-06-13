@@ -28,4 +28,9 @@ func main() {
 	fmt.Println(t.Working())
 	SetUp(t)
 
+	var simple = map[string]string{
+		"yes": "good",
+	}
+	fmt.Println(simple["yes"])
+
 }
