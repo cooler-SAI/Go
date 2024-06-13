@@ -55,4 +55,11 @@ func main() {
 	e := &p
 	fmt.Println(e.Greet())
 
+	n := Car{
+		Model: "Nissan",
+		Year:  1997,
+	}
+	fmt.Println(n.Go())
+	Moving(Going(n))
+
 }
