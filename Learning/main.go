@@ -44,4 +44,7 @@ func main() {
 	z := &x
 	fmt.Println(*z)
 
+	l := &y
+	fmt.Println(*l)
+
 }
