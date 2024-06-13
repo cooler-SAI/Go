@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Plug interface {
 	Working() string
 }
@@ -23,5 +25,6 @@ func main() {
 		Name:  "Toaster",
 		Power: 10,
 	}
+	fmt.Println(t.Working())
 
 }
