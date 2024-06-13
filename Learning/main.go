@@ -26,5 +26,6 @@ func main() {
 		Power: 10,
 	}
 	fmt.Println(t.Working())
+	SetUp(t)
 
 }
