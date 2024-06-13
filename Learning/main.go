@@ -36,6 +36,19 @@ func Moving(g Going) {
 	fmt.Println(g.Go())
 }
 
+type printer interface {
+	Print() string
+}
+
+type Model struct {
+	Name string
+	Type int
+}
+
+func (m Model) Print() string {
+	return fmt.Sprintf("%s: %d", m.Name, m.Type)
+}
+
 func main() {
 
 	p := Gopher{
@@ -61,5 +74,11 @@ func main() {
 	}
 	fmt.Println(n.Go())
 	Moving(Going(n))
+
+	test := Model{
+		Name: "New02",
+		Type: 42,
+	}
+	fmt.Println(test.Print())
 
 }
