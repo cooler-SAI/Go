@@ -36,4 +36,6 @@ func main() {
 	slice := []float64{25, 15, 16}
 	fmt.Println(slice)
 
+	fmt.Println(slice[:2])
+
 }
