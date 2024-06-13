@@ -33,4 +33,7 @@ func main() {
 	}
 	fmt.Println(simple["yes"])
 
+	slice := []float64{25, 15, 16}
+	fmt.Println(slice)
+
 }
