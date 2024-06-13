@@ -47,4 +47,21 @@ func main() {
 	l := &y
 	fmt.Println(*l)
 
+	var a, b = 10, 20
+	c := a - b
+	if c > 0 {
+		fmt.Println("All Minus")
+
+	} else {
+		fmt.Println("Good")
+	}
+
+	ok := (c > 0)
+
+	if ok {
+		fmt.Println("OK is true")
+	} else {
+		fmt.Println("OK is false")
+	}
+
 }
