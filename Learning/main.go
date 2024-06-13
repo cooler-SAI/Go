@@ -38,4 +38,10 @@ func main() {
 
 	fmt.Println(slice[:2])
 
+	var x, y = 25, 40
+	fmt.Println(x, y)
+
+	z := &x
+	fmt.Println(*z)
+
 }
