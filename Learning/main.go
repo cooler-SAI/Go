@@ -64,4 +64,6 @@ func main() {
 		fmt.Println("OK is false")
 	}
 
+	panic("No one here!")
+
 }
