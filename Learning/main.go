@@ -17,5 +17,6 @@ func main() {
 
 	ctx = context.WithValue(ctx, "key", "value")
 	go doSomething(ctx)
+	fmt.Println("do something")
 
 }
