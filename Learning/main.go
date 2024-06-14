@@ -1,24 +1,31 @@
 package main
 
 import (
-	"context"
 	"fmt"
+	"net/http"
 	"time"
 )
 
+func hello(w http.ResponseWriter, req *http.Request) {
+
+	ctx := req.Context()
+	fmt.Println("server: hello handler started")
+	defer fmt.Println("server: hello handler ended")
+
+	select {
+	case <-time.After(10 * time.Second):
+		_, _ = fmt.Fprintf(w, "hello\n")
+	case <-ctx.Done():
+
+		err := ctx.Err()
+		fmt.Println("server:", err)
+		internalError := http.StatusInternalServerError
+		http.Error(w, err.Error(), internalError)
+	}
+}
+
 func main() {
-	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
-	defer cancel()
 
-	go func(ctx context.Context) {
-		select {
-		case <-time.After(1 * time.Second):
-			fmt.Println("Operation completed")
-		case <-ctx.Done():
-			fmt.Println("Operation cancelled:", ctx.Err())
-		}
-	}(ctx)
-
-	time.Sleep(3 * time.Second)
-	fmt.Println("Main function completed")
+	http.HandleFunc("/hello", hello)
+	_ = http.ListenAndServe(":8090", nil)
 }
