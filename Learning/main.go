@@ -6,21 +6,19 @@ import (
 	"time"
 )
 
-func doSomething(ctx context.Context) {
-	fmt.Println("do something")
-}
-
 func main() {
-
-	ctx := context.Background()
-	ctx, cancel := context.WithCancel(ctx)
+	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
 	defer cancel()
 
-	ctx = context.WithValue(ctx, "key", "value")
-	go doSomething(ctx)
-	fmt.Println("do something")
+	go func(ctx context.Context) {
+		select {
+		case <-time.After(1 * time.Second):
+			fmt.Println("Operation completed")
+		case <-ctx.Done():
+			fmt.Println("Operation cancelled:", ctx.Err())
+		}
+	}(ctx)
 
-	ctx, cancel = context.WithTimeout(ctx, 5*time.Second)
-	defer cancel()
-
+	time.Sleep(3 * time.Second)
+	fmt.Println("Main function completed")
 }
