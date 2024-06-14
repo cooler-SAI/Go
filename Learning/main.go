@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"time"
 )
 
 func doSomething(ctx context.Context) {
@@ -18,5 +19,8 @@ func main() {
 	ctx = context.WithValue(ctx, "key", "value")
 	go doSomething(ctx)
 	fmt.Println("do something")
+
+	ctx, cancel = context.WithTimeout(ctx, 5*time.Second)
+	defer cancel()
 
 }
