@@ -18,9 +18,8 @@ func sleepAndTalk(ctx context.Context, d time.Duration, msg string) {
 func main() {
 
 	ctx := context.Background()
-	ctx, cancel := context.WithCancel(ctx)
-
-	time.AfterFunc(time.Second, cancel)
+	ctx, cancel := context.WithTimeout(ctx, time.Second)
+	cancel()
 
 	sleepAndTalk(ctx, 5*time.Second, "hello")
 
