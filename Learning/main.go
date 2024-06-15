@@ -15,6 +15,11 @@ func sleepAndTalk(ctx context.Context, d time.Duration, msg string) {
 	}
 }
 
+func newSleepAndTalk(ctx context.Context, d time.Duration, msg string) {
+	time.Sleep(d)
+	fmt.Println(msg)
+}
+
 func main() {
 
 	ctx := context.Background()
