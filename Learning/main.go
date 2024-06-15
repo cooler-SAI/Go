@@ -28,4 +28,6 @@ func main() {
 
 	sleepAndTalk(ctx, 5*time.Second, "hello")
 
+	newSleepAndTalk(ctx, 5*time.Second, "Ander Man")
+
 }
