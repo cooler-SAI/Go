@@ -3,31 +3,16 @@ package main
 import (
 	"context"
 	"fmt"
-	"time"
 )
 
-func sleepAndTalk(ctx context.Context, d time.Duration, msg string) {
-	select {
-	case <-time.After(d):
-		fmt.Println(msg)
-	case <-ctx.Done():
-		fmt.Println("context cancelled")
-	}
+func testContext(ctx context.Context) context.Context {
+	return context.WithValue(ctx, "request ID", "12345")
 }
-
-func newSleepAndTalk(ctx context.Context, d time.Duration, msg string) {
-	time.Sleep(d)
-	fmt.Println(msg)
-}
-
 func main() {
 
+	fmt.Println("Start....")
+
 	ctx := context.Background()
-	ctx, cancel := context.WithTimeout(ctx, time.Second)
-	defer cancel()
 
-	sleepAndTalk(ctx, 5*time.Second, "hello")
-
-	newSleepAndTalk(ctx, 5*time.Second, "Ander Man")
-
+	ctx = testContext(ctx)
 }
