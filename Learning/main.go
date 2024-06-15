@@ -23,4 +23,6 @@ func main() {
 	ctx = testContext(ctx)
 
 	doSomething(ctx)
+
+	fmt.Println("End.", ctx, fmt.Errorf("error"))
 }
