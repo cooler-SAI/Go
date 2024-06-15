@@ -19,7 +19,7 @@ func main() {
 
 	ctx := context.Background()
 	ctx, cancel := context.WithTimeout(ctx, time.Second)
-	cancel()
+	defer cancel()
 
 	sleepAndTalk(ctx, 5*time.Second, "hello")
 
