@@ -21,4 +21,6 @@ func main() {
 	ctx := context.Background()
 
 	ctx = testContext(ctx)
+
+	doSomething(ctx)
 }
