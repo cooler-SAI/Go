@@ -15,6 +15,8 @@ func main() {
 
 	go sayExample("hello", make(chan int))
 	sayExample("world", make(chan int))
-
+	c := make(chan int)
+	msg <- c
+	fmt.Println()
 	fmt.Println("done")
 }
