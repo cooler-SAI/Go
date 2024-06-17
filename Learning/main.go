@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 func sayExample(s string) {
@@ -19,8 +18,7 @@ func count(s string) {
 func main() {
 
 	go sayExample("hello")
-	sayExample("world")
+	go sayExample("world")
 
-	time.Sleep(time.Second)
 	fmt.Println("done")
 }
