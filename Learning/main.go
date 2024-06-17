@@ -4,21 +4,17 @@ import (
 	"fmt"
 )
 
-func sayExample(s string) {
+func sayExample(s string, c chan int) {
 	for i := 0; i < 5; i++ {
+		c <- i
 		fmt.Println(s, i)
 	}
 }
 
-func count(s string) {
-	for i := 0; i < 5; i++ {
-		fmt.Println(s, i)
-	}
-}
 func main() {
 
-	go sayExample("hello")
-	go sayExample("world")
+	go sayExample("hello", make(chan int))
+	sayExample("world", make(chan int))
 
 	fmt.Println("done")
 }
