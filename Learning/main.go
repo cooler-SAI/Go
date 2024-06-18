@@ -1,15 +1,32 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 func main() {
 
-	ch := make(chan int, 10)
-	fmt.Println("Base info:", ch)
-	ch <- 50
-	ch <- 200
-	fmt.Println("First value:", <-ch)
-	fmt.Println("Second info:", <-ch)
-	fmt.Println("Program Finished")
+	file, err := os.Open("test.txt")
+	if err != nil {
+		fmt.Println("Error Open file:", file)
+		return
+	}
+	defer func(file *os.File) {
+		err := file.Close()
+		if err != nil {
+
+		}
+	}(file)
+
+	reader := bufio.NewReader(file)
+
+	line, err := reader.ReadString('\n')
+	if err != nil {
+		fmt.Println("Error read line:", line)
+
+	}
+	fmt.Println("Reading....:", line)
 
 }
