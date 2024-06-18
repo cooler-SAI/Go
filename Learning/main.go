@@ -3,13 +3,12 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"os"
 )
 
 func main() {
 
-	var b bytes.Buffer
-	b.WriteString("Hello World")
-	fmt.Println(b.String())
-	_, _ = b.WriteTo(os.Stdout)
+	stringBuffer := new(bytes.Buffer)
+	stringBuffer.WriteString("Hello ")
+	stringBuffer.WriteString("World")
+	fmt.Println("Result of Buffer is: ", stringBuffer.String())
 }
