@@ -1,10 +1,16 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 )
 
 func main() {
+	var buf bytes.Buffer
+	buf.WriteString("Hello ")
+	buf.WriteByte('W')
+	buf.WriteString("orld!")
 
-	fmt.Println("Hello World")
+	data := buf.Bytes()
+	fmt.Println(string(data))
 }
