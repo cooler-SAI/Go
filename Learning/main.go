@@ -5,7 +5,10 @@ import (
 	"sync"
 )
 
-var counter int
+var (
+	counter int
+	mutex   sync.Mutex
+)
 
 func main() {
 
@@ -13,7 +16,9 @@ func main() {
 	for i := 0; i < 10000; i++ {
 		wg.Add(1)
 		go func() {
+			mutex.Lock()
 			counter++
+			mutex.Unlock()
 			wg.Done()
 		}()
 	}
