@@ -2,11 +2,20 @@ package main
 
 import "fmt"
 
-func main() {
-	b := "Hello"
-	point := &b
-	fmt.Println(*point)
+func changeValue(str *string) {
+	*str = "changed!"
+	fmt.Println(*str)
+}
 
-	*point = "World"
-	fmt.Println(*point)
+func changeValue2(str string) {
+	str = "not changed!"
+	fmt.Println(str)
+}
+
+func main() {
+	b := "Hello World"
+	changeValue(&b)
+
+	c := "Not changed!"
+	changeValue2(c)
 }
