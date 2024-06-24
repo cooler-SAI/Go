@@ -13,9 +13,8 @@ func changeValue2(str string) {
 }
 
 func main() {
-	b := "Hello World"
-	changeValue(&b)
+	toChange := "Hello here!"
 
-	c := "Not changed!"
-	changeValue2(c)
+	var pointer = &toChange
+	fmt.Println(*pointer)
 }
