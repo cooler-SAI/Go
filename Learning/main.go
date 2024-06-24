@@ -20,9 +20,17 @@ func GMin[T constraints.Ordered](x, y T) T {
 	return y
 }
 
+func GMax[T constraints.Ordered](x, y T) T {
+	if x > y {
+		return x
+	}
+	return y
+}
+
 func main() {
 	fmt.Println(Add(1, 2))
 	fmt.Println(AddType(1, 2.40))
 	fmt.Println(AddType("apple ", "banana"))
 	fmt.Println(GMin(1, 2))
+	fmt.Println(GMax(1, 2))
 }
