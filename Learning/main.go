@@ -10,7 +10,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
 	dates := []time.Time{
 		time.Date(2024, 1, 1, 0, 0, 0, 0, tz),
 		time.Date(2024, 2, 1, 0, 0, 0, 0, tz),
@@ -27,6 +26,6 @@ func main() {
 	}
 
 	for _, date := range dates {
-		fmt.Println(date.Format(time.RFC3339))
+		fmt.Println(date.Format("2006-01-02T15:04:05-07:00"))
 	}
 }
