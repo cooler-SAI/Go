@@ -9,4 +9,6 @@ func main() {
 
 	fmt.Println(hello.Hello())
 
+	fmt.Println("Errors...")
+
 }
