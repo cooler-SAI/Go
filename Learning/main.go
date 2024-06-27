@@ -14,4 +14,7 @@ func main() {
 	message := hello.HelloNew("Gladys")
 	fmt.Println(message)
 
+	function := hello.Result(10, 20)
+	fmt.Println(function)
+
 }
