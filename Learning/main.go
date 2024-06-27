@@ -17,4 +17,8 @@ func main() {
 	function := hello.Result(10, 20)
 	fmt.Println(function)
 
+	function2 := hello.HelloDificult("Ander")
+	function3 := hello.HelloDificult("")
+	fmt.Println(function2, function3)
+
 }
