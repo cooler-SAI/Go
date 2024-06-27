@@ -11,4 +11,7 @@ func main() {
 
 	fmt.Println("Errors...")
 
+	message := hello.HelloNew("Gladys")
+	fmt.Println(message)
+
 }
