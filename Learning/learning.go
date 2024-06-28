@@ -16,6 +16,12 @@ type Car struct {
 	Year  int    `json:"year"`
 }
 
+type Mobile struct {
+	Model string `json:"model"`
+	Color string `json:"color"`
+	Year  int    `json:"year"`
+}
+
 func main() {
 	jsonString := `{"name": "John", "age": 30, "email": "john@example.com"}`
 	var person Person
@@ -53,5 +59,18 @@ func main() {
 	}
 	jsonString3 := string(jsonBytes)
 	fmt.Println(jsonString3)
+
+	mobile := Mobile{
+		Model: "Motorolla",
+		Color: "Black",
+		Year:  1998,
+	}
+
+	jsonBytes3, err := json.Marshal(mobile)
+	if err != nil {
+		fmt.Println("Error encoding JSON:", err)
+		return
+	}
+	fmt.Println(string(jsonBytes3))
 
 }
