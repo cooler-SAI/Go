@@ -39,4 +39,19 @@ func main() {
 	}
 	fmt.Println("Car:", car.Model)
 	fmt.Println("Year:", car.Year)
+
+	person2 := Person{
+		Name:  "Jane",
+		Age:   25,
+		Email: "jane@example.com",
+	}
+
+	jsonBytes, err := json.Marshal(person2)
+	if err != nil {
+		fmt.Println("Error encoding JSON:", err)
+		return
+	}
+	jsonString3 := string(jsonBytes)
+	fmt.Println(jsonString3)
+
 }
