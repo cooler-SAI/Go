@@ -61,7 +61,7 @@ func main() {
 	fmt.Println(jsonString3)
 
 	mobile := Mobile{
-		Model: "Motorolla",
+		Model: "Motorola",
 		Color: "Black",
 		Year:  1998,
 	}
