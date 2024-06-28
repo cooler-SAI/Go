@@ -73,4 +73,16 @@ func main() {
 	}
 	fmt.Println(string(jsonBytes3))
 
+	jsonString5 := `{"name": "John", "age": 30, "email": "john@example.com"}`
+	var person3 Person
+
+	err2 := json.Unmarshal([]byte(jsonString5), &person3)
+	if err2 != nil {
+		fmt.Println("Error decoding JSON:", err2)
+		return
+	}
+	fmt.Println("Name:", person3.Name)
+	fmt.Println("Age:", person3.Age)
+	fmt.Println("Email:", person3.Email)
+
 }
