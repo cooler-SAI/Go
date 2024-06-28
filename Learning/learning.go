@@ -104,4 +104,14 @@ func main() {
 	}
 	fmt.Println("New JSON: ", string(jsonBytes5))
 
+	jsonStringComputer := `{"year": 2001, "number": 30, "serialNumber": 2534612}`
+	var computerSys2 ComputerSystem
+
+	err2 = json.Unmarshal([]byte(jsonStringComputer), &computerSys2)
+	if err2 != nil {
+		fmt.Println("Error decoding JSON:", err2)
+		return
+	}
+	fmt.Println("ComputerSystem:", computerSys2)
+
 }
