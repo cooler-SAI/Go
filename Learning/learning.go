@@ -22,6 +22,12 @@ type Mobile struct {
 	Year  int    `json:"year"`
 }
 
+type ComputerSystem struct {
+	Year         int `json:"year"`
+	Number       int `json:"number"`
+	SerialNumber int `json:"serialNumber"`
+}
+
 func main() {
 	jsonString := `{"name": "John", "age": 30, "email": "john@example.com"}`
 	var person Person
@@ -84,5 +90,18 @@ func main() {
 	fmt.Println("Name:", person3.Name)
 	fmt.Println("Age:", person3.Age)
 	fmt.Println("Email:", person3.Email)
+
+	systemNew := ComputerSystem{
+		Year:         1986,
+		Number:       1,
+		SerialNumber: 1,
+	}
+
+	jsonBytes5, err := json.Marshal(systemNew)
+	if err != nil {
+		fmt.Println("Error encoding JSON:", err)
+		return
+	}
+	fmt.Println("New JSON: ", string(jsonBytes5))
 
 }
