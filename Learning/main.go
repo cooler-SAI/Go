@@ -28,7 +28,11 @@ func main() {
 		Species: "Pigeon",
 	}
 
-	data, _ := json.Marshal(pigeon)
+	data, err := json.Marshal(pigeon)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 
 	fmt.Println(string(data))
 }
