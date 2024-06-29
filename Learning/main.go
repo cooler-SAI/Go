@@ -6,21 +6,15 @@ import (
 )
 
 type Bird struct {
-	Species     string `json:"birdType"`
-	Description string `json:"what it does"`
+	Species string `json:"-"`
 }
 
 func main() {
-	pigeon := Bird{
-		Species:     "Pigeon",
-		Description: "likes to eat seed",
+	pigeon := &Bird{
+		Species: "Pigeon",
 	}
 
-	data, err := json.Marshal(pigeon)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+	data, _ := json.Marshal(pigeon)
 
 	fmt.Println(string(data))
 }
