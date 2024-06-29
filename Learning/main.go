@@ -2,26 +2,20 @@ package main
 
 import (
 	"encoding/json"
-	"log"
-	"os"
+	"fmt"
 )
 
+type Bird struct {
+	Species     string `json:"species"`
+	Description string `json:"description"`
+}
+
 func main() {
-	dec := json.NewDecoder(os.Stdin)
-	enc := json.NewEncoder(os.Stdout)
-	for {
-		var v map[string]interface{}
-		if err := dec.Decode(&v); err != nil {
-			log.Println(err)
-			return
-		}
-		for k := range v {
-			if k != "Name" {
-				delete(v, k)
-			}
-		}
-		if err := enc.Encode(&v); err != nil {
-			log.Println(err)
-		}
+	birdJson := `[{"species":"pigeon","description":"likes to perch on rocks"},{"species":"eagle","description":"bird of prey"}]`
+	var birds []Bird
+	err := json.Unmarshal([]byte(birdJson), &birds)
+	if err != nil {
+		return
 	}
+	fmt.Printf("Birds : %+v", birds)
 }
