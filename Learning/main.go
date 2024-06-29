@@ -5,17 +5,24 @@ import (
 	"fmt"
 )
 
+type Dimensions struct {
+	Height int
+	Width  int
+}
+
 type Bird struct {
-	Species     string `json:"species"`
-	Description string `json:"description"`
+	Species     string
+	Description string
+	Dimensions  Dimensions
 }
 
 func main() {
-	birdJson := `[{"species":"pigeon","description":"likes to perch on rocks"},{"species":"eagle","description":"bird of prey"}]`
-	var birds []Bird
-	err := json.Unmarshal([]byte(birdJson), &birds)
+	birdJson := `{"species":"pigeon","description":"likes to perch on rocks", "dimensions":{"height":24,"width":10}}`
+	var bird Bird
+	err := json.Unmarshal([]byte(birdJson), &bird)
 	if err != nil {
 		return
 	}
-	fmt.Printf("Birds : %+v", birds)
+	fmt.Println(bird)
+	// {pigeon likes to perch on rocks {24 10}}
 }
