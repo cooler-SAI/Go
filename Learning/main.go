@@ -22,4 +22,16 @@ func main() {
 	}
 	fmt.Println("New cafe:", cafe)
 
+	var littleCafe = Cafe{
+		Name:   "Rooms",
+		Place:  "Oldenburg",
+		Number: 25,
+	}
+	jSonBytes, err := json.Marshal(littleCafe)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(string(jSonBytes))
+
 }
