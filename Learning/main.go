@@ -28,13 +28,28 @@ type ComputerSystem struct {
 	SerialNumber int `json:"serialNumber"`
 }
 
+type Cafe struct {
+	Place  string `json:"place"`
+	Street string `json:"street"`
+	Name   string `json:"name"`
+}
+
 func main() {
+	jsonString8 := `{"place":"Orenburg","street":"Lenina","name":"Marmalade"}`
+	var cafeNew Cafe
+	err := json.Unmarshal([]byte(jsonString8), &cafeNew)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(cafeNew)
+
 	jsonString := `{"name": "John", "age": 30, "email": "john@example.com"}`
 	var person Person
 
-	err := json.Unmarshal([]byte(jsonString), &person)
-	if err != nil {
-		fmt.Println("Error decoding JSON:", err)
+	err8 := json.Unmarshal([]byte(jsonString), &person)
+	if err8 != nil {
+		fmt.Println("Error decoding JSON:", err8)
 		return
 	}
 
