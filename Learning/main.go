@@ -6,7 +6,7 @@ import (
 )
 
 type Bird struct {
-	Species string `json:"-"`
+	Species string `json:"Knurl"`
 }
 
 func main() {
