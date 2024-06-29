@@ -35,4 +35,26 @@ func main() {
 	}
 
 	fmt.Println(string(data))
+
+	jsonStr := `{
+		"name": "John Doe",
+		"age": 30,
+		"email": "john.doe@example.com",
+		"isActive": true,
+		"roles": ["user", "admin"],
+		"address": {
+			"street": "123 Main St",
+			"city": "London",
+			"state": "CA",
+			"postalCode": "12345"
+		}
+	}`
+	var man ManInfo
+	err = json.Unmarshal([]byte(jsonStr), &man)
+	if err != nil {
+		fmt.Println("Error unmarshalling JSON string:", err)
+		return
+	}
+
+	fmt.Printf("Unmarshalled ManInfo struct: %+v\n", man)
 }
