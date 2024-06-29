@@ -17,12 +17,12 @@ type Bird struct {
 }
 
 func main() {
-	birdJson := `{"species":"pigeon","description":"likes to perch on rocks", "dimensions":{"height":24,"width":10}}`
+	birdJson := `{"species":"pigeon","description":"likes to perch on rocks", 
+"dimensions":{"height":24,"width":10}}`
 	var bird Bird
 	err := json.Unmarshal([]byte(birdJson), &bird)
 	if err != nil {
 		return
 	}
-	fmt.Println(bird)
-	// {pigeon likes to perch on rocks {24 10}}
+	fmt.Println("Result Data is: " + birdJson)
 }
