@@ -15,4 +15,5 @@ func main() {
 	fmt.Printf("capacity = %d\n", cap(mySlice2))
 	mySlice2[0] = 100
 	fmt.Println(mySlice2)
+	fmt.Printf("length = %d\n", len(mySlice2))
 }
