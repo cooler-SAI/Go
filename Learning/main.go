@@ -5,6 +5,8 @@ import (
 )
 
 func main() {
-	myslice := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-	fmt.Println(myslice)
+	mySlice := []int{1, 2, 3}
+	fmt.Println(mySlice)
+	fmt.Println(len(mySlice))
+	fmt.Println(cap(mySlice))
 }
