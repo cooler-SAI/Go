@@ -17,4 +17,10 @@ func main() {
 
 	fmt.Println("\n", k, l)
 
+	m := "Hello"
+	n := 15
+
+	fmt.Printf("m has value: %v and type: %T\n", m, m)
+	fmt.Printf("n has value: %v and type: %T", n, n)
+
 }
