@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	var student1 string
-	student1 = "John"
+
+	student1 := "John"
 	fmt.Println(student1)
 }
