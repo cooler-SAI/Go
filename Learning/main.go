@@ -1,26 +1,21 @@
 package main
 
-import "fmt"
-
-const PI = 3.1415926
-const A = 25
+import (
+	"fmt"
+)
 
 func main() {
-	fmt.Printf("PI: %f\n", PI)
-	fmt.Printf("A: %v\n", A)
-	var i, j = "Hello ", "World"
+	var i = 15
 
-	fmt.Print(i)
-	fmt.Print(j)
-
-	var k, l = "Hello", "World"
-
-	fmt.Println("\n", k, l)
-
-	m := "Hello"
-	n := 15
-
-	fmt.Printf("m has value: %v and type: %T\n", m, m)
-	fmt.Printf("n has value: %v and type: %T", n, n)
-
+	fmt.Printf("%b\n", i)
+	fmt.Printf("%d\n", i)
+	fmt.Printf("%+d\n", i)
+	fmt.Printf("%o\n", i)
+	fmt.Printf("%O\n", i)
+	fmt.Printf("%x\n", i)
+	fmt.Printf("%X\n", i)
+	fmt.Printf("%#x\n", i)
+	fmt.Printf("%4d\n", i)
+	fmt.Printf("%-4d\n", i)
+	fmt.Printf("%04d\n", i)
 }
