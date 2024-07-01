@@ -1,14 +1,10 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
+
+const PI = 3.1415926
 
 func main() {
-	var a, b, c, d = 1, 3, 5, 7
+	fmt.Printf("PI: %f\n", PI)
 
-	fmt.Println(a)
-	fmt.Println(b)
-	fmt.Println(c)
-	fmt.Println(d)
 }
