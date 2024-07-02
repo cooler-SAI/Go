@@ -20,4 +20,12 @@ func main() {
 		fmt.Println("Good evening.", time)
 	}
 
+	time2 := 22
+	if false {
+		fmt.Println("Good morning.")
+	} else if time2 < 20 {
+		fmt.Println("Good day.")
+	} else {
+		fmt.Println("Good evening.")
+
 }
