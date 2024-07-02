@@ -16,5 +16,6 @@ func main() {
 	c["Bergen"] = 2
 	c["Trondheim"] = 3
 	fmt.Printf("c\t%v\n", c)
+	fmt.Printf("b\t%v\n", b)
 
 }
