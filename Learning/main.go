@@ -13,4 +13,11 @@ func main() {
 		fmt.Println("x is greater than y")
 	}
 
+	time := 20
+	if false {
+		fmt.Println("Good day.", time)
+	} else {
+		fmt.Println("Good evening.", time)
+	}
+
 }
