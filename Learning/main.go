@@ -4,10 +4,13 @@ import (
 	"fmt"
 )
 
-func myMessage() {
-	fmt.Println("I just got executed!")
+func familyName(fname string) {
+	fmt.Println("familyName:", fname)
 }
 
 func main() {
-	myMessage() // call the function
+
+	familyName("Ander")
+	familyName("Bob")
+
 }
