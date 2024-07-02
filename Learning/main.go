@@ -15,4 +15,6 @@ func main() {
 
 	a["model"] = "Focus"
 	fmt.Println(a)
+	delete(a, "brand")
+	fmt.Println(a)
 }
