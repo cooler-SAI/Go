@@ -11,4 +11,8 @@ func main() {
 	a["year"] = "1964"
 
 	fmt.Printf(a["brand"])
+	fmt.Println(a)
+
+	a["model"] = "Focus"
+	fmt.Println(a)
 }
