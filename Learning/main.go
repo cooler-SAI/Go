@@ -1,13 +1,8 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	var a = map[string]string{"brand": "Ford", "model": "Mustang", "year": "1964"}
-	b := map[string]int{"Oslo": 1, "Bergen": 2, "Trondheim": 3, "Stranger": 4}
-
-	fmt.Printf("a\t%v\n", a)
-	fmt.Printf("b\t%v\n", b)
+	a := map[string]int{"a": 1, "b": 2, "c": 3, "d": 4, "e": 5}
+	fmt.Println(a)
 }
