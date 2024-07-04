@@ -13,4 +13,5 @@ func main() {
 	fmt.Println(b)
 	b["d"] = 40
 	fmt.Println(b)
+	fmt.Println(b["d"])
 }
