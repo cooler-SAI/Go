@@ -5,16 +5,9 @@ import (
 )
 
 func main() {
-	var a = make(map[string]string)
-	a["brand"] = "Ford"
-	a["model"] = "Mustang"
-	a["year"] = "1964"
+	var a = map[string]string{"brand": "Ford", "model": "Mustang", "year": "1964"}
+	b := map[string]int{"Oslo": 1, "Bergen": 2, "Trondheim": 3, "Stranger": 4}
 
-	fmt.Printf(a["brand"])
-	fmt.Println(a)
-
-	a["model"] = "Focus"
-	fmt.Println(a)
-	delete(a, "brand")
-	fmt.Println(a)
+	fmt.Printf("a\t%v\n", a)
+	fmt.Printf("b\t%v\n", b)
 }
