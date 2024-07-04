@@ -4,12 +4,12 @@ import (
 	"testing"
 )
 
-/*func TestSimpleTestFunc(t *testing.T) {
+func TestSimpleTestFunc(t *testing.T) {
 	expectedSimpleTestResult := "good"
 	if actualSimpleTestResult := SimpleTest(); actualSimpleTestResult != expectedSimpleTestResult {
 		t.Errorf("expected %s; got: %s", expectedSimpleTestResult, actualSimpleTestResult)
 	}
-}*/
+}
 
 func TestSimpleTest2Func(t *testing.T) {
 	expectedSimpleTestResult := 2
