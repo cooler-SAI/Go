@@ -11,4 +11,6 @@ func main() {
 	b["b"] = 2
 	b["c"] = 3
 	fmt.Println(b)
+	b["d"] = 40
+	fmt.Println(b)
 }
