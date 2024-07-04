@@ -5,8 +5,8 @@ import (
 )
 
 func TestSimpleTestFunc(t *testing.T) {
-	expectedFooResult := "bar"
-	if actualFooResult := SimpleTest(); actualFooResult != expectedFooResult {
-		t.Errorf("expected %s; got: %s", expectedFooResult, actualFooResult)
+	expectedSimpleTestResult := "good"
+	if actualSimpleTestResult := SimpleTest(); actualSimpleTestResult != expectedSimpleTestResult {
+		t.Errorf("expected %s; got: %s", expectedSimpleTestResult, actualSimpleTestResult)
 	}
 }
