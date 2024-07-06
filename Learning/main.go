@@ -6,6 +6,9 @@ const (
 	pi       = 3.14159
 	doublePi = pi * 2
 	version  = "1.0.0"
+	e
+	name = "John Doe"
+	fullName
 )
 
 func main() {
@@ -18,6 +21,6 @@ func main() {
 	fmt.Printf("id = %v (type %T)\n", id, id)
 	fmt.Printf("pi = %v (type %T)\n", pi, pi)
 
-	fmt.Println(doublePi, version)
+	fmt.Println(doublePi, version, name, fullName)
 
 }
