@@ -1,8 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"Main/simple"
+	"fmt"
+)
 
 func main() {
 	fmt.Println("Hello World")
+	simple.SimpleTest()
 
 }
