@@ -2,35 +2,24 @@ package main
 
 import "fmt"
 
+type Weekday int
+
 const (
-	pi       = 3.14159
-	doublePi = pi * 2
-	version  = "1.0.0"
-	e
-	name = "John Doe"
-	fullName
-	Black = "black"
-	Gray  = "gray"
-	White = "white"
+	Monday Weekday = iota + 1
+	Tuesday
+	Wednesday
+	Thursday
+	Friday
+	Saturday
+	Sunday
 )
 
-const flag uint8 = 128
+func NextDay(day Weekday) Weekday {
+	return (day % 7) + 1
+}
 
 func main() {
-	ver := "v0.0.1"
-	id := 0
-	pi := 3.1415
-	fmt.Println("ver =", ver, "id =", id, "pi =", pi)
-
-	fmt.Printf("ver = %v (type %T)\n", ver, ver)
-	fmt.Printf("id = %v (type %T)\n", id, id)
-	fmt.Printf("pi = %v (type %T)\n", pi, pi)
-
-	fmt.Println(doublePi, version, name, fullName, e)
-
-	i := int(flag)
-	fmt.Println(i)
-	fmt.Println(true)
-	fmt.Println(e, Black, Gray, White)
-
+	var today Weekday = Sunday
+	tomorrow := NextDay(today)
+	fmt.Println("today =", today, "tomorrow =", tomorrow)
 }
