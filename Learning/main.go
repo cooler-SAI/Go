@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"Learning/phones" // Ensure the correct import path based on your project structure
+	"fmt"
+)
 
 var simple = 100
 
@@ -17,5 +20,5 @@ func main() {
 	fmt.Println(a, b, c)
 	fmt.Println(d, e, f)
 	fmt.Println(simple)
-
+	phones.SimplePhone()
 }
