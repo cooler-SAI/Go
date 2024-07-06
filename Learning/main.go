@@ -11,6 +11,8 @@ const (
 	fullName
 )
 
+const flag uint8 = 128
+
 func main() {
 	ver := "v0.0.1"
 	id := 0
@@ -22,5 +24,8 @@ func main() {
 	fmt.Printf("pi = %v (type %T)\n", pi, pi)
 
 	fmt.Println(doublePi, version, name, fullName)
+
+	i := int(flag)
+	fmt.Println(i)
 
 }
