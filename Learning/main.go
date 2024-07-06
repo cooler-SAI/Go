@@ -9,6 +9,9 @@ const (
 	e
 	name = "John Doe"
 	fullName
+	Black = "black"
+	Gray  = "gray"
+	White = "white"
 )
 
 const flag uint8 = 128
@@ -27,5 +30,7 @@ func main() {
 
 	i := int(flag)
 	fmt.Println(i)
+	fmt.Println(true)
+	fmt.Println(e, Black, Gray, White)
 
 }
