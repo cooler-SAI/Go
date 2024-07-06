@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+var simple = 100
+
 const (
 	a = iota // 0
 	b        // 1
@@ -14,5 +16,6 @@ const (
 func main() {
 	fmt.Println(a, b, c)
 	fmt.Println(d, e, f)
+	fmt.Println(simple)
 
 }
