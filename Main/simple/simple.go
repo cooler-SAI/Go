@@ -2,10 +2,10 @@ package simple
 
 import "fmt"
 
-func SimpleTest() string {
+func WordTest() string {
 	return "Hello World"
 }
 
-func simpleTest() {
+func simpleTest2() {
 	fmt.Println("simpleTest")
 }

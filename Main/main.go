@@ -7,6 +7,6 @@ import (
 
 func main() {
 	fmt.Println("Hello World")
-	simple.SimpleTest()
+	simple.WordTest()
 
 }
