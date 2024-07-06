@@ -21,6 +21,10 @@ func greetUser(birthYear int) {
 	}
 }
 
+func nameScan(name string) {
+	fmt.Println("Hello,", name, " Welcome to the Development!")
+}
+
 func main() {
 	var birthYear int
 
@@ -30,4 +34,12 @@ func main() {
 		return
 	}
 	greetUser(birthYear)
+
+	fmt.Println("Hello, Welcome to Development! Enter your name:")
+	var name string
+	_, err = fmt.Scan(&name)
+	if err != nil {
+		return
+	}
+	nameScan(name)
 }
