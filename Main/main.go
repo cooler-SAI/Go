@@ -3,24 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	v := 0
-	for i := 1; i < 10; i++ {
-		v += i
-
-	}
-	fmt.Println(v)
-	i := 0
-	for i < 5 {
-		if i == 3 {
-			fmt.Println(i)
-			break
+outerLoopLabel:
+	for i := 0; i < 5; i++ {
+		for j := 0; j < 5; j++ {
+			fmt.Printf("[%d, %d]\n", i, j)
+			break outerLoopLabel
 		}
-		i++
 	}
-
-	array := [3]int{1, 2, 3}
-	for arrayIndex, arrayValue := range array {
-		fmt.Println(arrayIndex, arrayValue)
-	}
+	fmt.Println("End")
 
 }
