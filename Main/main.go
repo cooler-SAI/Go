@@ -2,15 +2,20 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 func main() {
-	start := time.Now()
-	sum := 0
-	for i := 0; i < 100000000; i++ {
-		sum += i
-	}
-	fmt.Println("Sum:", sum)
-	fmt.Println("Time elapsed:", time.Since(start))
+	a := 1
+	p := &a
+	b := &p
+
+	*p = 3
+	**b = 5
+
+	a += 4 + *p + **b
+
+	fmt.Printf("%d", *p)
+
+	myMap := map[int]string{1: "a", 2: "b", 3: "c"}
+	fmt.Println(myMap)
 }
