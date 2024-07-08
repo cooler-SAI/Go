@@ -3,22 +3,12 @@ package main
 import "fmt"
 
 func main() {
-outerLoopLabel:
-	for i := 0; i < 5; i++ {
-		for j := 0; j < 5; j++ {
-			fmt.Printf("[%d, %d]\n", i, j)
-			break outerLoopLabel
-		}
-	}
-	fmt.Println("End")
+	var a int
+	p := &a
+	fmt.Println(*p, p, a)
 
-outerLoopLabel2:
-	for i := 0; i < 5; i++ {
-		for j := 0; j < 5; j++ {
-			fmt.Printf("[%d, %d]\n", i, j)
-			continue outerLoopLabel2
-		}
-	}
-	fmt.Println("End")
+	b := "Hello Here!"
+	p2 := &b
+	fmt.Println(*p2, p2, b)
 
 }
