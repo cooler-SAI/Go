@@ -11,7 +11,10 @@ func main() {
 	fmt.Println(v)
 	i := 0
 	for i < 5 {
-		fmt.Println(i)
+		if i == 3 {
+			fmt.Println(i)
+			break
+		}
 		i++
 	}
 
