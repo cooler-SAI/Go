@@ -15,4 +15,9 @@ func main() {
 		i++
 	}
 
+	array := [3]int{1, 2, 3}
+	for arrayIndex, arrayValue := range array {
+		fmt.Println(arrayIndex, arrayValue)
+	}
+
 }
