@@ -22,7 +22,14 @@ func foo() (int, int, string) {
 	return 1, 2, "foo"
 }
 
+func EvaluationOrder() {
+	defer fmt.Println("deferred")
+	fmt.Println("evaluated")
+}
+
 func main() {
+	defer EvaluationOrder()
+
 	check := Cube(3)
 	fmt.Println(check)
 	fmt.Println(Mul(3, 30))
@@ -30,4 +37,5 @@ func main() {
 	sum := Sum(2, 3, 5, 1, 2, 57)
 	fmt.Println(sum)
 	fmt.Println(foo())
+
 }
