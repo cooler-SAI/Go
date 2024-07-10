@@ -18,6 +18,10 @@ func Sum(x ...int) int {
 	return sum
 }
 
+func foo() (int, int, string) {
+	return 1, 2, "foo"
+}
+
 func main() {
 	check := Cube(3)
 	fmt.Println(check)
@@ -25,4 +29,5 @@ func main() {
 
 	sum := Sum(2, 3, 5, 1, 2, 57)
 	fmt.Println(sum)
+	fmt.Println(foo())
 }
