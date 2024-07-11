@@ -47,8 +47,6 @@ func main() {
 	fmt.Println(foo())
 
 	var m Mytype = 5
-
-	// вызов метода
 	s := m.String()
 	fmt.Println(s)
 }
