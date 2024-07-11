@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 type Person struct {
@@ -41,10 +42,23 @@ func (s Student) String() string {
 	return fmt.Sprintf("%s, Группа: %s", s.Person, s.Group)
 }
 
+type User struct {
+	Email        string
+	PasswordHash string
+	LastAccess   time.Time
+}
+
+func (u User) String() string {
+	return "user with e-mail: " + u.Email + ", password: " + u.PasswordHash
+}
+
 func main() {
 	s := NewStudent("John Doe", 1980, "701")
 	s.Print()
 
 	fmt.Println(s)
 	fmt.Println(s.Name, s.Year, s.Group)
+
+	u := User{Email: "john@doe.com", PasswordHash: "123456"}
+	fmt.Println(u)
 }
