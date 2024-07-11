@@ -1,48 +1,50 @@
 package main
 
-import "fmt"
-
-type MyInt int
-
-type OuterStruct struct {
-	EmbeddedType
-	A int
-	B int
-}
-
-type EmbeddedType struct {
-	A string
-	B string
-}
+import (
+	"fmt"
+)
 
 type Person struct {
-	Name      string
-	BirthYear int
+	Name string
+	Year int
 }
 
-func NewPerson(name string, BirthYear int) Person {
+func NewPerson(name string, year int) Person {
 	return Person{
-		Name:      name,
-		BirthYear: BirthYear,
+		Name: name,
+		Year: year,
 	}
 }
 
-func (o OuterStruct) Print() {
-	fmt.Println("A=", o.A, "B=", o.B)
+func (p Person) String() string {
+	return fmt.Sprintf("Имя: %s, Год рождения: %d", p.Name, p.Year)
 }
 
-func (my MyInt) Set(v int) {
-	my = MyInt(v)
+func (p Person) Print() {
+
+	fmt.Println(p)
+}
+
+type Student struct {
+	Person
+	Group string
+}
+
+func NewStudent(name string, year int, group string) Student {
+	return Student{
+		Person: NewPerson(name, year),
+		Group:  group,
+	}
+}
+
+func (s Student) String() string {
+	return fmt.Sprintf("%s, Группа: %s", s.Person, s.Group)
 }
 
 func main() {
-	var myInt MyInt
-	myInt.Set(5)
-	fmt.Println(myInt)
+	s := NewStudent("John Doe", 1980, "701")
+	s.Print()
 
-	var check OuterStruct
-	check.Print()
-
-	var Michael = NewPerson("Michael", 1999)
-	fmt.Println(Michael)
+	fmt.Println(s)
+	fmt.Println(s.Name, s.Year, s.Group)
 }
