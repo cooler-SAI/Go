@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func Cube(x int) int {
 	return x * x * x
@@ -27,6 +29,12 @@ func EvaluationOrder() {
 	fmt.Println("evaluated")
 }
 
+type Mytype int
+
+func (m Mytype) String() string {
+	return fmt.Sprintf("MyType: %d", m)
+}
+
 func main() {
 	defer EvaluationOrder()
 
@@ -38,4 +46,9 @@ func main() {
 	fmt.Println(sum)
 	fmt.Println(foo())
 
+	var m Mytype = 5
+
+	// вызов метода
+	s := m.String()
+	fmt.Println(s)
 }
