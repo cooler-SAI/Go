@@ -15,6 +15,18 @@ type EmbeddedType struct {
 	B string
 }
 
+type Person struct {
+	Name      string
+	BirthYear int
+}
+
+func NewPerson(name string, BirthYear int) Person {
+	return Person{
+		Name:      name,
+		BirthYear: BirthYear,
+	}
+}
+
 func (o OuterStruct) Print() {
 	fmt.Println("A=", o.A, "B=", o.B)
 }
@@ -30,4 +42,7 @@ func main() {
 
 	var check OuterStruct
 	check.Print()
+
+	var Michael = NewPerson("Michael", 1999)
+	fmt.Println(Michael)
 }
