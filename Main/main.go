@@ -4,6 +4,28 @@ import (
 	"fmt"
 )
 
+type DeliveryState string
+
+const (
+	DeliveryStatePending   DeliveryState = "pending"
+	DeliveryStateAck       DeliveryState = "acknowledged"
+	DeliveryStateProcessed DeliveryState = "processed"
+	DeliveryStateCanceled  DeliveryState = "canceled"
+)
+
+func (s DeliveryState) IsValid() bool {
+	switch s {
+	case DeliveryStatePending, DeliveryStateAck, DeliveryStateProcessed, DeliveryStateCanceled:
+		return true
+	default:
+		return false
+	}
+}
+
+func (s DeliveryState) String() string {
+	return string(s)
+}
+
 func Cube(x int) int {
 	return x * x * x
 }
