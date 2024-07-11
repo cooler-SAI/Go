@@ -1,74 +1,15 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-type DeliveryState string
+type MyInt int
 
-const (
-	DeliveryStatePending   DeliveryState = "pending"
-	DeliveryStateAck       DeliveryState = "acknowledged"
-	DeliveryStateProcessed DeliveryState = "processed"
-	DeliveryStateCanceled  DeliveryState = "canceled"
-)
-
-func (s DeliveryState) IsValid() bool {
-	switch s {
-	case DeliveryStatePending, DeliveryStateAck, DeliveryStateProcessed, DeliveryStateCanceled:
-		return true
-	default:
-		return false
-	}
-}
-
-func (s DeliveryState) String() string {
-	return string(s)
-}
-
-func Cube(x int) int {
-	return x * x * x
-}
-
-func Mul(x, y int) int {
-	return x * y * y
-}
-
-func Sum(x ...int) int {
-	sum := 0
-	for _, v := range x {
-		sum += v
-	}
-	return sum
-}
-
-func foo() (int, int, string) {
-	return 1, 2, "foo"
-}
-
-func EvaluationOrder() {
-	defer fmt.Println("deferred")
-	fmt.Println("evaluated")
-}
-
-type Mytype int
-
-func (m Mytype) String() string {
-	return fmt.Sprintf("MyType: %d", m)
+func (my MyInt) Set(v int) {
+	my = MyInt(v)
 }
 
 func main() {
-	defer EvaluationOrder()
-
-	check := Cube(3)
-	fmt.Println(check)
-	fmt.Println(Mul(3, 30))
-
-	sum := Sum(2, 3, 5, 1, 2, 57)
-	fmt.Println(sum)
-	fmt.Println(foo())
-
-	var m Mytype = 5
-	s := m.String()
-	fmt.Println(s)
+	var myInt MyInt
+	myInt.Set(5)
+	fmt.Println(myInt)
 }
