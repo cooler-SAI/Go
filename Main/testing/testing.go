@@ -22,12 +22,13 @@ func Add(a, b int) (int, error) {
 }
 
 func Add2(a, b int) (int, error) {
-	if a == 0 || b == 0 {
+	c := a + b
+	if c == 0 {
 		return 0, errors.New("arg is zero")
-	}
-	if a < 0 || b < 0 {
+	} else if c < 0 {
 		return 0, errors.New("arg is negative")
-
+	} else if c > 0 {
+		return 0, errors.New("arg is greater than zero")
 	}
-	return a + b, nil
+	return c, nil
 }
