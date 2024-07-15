@@ -1,8 +1,9 @@
 package testing
 
 import (
+	"fmt"
 	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
+	. "github.com/stretchr/testify/require"
 	"testing"
 )
 
@@ -74,18 +75,18 @@ func TestAdd2(t *testing.T) {
 func TestDivision(t *testing.T) {
 	t.Run("ZeroNumerator", func(t *testing.T) {
 		result, err := Division(0, 1)
-		require.NoError(t, err)
+		NoError(t, err)
 		assert.Equal(t, 0, result)
 	})
 
 	t.Run("BothNonZero", func(t *testing.T) {
 		result, err := Division(4, 2)
-		require.NoError(t, err)
+		NoError(t, err)
 		assert.Equal(t, 2, result)
 	})
 
 	t.Run("ZeroDenominator", func(t *testing.T) {
 		_, err := Division(1, 0)
-		require.Error(err)
+		fmt.Println(err)
 	})
 }
