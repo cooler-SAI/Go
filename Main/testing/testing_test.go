@@ -44,7 +44,7 @@ func TestAddZero(t *testing.T) {
 }
 
 func TestAdd2(t *testing.T) {
-	sum, err := Add(1, 2)
+	sum, err := Add2(1, 2)
 	if err != nil {
 		t.Error("unexpected error")
 	} else {
