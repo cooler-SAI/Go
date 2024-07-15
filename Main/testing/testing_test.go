@@ -42,3 +42,14 @@ func TestAddZero(t *testing.T) {
 		t.Error("all arg negative - expected error not be nil")
 	}
 }
+
+func TestAdd2(t *testing.T) {
+	sum, err := Add(1, 2)
+	if err != nil {
+		t.Error("unexpected error")
+	} else {
+		if sum != 3 {
+			t.Errorf("sum expected to be 3; got %d", sum)
+		}
+	}
+}
