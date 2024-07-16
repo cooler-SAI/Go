@@ -22,6 +22,11 @@ func (s *RealUserService) GetUser(id int) (*User, error) {
 
 func main() {
 	service := &RealUserService{}
-	user, _ := service.GetUser(1)
-	fmt.Println(user)
+	user, err := service.GetUser(1)
+	if err != nil {
+		fmt.Println("Error fetching user:", err)
+		return
+	}
+
+	fmt.Println("User fetched:", user)
 }
