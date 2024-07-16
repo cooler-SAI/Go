@@ -9,10 +9,6 @@ type User struct {
 	Name string
 }
 
-type UserService interface {
-	GetUser(id int) (*User, error)
-}
-
 type RealUserService struct{}
 
 func (s *RealUserService) GetUser(id int) (*User, error) {
