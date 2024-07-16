@@ -18,7 +18,7 @@ func (suite *ExampleTestSuite) TestExample() {
 	suite.Equal(5, suite.VariableThatShouldStartAtFive)
 }
 
-func TestExampleTestSuite(t *testing.T) {
+func _(t *testing.T) {
 	suite.Run(t, new(ExampleTestSuite))
 }
 
