@@ -1,27 +1,27 @@
 package main
 
 import (
-	"github.com/stretchr/testify/suite"
-	"testing"
+	"fmt"
 )
 
-type ExampleTestSuite struct {
-	suite.Suite
-	VariableThatShouldStartAtFive int
+type User struct {
+	ID   int
+	Name string
 }
 
-func (suite *ExampleTestSuite) SetupTest() {
-	suite.VariableThatShouldStartAtFive = 5
+type UserService interface {
+	GetUser(id int) (*User, error)
 }
 
-func (suite *ExampleTestSuite) TestExample() {
-	suite.Equal(5, suite.VariableThatShouldStartAtFive)
-}
+type RealUserService struct{}
 
-func _(t *testing.T) {
-	suite.Run(t, new(ExampleTestSuite))
+func (s *RealUserService) GetUser(id int) (*User, error) {
+
+	return &User{ID: id, Name: "John Doe"}, nil
 }
 
 func main() {
-
+	service := &RealUserService{}
+	user, _ := service.GetUser(1)
+	fmt.Println(user)
 }
