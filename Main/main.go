@@ -28,5 +28,5 @@ func main() {
 		return
 	}
 
-	fmt.Println("User fetched:", user)
+	fmt.Println("User fetched:", *user)
 }
