@@ -28,11 +28,18 @@ func main() {
 
 	var helloCmd = &cobra.Command{
 		Use:   "hello",
-		Short: "hello, Cobra",
+		Short: "hl",
 		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Println("Hello All")
+			name, _ := cmd.Flags().GetString("name")
+			if name != "" {
+				fmt.Printf("Hello, %s!\n", name)
+			} else {
+				fmt.Println("Hello All")
+			}
 		},
 	}
+
+	helloCmd.Flags().StringP("name", "n", "", "Name to greet")
 
 	rootCmd.AddCommand(echoCmd)
 	rootCmd.AddCommand(helloCmd)
@@ -41,4 +48,5 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+
 }
