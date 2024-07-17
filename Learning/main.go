@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+
 	var rootCmd = &cobra.Command{
 		Use:   "learning",
 		Short: "learning is an example of a cobra command short",
@@ -14,6 +15,7 @@ func main() {
 			fmt.Println("Hello, Cobra!")
 		},
 	}
+
 	var echoCmd = &cobra.Command{
 		Use:   "echo [string to echo]",
 		Short: "Echo a string",
@@ -23,10 +25,20 @@ func main() {
 			fmt.Println(args[0])
 		},
 	}
-	rootCmd.AddCommand(echoCmd)
-	err := rootCmd.Execute()
-	if err != nil {
-		return
+
+	var helloCmd = &cobra.Command{
+		Use:   "hello",
+		Short: "hello, Cobra",
+		Run: func(cmd *cobra.Command, args []string) {
+			fmt.Println("Hello All")
+		},
 	}
 
+	rootCmd.AddCommand(echoCmd)
+	rootCmd.AddCommand(helloCmd)
+
+	if err := rootCmd.Execute(); err != nil {
+		fmt.Println(err)
+		return
+	}
 }
