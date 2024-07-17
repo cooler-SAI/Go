@@ -24,6 +24,9 @@ func main() {
 		},
 	}
 	rootCmd.AddCommand(echoCmd)
-	rootCmd.Execute()
+	err := rootCmd.Execute()
+	if err != nil {
+		return
+	}
 
 }
