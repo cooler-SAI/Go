@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b21972f-2dd3-4f82-9253-6fafdf7b2e21" name="Changes" comment="Go/Learning: added Cobra CLI, updates, compile, all">
+    <list default="true" id="7b21972f-2dd3-4f82-9253-6fafdf7b2e21" name="Changes" comment="Go/Learning: added Cobra CLI, updates, tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
@@ -114,7 +114,8 @@
     <MESSAGE value="Go/Learning: added Cobra CLI, updates, misc" />
     <MESSAGE value="Go/Learning: added Cobra CLI, updates, compile" />
     <MESSAGE value="Go/Learning: added Cobra CLI, updates, compile, all" />
-    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: added Cobra CLI, updates, compile, all" />
+    <MESSAGE value="Go/Learning: added Cobra CLI, updates, tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: added Cobra CLI, updates, tests" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
