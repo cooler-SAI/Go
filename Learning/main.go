@@ -51,7 +51,6 @@ func main() {
 		},
 	}
 
-	// Добавляем альтернативное имя команды "hl" для helloCmd
 	helloCmd.Aliases = []string{"hl"}
 
 	helloCmd.Flags().StringP("name", "n", "", "Name to greet")
