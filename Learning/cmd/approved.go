@@ -34,8 +34,8 @@ var talkingCmd = &cobra.Command{
 func init() {
 	brotherCmd.Aliases = []string{"br"}
 
-	brotherCmd.Flags().StringP("name", "n", "", "Name to greet")
+	brotherCmd.Flags().StringP("talking", "n", "", "Name to greet")
 	rootCmd.AddCommand(brotherCmd)
-	talkingCmd.Flags().StringP("name", "n", "", "Name to greet")
+	talkingCmd.Flags().StringP("talking", "n", "", "Name to greet")
 	rootCmd.AddCommand(talkingCmd)
 }
