@@ -18,9 +18,24 @@ var brotherCmd = &cobra.Command{
 	},
 }
 
+var talkingCmd = &cobra.Command{
+	Use:   "talking",
+	Short: "A command for greeting in a cool way",
+	Run: func(cmd *cobra.Command, args []string) {
+		name, _ := cmd.Flags().GetString("talking")
+		if name != "" {
+			fmt.Printf("Hello, %s!\n", name)
+		} else {
+			fmt.Println("Talking.....")
+		}
+	},
+}
+
 func init() {
 	brotherCmd.Aliases = []string{"br"}
 
 	brotherCmd.Flags().StringP("name", "n", "", "Name to greet")
 	rootCmd.AddCommand(brotherCmd)
+	talkingCmd.Flags().StringP("name", "n", "", "Name to greet")
+	rootCmd.AddCommand(talkingCmd)
 }

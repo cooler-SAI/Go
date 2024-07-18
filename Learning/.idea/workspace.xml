@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b21972f-2dd3-4f82-9253-6fafdf7b2e21" name="Changes" comment="Go/Learning: misc Cobra CLI fixes, added subcommands">
-      <change afterPath="$PROJECT_DIR$/cmd/approved.go" afterDir="false" />
+    <list default="true" id="7b21972f-2dd3-4f82-9253-6fafdf7b2e21" name="Changes" comment="Go/Learning: misc Cobra CLI fixes, changed subcommand">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/old/old_main.go" beforeDir="false" afterPath="$PROJECT_DIR$/old/old_main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/approved.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/approved.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +102,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Go/Learning: added new base project" />
     <MESSAGE value="Go/Learning: added new JSON files" />
     <MESSAGE value="Go/Learning: added JSON files" />
     <MESSAGE value="Go/Learning: added JSON streaming" />
@@ -127,7 +125,9 @@
     <MESSAGE value="Go/Learning: added Cobra CLI, tests, clean up" />
     <MESSAGE value="Go/Learning: added Cobra CLI, base new app" />
     <MESSAGE value="Go/Learning: misc Cobra CLI fixes, added subcommands" />
-    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: misc Cobra CLI fixes, added subcommands" />
+    <MESSAGE value="Go/Learning: misc Cobra CLI fixes, added subcommands, new" />
+    <MESSAGE value="Go/Learning: misc Cobra CLI fixes, changed subcommand" />
+    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: misc Cobra CLI fixes, changed subcommand" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
