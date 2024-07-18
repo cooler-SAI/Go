@@ -13,8 +13,22 @@ var rootCmd = &cobra.Command{
                 love by spf13 and friends in Go.
                 Complete documentation is available at hugo.spf13.com`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Hugo Static Site Generator")
+		fmt.Println("Hugo Static Site Generator - base Info")
 	},
+}
+
+var echoCmd = &cobra.Command{
+	Use:   "echo [string to echo]",
+	Short: "Echo a string",
+	Long:  "Echo is a subcommand that prints the input string to the terminal.",
+	Args:  cobra.MinimumNArgs(1),
+	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Println(args[0])
+	},
+}
+
+func init() {
+	rootCmd.AddCommand(echoCmd)
 }
 
 func Execute() {
