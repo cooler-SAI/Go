@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b21972f-2dd3-4f82-9253-6fafdf7b2e21" name="Changes" comment="Go/Learning: misc Cobra CLI, ,isc...">
-      <change afterPath="$PROJECT_DIR$/cmd/times.go" afterDir="false" />
+    <list default="true" id="7b21972f-2dd3-4f82-9253-6fafdf7b2e21" name="Changes" comment="Go/Learning: misc Cobra CLI, added times commands">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/base.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/times.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/times.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/version.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/version.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +104,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Go/Learning: added JSON , more" />
     <MESSAGE value="Go/Learning: added JSON , more, err check also" />
     <MESSAGE value="Go/Learning: added JSON , more, err check" />
     <MESSAGE value="Go/Learning: added JSON tests again" />
@@ -127,7 +128,8 @@
     <MESSAGE value="Go/Learning: misc Cobra CLI fixes, new added" />
     <MESSAGE value="Go/Learning: misc Cobra CLI, added version" />
     <MESSAGE value="Go/Learning: misc Cobra CLI, ,isc..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: misc Cobra CLI, ,isc..." />
+    <MESSAGE value="Go/Learning: misc Cobra CLI, added times commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: misc Cobra CLI, added times commands" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

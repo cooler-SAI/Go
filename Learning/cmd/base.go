@@ -10,8 +10,8 @@ var rootCmd = &cobra.Command{
 	Use:   "hugo",
 	Short: "Hugo is a very fast static site generator",
 	Long: `A Fast and Flexible Static Site Generator built with
-                love by spf13 and friends in Go.
-                Complete documentation is available at hugo.spf13.com`,
+love by spf13 and friends in Go.
+Complete documentation is available at hugo.spf13.com`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Hugo Static Site Generator - base Info")
 	},
@@ -29,6 +29,7 @@ var echoCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(echoCmd)
+	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
 
 func Execute() {

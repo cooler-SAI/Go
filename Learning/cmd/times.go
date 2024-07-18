@@ -44,10 +44,7 @@ a count and a string.`,
 }
 
 func init() {
-	cmdTimes.Flags().IntVarP(&echoTimes, "times", "t", 1,
-		"times to echo the input")
-	var rootCmd = &cobra.Command{Use: "app"}
-	rootCmd.AddCommand(cmdPrint, cmdEcho)
+	cmdTimes.Flags().IntVarP(&echoTimes, "times", "t", 1, "times to echo the input")
 	cmdEcho.AddCommand(cmdTimes)
-
+	rootCmd.AddCommand(cmdPrint, cmdEcho)
 }
