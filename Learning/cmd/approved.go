@@ -7,7 +7,7 @@ import (
 
 var brotherCmd = &cobra.Command{
 	Use:   "brother coolMan",
-	Short: "hl",
+	Short: "br",
 	Run: func(cmd *cobra.Command, args []string) {
 		name, _ := cmd.Flags().GetString("brother coolMan")
 		if name != "" {
@@ -19,7 +19,7 @@ var brotherCmd = &cobra.Command{
 }
 
 func init() {
-	brotherCmd.Aliases = []string{"hl"}
+	brotherCmd.Aliases = []string{"br"}
 
 	brotherCmd.Flags().StringP("name", "n", "", "Name to greet")
 	rootCmd.AddCommand(brotherCmd)
