@@ -39,14 +39,14 @@ func _() {
 	}
 
 	var brotherCmd = &cobra.Command{
-		Use:   "brother loh",
+		Use:   "brother coolMan",
 		Short: "hl",
 		Run: func(cmd *cobra.Command, args []string) {
-			name, _ := cmd.Flags().GetString("brother loh")
+			name, _ := cmd.Flags().GetString("brother coolMan")
 			if name != "" {
 				fmt.Printf("Hello, %s!\n", name)
 			} else {
-				fmt.Println("Hello Brother, you are LOH!!!")
+				fmt.Println("Hello Brother, you are COOLMAN!!!")
 			}
 		},
 	}

@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b21972f-2dd3-4f82-9253-6fafdf7b2e21" name="Changes" comment="Go/Learning: added Cobra CLI, base new app">
+    <list default="true" id="7b21972f-2dd3-4f82-9253-6fafdf7b2e21" name="Changes" comment="Go/Learning: misc Cobra CLI fixes, added subcommands">
+      <change afterPath="$PROJECT_DIR$/cmd/approved.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/base.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old/old_main.go" beforeDir="false" afterPath="$PROJECT_DIR$/old/old_main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +126,8 @@
     <MESSAGE value="Go/Learning: added Cobra CLI, tests" />
     <MESSAGE value="Go/Learning: added Cobra CLI, tests, clean up" />
     <MESSAGE value="Go/Learning: added Cobra CLI, base new app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: added Cobra CLI, base new app" />
+    <MESSAGE value="Go/Learning: misc Cobra CLI fixes, added subcommands" />
+    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: misc Cobra CLI fixes, added subcommands" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
