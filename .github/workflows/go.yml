@@ -1,6 +1,3 @@
-# This workflow will build a golang project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
-
 name: Go
 
 on:
@@ -10,19 +7,36 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Set up Go
-      uses: actions/setup-go@v4
-      with:
-        go-version: '1.20'
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.22'
 
-    - name: Build
-      run: go build -v ./...
+      - name: Build and Test Learning
+        run: |
+          cd Learning
+          go build -v ./...
+          go test -v ./...
 
-    - name: Test
-      run: go test -v ./...
+      - name: Build and Test Main
+        run: |
+          cd Main
+          go build -v ./...
+          go test -v ./...
+
+      - name: Build and Test Tour
+        run: |
+          cd Tour
+          go build -v ./...
+          go test -v ./...
+
+      - name: Build and Test urvafe
+        run: |
+          cd urvafe
+          go build -v ./...
+          go test -v ./...
