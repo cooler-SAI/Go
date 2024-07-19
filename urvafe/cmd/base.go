@@ -1,4 +1,3 @@
-// cmd/base.go
 package cmd
 
 import (
