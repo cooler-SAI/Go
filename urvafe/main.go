@@ -25,6 +25,15 @@ func main() {
 					return nil
 				},
 			},
+
+			{
+				Name:  "world",
+				Usage: "prints World urfave",
+				Action: func(c *cli.Context) error {
+					fmt.Println("World")
+					return nil
+				},
+			},
 		},
 	}
 
