@@ -34,6 +34,7 @@ jobs:
           cd urvafe
           go build -v ./...
           go test -v ./...
+
       - name: Build and Test Main
         run: |
           cd urvafe
