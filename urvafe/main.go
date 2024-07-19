@@ -10,9 +10,8 @@ func main() {
 	app := &cli.App{
 		Commands: []*cli.Command{
 			{
-				Name:    "hello",
-				Aliases: []string{"h"},
-				Usage:   "prints Hello urfave",
+				Name:  "hello",
+				Usage: "prints Hello urfave",
 				Action: func(c *cli.Context) error {
 					fmt.Println("Hello urfave")
 					return nil
