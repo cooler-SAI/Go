@@ -23,5 +23,13 @@ func NewProgressiveCommands() []*cli.Command {
 				return nil
 			},
 		},
+		{
+			Name:  "update",
+			Usage: "updates progress message",
+			Action: func(c *cli.Context) error {
+				fmt.Println("Update is good!")
+				return nil
+			},
+		},
 	}
 }
