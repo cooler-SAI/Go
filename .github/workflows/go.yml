@@ -17,20 +17,38 @@ jobs:
         with:
           go-version: '1.22'
 
+      - name: List repository contents
+        run: ls -R
+
       - name: Build and Test Learning
         run: |
-          cd Learning
-          go build -v ./...
-          go test -v ./...      
+          if [ -d "Learning" ]; then
+            cd Learning
+            go build -v ./...
+            go test -v ./...
+          else
+            echo "Directory Learning does not exist."
+            exit 1
+          fi
 
       - name: Build and Test Tour
         run: |
-          cd Tour
-          go build -v ./...
-          go test -v ./...   
+          if [ -d "Tour" ]; then
+            cd Tour
+            go build -v ./...
+            go test -v ./...
+          else
+            echo "Directory Tour does not exist."
+            exit 1
+          fi
 
       - name: Build and Test Main
         run: |
-          cd urvafe
-          go build -v ./...
-          go test -v ./...
+          if [ -d "Main" ]; then
+            cd Main
+            go build -v ./...
+            go test -v ./...
+          else
+            echo "Directory Main does not exist."
+            exit 1
+          fi
