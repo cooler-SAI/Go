@@ -52,3 +52,14 @@ jobs:
             echo "Directory Main does not exist."
             exit 1
           fi
+
+      - name: Build and Test urfave
+        run: |
+          if [ -d "urfave" ]; then
+            cd urfave
+            go build -v ./...
+            go test -v ./...
+          else
+            echo "Directory urfave does not exist."
+            exit 1
+          fi
