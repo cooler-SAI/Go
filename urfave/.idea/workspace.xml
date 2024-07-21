@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d87bf19-80ea-4748-a14d-5ce51e9a805d" name="Changes" comment="Go/Learning: added base app , using urfave">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/urfave.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/urfave.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/urfave.go" beforeDir="false" />
-    </list>
+    <list default="true" id="9d87bf19-80ea-4748-a14d-5ce51e9a805d" name="Changes" comment="Go/Learning: using urfave" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +84,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Go/Learning: added base app , using urfave" />
-    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: added base app , using urfave" />
+    <MESSAGE value="Go/Learning: using urfave" />
+    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: using urfave" />
   </component>
   <component name="VgoProject">
     <auto-vendoring-mode>false</auto-vendoring-mode>
