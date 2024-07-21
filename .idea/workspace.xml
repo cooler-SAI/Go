@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb91dce2-f57c-4a95-8f4e-b4e31a349fa0" name="Changes" comment="Go/Main: set up builds">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/go.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/go.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urvafe/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/urvafe/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/urvafe/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/urvafe/.idea/urvafe.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/urvafe/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/urvafe/cmd/base.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/urvafe/cmd/base_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/urvafe/cmd/progressive.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/urvafe/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/urvafe/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/urvafe/main.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
