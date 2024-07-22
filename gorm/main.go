@@ -26,12 +26,11 @@ func main() {
 	}
 
 	db.Create(&User{Name: "Ander", Email: "ander@gmail.com"})
+	db.Create(&User{Name: "Alex", Email: "alex@gmail.com"})
+	db.Create(&User{Name: "Bob", Email: "bob@gmail.com"})
+	db.Create(&User{Name: "Charlie", Email: "charlie@gmail.com"})
 
 	var user User
-	db.First(&user, 1)
-	db.First(&user, "name = ?", "Ander")
+	db.First(&user, 2)
 
-	db.Model(&user).Update("name", "AnderMe")
-
-	db.Delete(&user, 1)
 }
