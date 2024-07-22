@@ -2,35 +2,47 @@ package main
 
 import (
 	"fmt"
+	"log"
+
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
 
+// User represents a user in the database
 type User struct {
-	Id    uint
+	ID    uint `gorm:"primaryKey"`
 	Name  string
 	Email string
 }
 
 func main() {
-	fmt.Println("GORM starting....")
+	fmt.Println("GORM starting...")
 
 	db, err := gorm.Open(sqlite.Open("test.db"), &gorm.Config{})
 	if err != nil {
-		panic("failed to connect database")
+		log.Fatalf("failed to connect database: %v", err)
 	}
 
-	err2 := db.AutoMigrate(&User{})
-	if err2 != nil {
-		return
+	if err := db.AutoMigrate(&User{}); err != nil {
+		log.Fatalf("failed to migrate database schema: %v", err)
 	}
 
-	db.Create(&User{Name: "Ander", Email: "ander@gmail.com"})
-	db.Create(&User{Name: "Alex", Email: "alex@gmail.com"})
-	db.Create(&User{Name: "Bob", Email: "bob@gmail.com"})
-	db.Create(&User{Name: "Charlie", Email: "charlie@gmail.com"})
+	users := []User{
+		{Name: "Ander", Email: "ander@gmail.com"},
+		{Name: "Alex", Email: "alex@gmail.com"},
+		{Name: "Bob", Email: "bob@gmail.com"},
+		{Name: "Charlie", Email: "charlie@gmail.com"},
+	}
+
+	for _, user := range users {
+		if err := db.Create(&user).Error; err != nil {
+			log.Fatalf("failed to create user %s: %v", user.Name, err)
+		}
+	}
 
 	var user User
-	db.First(&user, 2)
-
+	if err := db.First(&user, 2).Error; err != nil {
+		log.Fatalf("failed to find user with ID 2: %v", err)
+	}
+	fmt.Printf("Retrieved user: %+v\n", user)
 }
