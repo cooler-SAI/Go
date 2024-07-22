@@ -63,3 +63,14 @@ jobs:
             echo "Directory urfave does not exist."
             exit 1
           fi
+
+      - name: Build and Test gorm
+        run: |
+          if [ -d "gorm" ]; then
+            cd urfave
+            go build -v ./...
+            go test -v ./...
+          else
+            echo "Directory gorm does not exist."
+            exit 1
+          fi
