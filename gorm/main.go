@@ -73,4 +73,10 @@ func main() {
 	}
 	fmt.Printf("Sorted users: %+v\n", sortedUsers)
 
+	var count int64
+	if err := db.Model(&User{}).Count(&count).Error; err != nil {
+		log.Fatalf("failed to count users: %v", err)
+	}
+	fmt.Printf("Total users: %d\n", count)
+
 }
