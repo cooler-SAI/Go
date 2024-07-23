@@ -109,4 +109,15 @@ func main() {
 	}
 	fmt.Println("Updated email for users with name Ander")
 
+	type User struct {
+		ID    uint `gorm:"primaryKey"`
+		Name  string
+		Email string
+		Age   int
+	}
+
+	if err := db.AutoMigrate(&User{}); err != nil {
+		log.Fatalf("failed to migrate database schema: %v", err)
+	}
+
 }
