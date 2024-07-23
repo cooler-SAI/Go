@@ -50,4 +50,15 @@ func main() {
 	}
 
 	fmt.Println("Deleted all users with ID > 10")
+
+	var userToUpdate User
+	if err := db.First(&userToUpdate, 1).Error; err != nil {
+		log.Fatalf("failed to find user with ID 1: %v", err)
+	}
+	userToUpdate.Email = "updated_email@gmail.com"
+	if err := db.Save(&userToUpdate).Error; err != nil {
+		log.Fatalf("failed to update user: %v", err)
+	}
+	fmt.Println("Updated user email")
+
 }
