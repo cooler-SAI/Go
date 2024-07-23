@@ -61,4 +61,10 @@ func main() {
 	}
 	fmt.Println("Updated user email")
 
+	var usersWithEmailGmail []User
+	if err := db.Where("email LIKE ?", "%gmail.com%").Find(&usersWithEmailGmail).Error; err != nil {
+		log.Fatalf("failed to find users with Gmail email: %v", err)
+	}
+	fmt.Printf("Users with Gmail email: %+v\n", usersWithEmailGmail)
+
 }
