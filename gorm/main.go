@@ -86,4 +86,22 @@ func main() {
 	}
 	fmt.Printf("Paginated users: %+v\n", paginatedUsers)
 
+	err = db.Transaction(func(tx *gorm.DB) error {
+		user1 := User{Name: "User1", Email: "user1@gmail.com"}
+		if err := tx.Create(&user1).Error; err != nil {
+			return err
+		}
+
+		user2 := User{Name: "User2", Email: "user2@gmail.com"}
+		if err := tx.Create(&user2).Error; err != nil {
+			return err
+		}
+
+		return nil
+	})
+	if err != nil {
+		log.Fatalf("transaction failed: %v", err)
+	}
+	fmt.Println("Transaction successful")
+
 }
