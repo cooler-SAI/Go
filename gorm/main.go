@@ -44,4 +44,10 @@ func main() {
 		log.Fatalf("failed to find user with ID 2: %v", err)
 	}
 	fmt.Printf("Retrieved user: %+v\n", user)
+
+	if err := db.Where("ID > ?", 10).Delete(&User{}).Error; err != nil {
+		log.Fatalf("failed to delete users with ID > 10: %v", err)
+	}
+
+	fmt.Println("Deleted all users with ID > 10")
 }
