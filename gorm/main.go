@@ -67,4 +67,10 @@ func main() {
 	}
 	fmt.Printf("Users with Gmail email: %+v\n", usersWithEmailGmail)
 
+	var sortedUsers []User
+	if err := db.Order("name desc").Find(&sortedUsers).Error; err != nil {
+		log.Fatalf("failed to find sorted users: %v", err)
+	}
+	fmt.Printf("Sorted users: %+v\n", sortedUsers)
+
 }
