@@ -79,4 +79,11 @@ func main() {
 	}
 	fmt.Printf("Total users: %d\n", count)
 
+	var paginatedUsers []User
+	page, pageSize := 1, 2
+	if err := db.Offset((page - 1) * pageSize).Limit(pageSize).Find(&paginatedUsers).Error; err != nil {
+		log.Fatalf("failed to find paginated users: %v", err)
+	}
+	fmt.Printf("Paginated users: %+v\n", paginatedUsers)
+
 }
