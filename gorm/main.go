@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 
+	"gorm.io/driver/mysql"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
@@ -12,20 +13,34 @@ type User struct {
 	ID    uint `gorm:"primaryKey"`
 	Name  string
 	Email string
+	Age   int
 }
 
 func main() {
 	fmt.Println("GORM starting...")
 
-	db, err := gorm.Open(sqlite.Open("test.db"), &gorm.Config{})
+	// SQLite configuration
+	sqliteDB, err := gorm.Open(sqlite.Open("sqlite_gormdb.db"), &gorm.Config{})
 	if err != nil {
-		log.Fatalf("failed to connect database: %v", err)
+		log.Fatalf("failed to connect to SQLite database: %v", err)
 	}
 
-	if err := db.AutoMigrate(&User{}); err != nil {
-		log.Fatalf("failed to migrate database schema: %v", err)
+	// MySQL configuration
+	dsn := "root:123456@tcp(127.0.0.1:3310)/gormdb?charset=utf8mb4&parseTime=True&loc=Local"
+	mysqlDB, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	if err != nil {
+		log.Fatalf("failed to connect to MySQL database: %v", err)
 	}
 
+	// Migrate the schema for both databases
+	if err := sqliteDB.AutoMigrate(&User{}); err != nil {
+		log.Fatalf("failed to migrate SQLite database schema: %v", err)
+	}
+	if err := mysqlDB.AutoMigrate(&User{}); err != nil {
+		log.Fatalf("failed to migrate MySQL database schema: %v", err)
+	}
+
+	// Insert data into SQLite
 	users := []User{
 		{Name: "Ander", Email: "ander@gmail.com"},
 		{Name: "Alex", Email: "alex@gmail.com"},
@@ -34,59 +49,35 @@ func main() {
 	}
 
 	for _, user := range users {
-		if err := db.Create(&user).Error; err != nil {
-			log.Fatalf("failed to create user %s: %v", user.Name, err)
+		if err := sqliteDB.Create(&user).Error; err != nil {
+			log.Fatalf("failed to create user in SQLite %s: %v", user.Name, err)
 		}
 	}
 
+	// Insert data into MySQL
+	for _, user := range users {
+		if err := mysqlDB.Create(&user).Error; err != nil {
+			log.Fatalf("failed to create user in MySQL %s: %v", user.Name, err)
+		}
+	}
+
+	// Perform operations on SQLite
 	var user User
-	if err := db.First(&user, 2).Error; err != nil {
-		log.Fatalf("failed to find user with ID 2: %v", err)
+	if err := sqliteDB.First(&user, 2).Error; err != nil {
+		log.Fatalf("failed to find user with ID 2 in SQLite: %v", err)
 	}
-	fmt.Printf("Retrieved user: %+v\n", user)
+	fmt.Printf("Retrieved user from SQLite: %+v\n", user)
 
-	if err := db.Where("ID > ?", 10).Delete(&User{}).Error; err != nil {
-		log.Fatalf("failed to delete users with ID > 10: %v", err)
+	// Perform operations on MySQL
+	if err := mysqlDB.First(&user, 2).Error; err != nil {
+		log.Fatalf("failed to find user with ID 2 in MySQL: %v", err)
 	}
+	fmt.Printf("Retrieved user from MySQL: %+v\n", user)
 
-	fmt.Println("Deleted all users with ID > 10")
+	// Other operations can be similarly performed on both databases as needed
 
-	var userToUpdate User
-	if err := db.First(&userToUpdate, 1).Error; err != nil {
-		log.Fatalf("failed to find user with ID 1: %v", err)
-	}
-	userToUpdate.Email = "updated_email@gmail.com"
-	if err := db.Save(&userToUpdate).Error; err != nil {
-		log.Fatalf("failed to update user: %v", err)
-	}
-	fmt.Println("Updated user email")
-
-	var usersWithEmailGmail []User
-	if err := db.Where("email LIKE ?", "%gmail.com%").Find(&usersWithEmailGmail).Error; err != nil {
-		log.Fatalf("failed to find users with Gmail email: %v", err)
-	}
-	fmt.Printf("Users with Gmail email: %+v\n", usersWithEmailGmail)
-
-	var sortedUsers []User
-	if err := db.Order("name desc").Find(&sortedUsers).Error; err != nil {
-		log.Fatalf("failed to find sorted users: %v", err)
-	}
-	fmt.Printf("Sorted users: %+v\n", sortedUsers)
-
-	var count int64
-	if err := db.Model(&User{}).Count(&count).Error; err != nil {
-		log.Fatalf("failed to count users: %v", err)
-	}
-	fmt.Printf("Total users: %d\n", count)
-
-	var paginatedUsers []User
-	page, pageSize := 1, 2
-	if err := db.Offset((page - 1) * pageSize).Limit(pageSize).Find(&paginatedUsers).Error; err != nil {
-		log.Fatalf("failed to find paginated users: %v", err)
-	}
-	fmt.Printf("Paginated users: %+v\n", paginatedUsers)
-
-	err = db.Transaction(func(tx *gorm.DB) error {
+	// Transaction example with MySQL
+	err = mysqlDB.Transaction(func(tx *gorm.DB) error {
 		user1 := User{Name: "User1", Email: "user1@gmail.com"}
 		if err := tx.Create(&user1).Error; err != nil {
 			return err
@@ -100,24 +91,7 @@ func main() {
 		return nil
 	})
 	if err != nil {
-		log.Fatalf("transaction failed: %v", err)
+		log.Fatalf("MySQL transaction failed: %v", err)
 	}
-	fmt.Println("Transaction successful")
-
-	if err := db.Model(&User{}).Where("name = ?", "Ander").Update("email", "new_email@gmail.com").Error; err != nil {
-		log.Fatalf("failed to update users: %v", err)
-	}
-	fmt.Println("Updated email for users with name Ander")
-
-	type User struct {
-		ID    uint `gorm:"primaryKey"`
-		Name  string
-		Email string
-		Age   int
-	}
-
-	if err := db.AutoMigrate(&User{}); err != nil {
-		log.Fatalf("failed to migrate database schema: %v", err)
-	}
-
+	fmt.Println("MySQL transaction successful")
 }
