@@ -104,4 +104,9 @@ func main() {
 	}
 	fmt.Println("Transaction successful")
 
+	if err := db.Model(&User{}).Where("name = ?", "Ander").Update("email", "new_email@gmail.com").Error; err != nil {
+		log.Fatalf("failed to update users: %v", err)
+	}
+	fmt.Println("Updated email for users with name Ander")
+
 }
