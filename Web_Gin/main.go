@@ -18,6 +18,10 @@ func main() {
 		c.String(http.StatusOK, "About us page")
 	})
 
+	r.GET("/login", func(c *gin.Context) {
+		c.String(http.StatusOK, "login")
+	})
+
 	err := r.Run(":8080")
 	if err != nil {
 		return
