@@ -7,6 +7,14 @@ import (
 	"sync"
 )
 
+func LoggerMiddleware() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		// Log request details
+		fmt.Printf("Request: %s %s\n", c.Request.Method, c.Request.URL.Path)
+		c.Next()
+	}
+}
+
 func main() {
 	fmt.Println("web_Gin running...")
 
