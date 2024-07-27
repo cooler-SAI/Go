@@ -31,6 +31,16 @@ func main() {
 		c.String(http.StatusOK, "login Server 1")
 	})
 
+	r1.GET("/user/:name", func(c *gin.Context) {
+		name := c.Param("name")
+		c.String(http.StatusOK, "Hello %s", name)
+	})
+
+	r1.GET("/search", func(c *gin.Context) {
+		query := c.Query("q")
+		c.String(http.StatusOK, "Search results for: %s", query)
+	})
+
 	r2 := gin.Default()
 	r2.GET("/", func(c *gin.Context) {
 		c.String(http.StatusOK, "hello gin, it's Server 2")
