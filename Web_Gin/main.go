@@ -37,6 +37,7 @@ func main() {
 	})
 
 	r2.GET("/about", func(c *gin.Context) {
+		LoggerMiddleware()
 		c.String(http.StatusOK, "About us page Server 2")
 	})
 
