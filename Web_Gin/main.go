@@ -41,6 +41,20 @@ func main() {
 		c.String(http.StatusOK, "Search results for: %s", query)
 	})
 
+	r1.GET("/json", func(c *gin.Context) {
+		data := map[string]string{"message": "Hello, JSON"}
+		c.JSON(http.StatusOK, data)
+	})
+
+	r1.POST("/json", func(c *gin.Context) {
+		var jsonData map[string]interface{}
+		if err := c.BindJSON(&jsonData); err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+			return
+		}
+		c.JSON(http.StatusOK, jsonData)
+	})
+
 	r2 := gin.Default()
 	r2.GET("/", func(c *gin.Context) {
 		c.String(http.StatusOK, "hello gin, it's Server 2")
