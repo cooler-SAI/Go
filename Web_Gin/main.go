@@ -55,6 +55,17 @@ func main() {
 		c.JSON(http.StatusOK, jsonData)
 	})
 
+	v1 := r1.Group("/v1")
+	{
+		v1.GET("/posts", func(c *gin.Context) {
+			c.String(http.StatusOK, "List of posts")
+		})
+
+		v1.POST("/posts", func(c *gin.Context) {
+			c.String(http.StatusOK, "Create a post")
+		})
+	}
+
 	r2 := gin.Default()
 	r2.GET("/", func(c *gin.Context) {
 		c.String(http.StatusOK, "hello gin, it's Server 2")
