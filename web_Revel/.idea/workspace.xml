@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f9b1be4-af21-4240-9b1c-d8fc70d173e6" name="Changes" comment="Go/Learning: added full Revel project, conf files" />
+    <list default="true" id="6f9b1be4-af21-4240-9b1c-d8fc70d173e6" name="Changes" comment="Go/Learning: added full Revel project, conf files, ups" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,7 +91,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Go/Learning: added full Revel project" />
     <MESSAGE value="Go/Learning: added full Revel project, conf files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: added full Revel project, conf files" />
+    <MESSAGE value="Go/Learning: added full Revel project, conf files, ups" />
+    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: added full Revel project, conf files, ups" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

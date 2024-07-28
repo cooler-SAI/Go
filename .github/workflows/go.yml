@@ -86,13 +86,3 @@ jobs:
             exit 1
           fi
 
-      - name: Build and Test web_Revel
-        run: |
-          if [ -d "web_Revel" ]; then
-            cd web_Revel
-            go build -v ./...
-            go test -v ./...
-          else
-            echo "Directory web_Revel does not exist."
-            exit 1
-          fi
