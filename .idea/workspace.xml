@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb91dce2-f57c-4a95-8f4e-b4e31a349fa0" name="Changes" comment="Go/Main: set up builds">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/go.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/go.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_Revel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_Revel/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="eb91dce2-f57c-4a95-8f4e-b4e31a349fa0" name="Changes" comment="Go/Main: set up tests" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +77,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Go/Main: added new one for build" />
     <MESSAGE value="Go/Main: set up builds" />
-    <option name="LAST_COMMIT_MESSAGE" value="Go/Main: set up builds" />
+    <MESSAGE value="Go/Main: set up tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Go/Main: set up tests" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
