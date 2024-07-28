@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f9b1be4-af21-4240-9b1c-d8fc70d173e6" name="Changes" comment="Go/Learning: added full Revel project">
-      <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/app.conf" beforeDir="false" afterPath="$PROJECT_DIR$/conf/app.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-    </list>
+    <list default="true" id="6f9b1be4-af21-4240-9b1c-d8fc70d173e6" name="Changes" comment="Go/Learning: added full Revel project, conf files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,6 +56,12 @@
     "settings.editor.selected.configurable": "go.sdk"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Enterprise Development\Go\web_Revel" />
+      <recent name="D:\Enterprise Development\Go\web_Revel\myRevelApp" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="web_Revel" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="web_Revel" />
@@ -90,7 +90,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Go/Learning: added full Revel project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: added full Revel project" />
+    <MESSAGE value="Go/Learning: added full Revel project, conf files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: added full Revel project, conf files" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
