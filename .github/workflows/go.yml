@@ -67,10 +67,32 @@ jobs:
       - name: Build and Test gorm
         run: |
           if [ -d "gorm" ]; then
-            cd urfave
+            cd gorm
             go build -v ./...
             go test -v ./...
           else
             echo "Directory gorm does not exist."
+            exit 1
+          fi
+
+      - name: Build and Test web_Gin
+        run: |
+          if [ -d "web_Gin" ]; then
+            cd web_Gin
+            go build -v ./...
+            go test -v ./...
+          else
+            echo "Directory web_Gin does not exist."
+            exit 1
+          fi
+
+      - name: Build and Test web_Revel
+        run: |
+          if [ -d "web_Revel" ]; then
+            cd web_Revel
+            go build -v ./...
+            go test -v ./...
+          else
+            echo "Directory web_Revel does not exist."
             exit 1
           fi
