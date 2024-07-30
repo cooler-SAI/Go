@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2958cc94-a594-49c0-9cf3-d72f546346af" name="Changes" comment="Go/Learning: BeeGo, added new controller">
-      <change afterPath="$PROJECT_DIR$/BeeGo/views/hello.tpl" afterDir="false" />
+    <list default="true" id="2958cc94-a594-49c0-9cf3-d72f546346af" name="Changes" comment="Go/Learning: BeeGo, added new page">
+      <change afterPath="$PROJECT_DIR$/BeeGo/controllers/about.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeeGo/views/about.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BeeGo/routers/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/BeeGo/routers/router.go" afterDir="false" />
     </list>
@@ -103,7 +104,8 @@
     <MESSAGE value="Go/Learning: BeeGo project, set up base" />
     <MESSAGE value="Go/Learning: update BeeGo packages" />
     <MESSAGE value="Go/Learning: BeeGo, added new controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: BeeGo, added new controller" />
+    <MESSAGE value="Go/Learning: BeeGo, added new page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: BeeGo, added new page" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
