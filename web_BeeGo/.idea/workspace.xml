@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2958cc94-a594-49c0-9cf3-d72f546346af" name="Changes" comment="Go/Learning: update BeeGo packages">
-      <change afterPath="$PROJECT_DIR$/BeeGo/controllers/hello.go" afterDir="false" />
+    <list default="true" id="2958cc94-a594-49c0-9cf3-d72f546346af" name="Changes" comment="Go/Learning: BeeGo, added new controller">
+      <change afterPath="$PROJECT_DIR$/BeeGo/views/hello.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeeGo/routers/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/BeeGo/routers/router.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +66,11 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "go.vgo"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "PLAIN_TEXT"
+    ]
   }
 }]]></component>
   <component name="RunManager">
@@ -95,7 +102,8 @@
     <MESSAGE value="Go/Learning: BeeGo project, set up packages, ups" />
     <MESSAGE value="Go/Learning: BeeGo project, set up base" />
     <MESSAGE value="Go/Learning: update BeeGo packages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: update BeeGo packages" />
+    <MESSAGE value="Go/Learning: BeeGo, added new controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: BeeGo, added new controller" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
