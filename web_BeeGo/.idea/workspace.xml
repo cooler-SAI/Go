@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2958cc94-a594-49c0-9cf3-d72f546346af" name="Changes" comment="Go/Learning: BeeGo, added new page">
-      <change afterPath="$PROJECT_DIR$/BeeGo/controllers/about.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BeeGo/views/about.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeeGo/routers/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/BeeGo/routers/router.go" afterDir="false" />
-    </list>
+    <list default="true" id="2958cc94-a594-49c0-9cf3-d72f546346af" name="Changes" comment="Go/Learning: added readme manual install" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,7 +100,10 @@
     <MESSAGE value="Go/Learning: update BeeGo packages" />
     <MESSAGE value="Go/Learning: BeeGo, added new controller" />
     <MESSAGE value="Go/Learning: BeeGo, added new page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: BeeGo, added new page" />
+    <MESSAGE value="Go/Learning: BeeGo, added about page" />
+    <MESSAGE value="Go/Learning: added ignore" />
+    <MESSAGE value="Go/Learning: added readme manual install" />
+    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: added readme manual install" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
