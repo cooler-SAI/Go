@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b21972f-2dd3-4f82-9253-6fafdf7b2e21" name="Changes" comment="Go/Learning: misc Cobra CLI, added help, updates, new">
-      <change afterPath="$PROJECT_DIR$/../urvafe/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../urvafe/.idea/urvafe.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../urvafe/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../urvafe/go.mod" afterDir="false" />
-    </list>
+    <list default="true" id="7b21972f-2dd3-4f82-9253-6fafdf7b2e21" name="Changes" comment="Go/Learning: misc Cobra CLI, added help, updates, new" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
