@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2958cc94-a594-49c0-9cf3-d72f546346af" name="Changes" comment="Go/Learning: BeeGo - added user ID, ups">
-      <change afterPath="$PROJECT_DIR$/BeeGo/controllers/user_api_controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeeGo/routers/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/BeeGo/routers/router.go" afterDir="false" />
-    </list>
+    <list default="true" id="2958cc94-a594-49c0-9cf3-d72f546346af" name="Changes" comment="Go/Learning: BeeGo - added UserAPI Controller" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,7 +106,8 @@
     <MESSAGE value="Go/Learning: BeeGo - mix up" />
     <MESSAGE value="Go/Learning: BeeGo - added user ID" />
     <MESSAGE value="Go/Learning: BeeGo - added user ID, ups" />
-    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: BeeGo - added user ID, ups" />
+    <MESSAGE value="Go/Learning: BeeGo - added UserAPI Controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: BeeGo - added UserAPI Controller" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
