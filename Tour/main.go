@@ -8,5 +8,8 @@ func add(x, y int) int {
 
 func main() {
 	fmt.Println(add(33, 28))
+
+	const Truth = true
+	fmt.Println("Go rules?", Truth)
 }
 
