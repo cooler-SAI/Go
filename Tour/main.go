@@ -2,15 +2,12 @@ package main
 
 import "fmt"
 
-type BaseCoordinates struct {
-	X int
-	Y int
-	Z int
-}
+var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
 
 func main() {
-	v := BaseCoordinates{10, 70, 44}
-	v.X = 4
-	fmt.Println(v.X)
+	for i, v := range pow {
+		fmt.Printf("2**%d = %d\n", i, v)
+	}
 }
+
 
