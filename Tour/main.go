@@ -2,14 +2,15 @@ package main
 
 import "fmt"
 
-func add(x, y int) int {
-	return x + y
+type BaseCoordinates struct {
+	X int
+	Y int
+	Z int
 }
 
 func main() {
-	fmt.Println(add(33, 28))
-
-	const Truth = true
-	fmt.Println("Go rules?", Truth)
+	v := BaseCoordinates{10, 70, 44}
+	v.X = 4
+	fmt.Println(v.X)
 }
 
