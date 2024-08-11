@@ -1,20 +1,21 @@
 package main
 
-import "golang.org/x/tour/pic"
+import "fmt"
 
-func Pic(dx, dy int) [][]uint8 {
+func fibonacci() func() int {
+	a, b := 0, 1
 	
-	result := make([][]uint8, dy)
-	for y := 0; y < dy; y++ {
-		result[y] = make([]uint8, dx)
-		for x := 0; x < dx; x++ {
-			result[y][x] = uint8((x ^ y))
-		}
+	return func() int {
+		current := a
+		a, b = b, a+b
+		return current
 	}
-	return result
 }
 
 func main() {
-	pic.Show(Pic)
+	fib := fibonacci()
+	
+	for i := 0; i < 10; i++ {
+		fmt.Println(fib())
+	}
 }
-
