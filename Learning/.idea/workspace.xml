@@ -18,7 +18,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://$PROJECT_DIR$/../../Go Source/go1.22.5" />
+  <component name="GOROOT" url="file://$PROJECT_DIR$/../../Go SDK/go1.22.3" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -28,12 +28,12 @@
     &quot;assignee&quot;: &quot;cooler-SAI&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/cooler-SAI/Go&quot;,
-    &quot;accountId&quot;: &quot;c3876b20-974c-49ac-b80a-eb4c45bd8776&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/cooler-SAI/Go",
+    "accountId": "b924dd68-eaa8-49ec-9ce3-219725942b97"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
