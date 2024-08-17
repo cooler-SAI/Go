@@ -97,3 +97,14 @@ jobs:
             exit 1
           fi
 
+      - name: Build and Test web_Echo
+        run: |
+          if [ -d "web_Echo" ]; then
+            cd web_Echo
+            go build -v ./...
+            go test -v ./...
+          else
+            echo "Directory web_Echo does not exist."
+            exit 1
+          fi
+
