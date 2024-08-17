@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b21972f-2dd3-4f82-9253-6fafdf7b2e21" name="Changes" comment="Go/Learning: few ups" />
+    <list default="true" id="7b21972f-2dd3-4f82-9253-6fafdf7b2e21" name="Changes" comment="Go/Learning: few ups, again" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +100,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Go/Learning: added JSON more here" />
     <MESSAGE value="Go/Learning: clean up" />
     <MESSAGE value="Go/Learning: Go generics add" />
     <MESSAGE value="Go/Learning: set up Learning" />
@@ -125,7 +124,8 @@
     <MESSAGE value="Go/Learning: misc Cobra CLI, added help, updates" />
     <MESSAGE value="Go/Learning: misc Cobra CLI, added help, updates, new" />
     <MESSAGE value="Go/Learning: few ups" />
-    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: few ups" />
+    <MESSAGE value="Go/Learning: few ups, again" />
+    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: few ups, again" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
