@@ -119,3 +119,14 @@ jobs:
             exit 1
           fi
 
+      - name: Build and Test web_Gorilla
+        run: |
+          if [ -d "web_Gorilla" ]; then
+            cd web_Gorilla
+            go build -v ./...
+            go test -v ./...
+          else
+            echo "Directory web_Gorilla does not exist."
+            exit 1
+          fi
+
