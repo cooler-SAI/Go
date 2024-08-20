@@ -108,14 +108,14 @@ jobs:
             exit 1
           fi
 
-      - name: Build and Test web_Echo
+      - name: Build and Test web_gofiber
         run: |
-          if [ -d "web_Echo" ]; then
-            cd web_Echo
+          if [ -d "web_gofiber" ]; then
+            cd web_gofiber
             go build -v ./...
             go test -v ./...
           else
-            echo "Directory web_Echo does not exist."
+            echo "Directory web_gofiber does not exist."
             exit 1
           fi
 
