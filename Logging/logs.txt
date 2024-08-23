@@ -1,1 +1,5 @@
 2024/08/23 22:46:42 Hello logs!
+INFO: 2024/08/23 22:57:18 main.go:26: Starting the application...
+INFO: 2024/08/23 22:57:18 main.go:27: Something noteworthy happened
+WARNING: 2024/08/23 22:57:18 main.go:28: There is something you should know about
+ERROR: 2024/08/23 22:57:18 main.go:29: Something went wrong
