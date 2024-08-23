@@ -5,5 +5,11 @@ import (
 )
 
 func main() {
-	log.Println("Hello logs!")
+	log.SetFormatter(&log.JSONFormatter{})
+	log.WithFields(
+		log.Fields{
+			"foo": "foo",
+			"bar": "bar",
+		},
+	).Info("Something happened")
 }
