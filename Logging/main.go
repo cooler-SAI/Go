@@ -1,14 +1,8 @@
 package main
 
-import (
-	log "github.com/sirupsen/logrus"
-)
+import "log/slog"
 
 func main() {
-	log.SetFormatter(&log.JSONFormatter{})
+	slog.Info("hello, logg")
 
-	log.Debug("Useful debugging information.")
-	log.Info("Something noteworthy happened!")
-	log.Warn("You should probably take a look at this.")
-	log.Error("Something failed but I'm not quitting.")
 }
