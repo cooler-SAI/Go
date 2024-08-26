@@ -1,6 +1,8 @@
 package main
 
 import (
+	"bytes"
+	"fmt"
 	"log"
 	"os"
 )
@@ -15,5 +17,10 @@ func main() {
 
 	logger := log.New(os.Stdout, "my:", log.LstdFlags)
 	logger.Println("from logger")
+
+	var buf bytes.Buffer
+	bufLog := log.New(&buf, "buf:", log.LstdFlags)
+	bufLog.Println("hello")
+	fmt.Print("from bufLog:", buf.String())
 
 }
