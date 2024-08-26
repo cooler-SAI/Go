@@ -130,3 +130,14 @@ jobs:
             exit 1
           fi
 
+      - name: Build and Test Logging
+        run: |
+          if [ -d "Logging" ]; then
+            cd Logging
+            go build -v ./...
+            go test -v ./...
+          else
+            echo "Directory Logging does not exist."
+            exit 1
+          fi
+
