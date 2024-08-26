@@ -1,11 +1,12 @@
 package main
 
-import "log/slog"
+import (
+	"log"
+	"log/slog"
+)
 
 func main() {
 	slog.Info("hello, logg")
-	slog.Error("hello, fail")
-	slog.Warn("hello, warn")
-	slog.Debug("hello, debug")
+	log.Printf("Hello all here")
 
 }
