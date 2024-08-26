@@ -1,12 +1,12 @@
 package main
 
 import (
-	"log"
 	"log/slog"
+	"os"
 )
 
 func main() {
-	slog.Info("hello, logg")
-	log.Printf("Hello all here")
+	logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
+	logger.Info("hello, world", "user", os.Getenv("USER"))
 
 }
