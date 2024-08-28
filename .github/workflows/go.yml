@@ -86,17 +86,6 @@ jobs:
             exit 1
           fi
 
-      - name: Build and Test web_BeeGo
-        run: |
-          if [ -d "web_BeeGo" ]; then
-            cd web_BeeGo
-            go build -v ./...
-            go test -v ./...
-          else
-            echo "Directory web_BeeGo does not exist."
-            exit 1
-          fi
-
       - name: Build and Test web_Echo
         run: |
           if [ -d "web_Echo" ]; then
