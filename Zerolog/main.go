@@ -11,6 +11,7 @@ func main() {
 	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
 
 	log.Info().Msg("Service RUN good!")
+	log.Error().Msg("UPDATE Last one")
 
 	file, err := os.Create("Zerolog_logfile.log")
 	if err != nil {
