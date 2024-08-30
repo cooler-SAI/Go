@@ -130,3 +130,14 @@ jobs:
             exit 1
           fi
 
+      - name: Build and Test Zap
+        run: |
+          if [ -d "Zap" ]; then
+            cd Zap
+            go build -v ./...
+            go test -v ./...
+          else
+            echo "Directory Zap does not exist."
+            exit 1
+          fi
+
