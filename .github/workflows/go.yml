@@ -141,3 +141,14 @@ jobs:
             exit 1
           fi
 
+      - name: Build and Test Zerolog
+        run: |
+          if [ -d "Zerolog" ]; then
+            cd Zerolog
+            go build -v ./...
+            go test -v ./...
+          else
+            echo "Directory Zerolog does not exist."
+            exit 1
+          fi
+
