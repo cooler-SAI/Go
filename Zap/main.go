@@ -16,5 +16,6 @@ func main() {
 	logger.Info("A structured log message",
 		zap.String("key1", "value1"),
 		zap.Int("key2", 42),
+		zap.Bool("key3", false),
 	)
 }
