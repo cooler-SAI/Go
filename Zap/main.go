@@ -1,7 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"go.uber.org/zap"
+)
 
 func main() {
-	fmt.Println("Hello zap!")
+	logger, _ := zap.NewProduction()
+	defer func(logger *zap.Logger) {
+		err := logger.Sync()
+		if err != nil {
+
+		}
+	}(logger)
+
+	logger.Info("A structured log message",
+		zap.String("key1", "value1"),
+		zap.Int("key2", 42),
+	)
 }
