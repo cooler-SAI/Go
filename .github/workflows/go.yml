@@ -152,3 +152,14 @@ jobs:
             exit 1
           fi
 
+      - name: Build and Test Melody
+        run: |
+          if [ -d "Melody" ]; then
+            cd Melody
+            go build -v ./...
+            go test -v ./...
+          else
+            echo "Directory Melody does not exist."
+            exit 1
+          fi
+
