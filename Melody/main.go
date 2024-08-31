@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -12,6 +13,8 @@ import (
 
 func main() {
 	m := melody.New()
+
+	fmt.Println("Welcome to Melody real time chat - server!")
 
 	log.Print("Server started...")
 
