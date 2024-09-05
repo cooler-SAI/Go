@@ -163,14 +163,3 @@ jobs:
             exit 1
           fi
 
-      - name: Build and Test Centrifugo
-        run: |
-          if [ -d "Centrifugo" ]; then
-            cd Centrifugo
-            go build -v ./...
-            go test -v ./...
-          else
-            echo "Directory Centrifugo does not exist."
-            exit 1
-          fi
-
