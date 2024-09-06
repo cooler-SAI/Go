@@ -163,3 +163,14 @@ jobs:
             exit 1
           fi
 
+      - name: Build and Test REST
+        run: |
+          if [ -d "REST" ]; then
+            cd REST
+            go build -v ./...
+            go test -v ./...
+          else
+            echo "Directory REST does not exist."
+            exit 1
+          fi
+
