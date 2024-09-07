@@ -174,3 +174,14 @@ jobs:
             exit 1
           fi
 
+      - name: Build and Test heimdall
+        run: |
+          if [ -d "heimdall" ]; then
+            cd heimdall
+            go build -v ./...
+            go test -v ./...
+          else
+            echo "Directory heimdall does not exist."
+            exit 1
+          fi
+
