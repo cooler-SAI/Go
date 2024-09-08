@@ -4,7 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/levigross/grequests"
-	"go.uber.org/zap"
+	"github.com/rs/zerolog"
+	"github.com/rs/zerolog/log"
+
 	"os"
 )
 
@@ -16,14 +18,9 @@ type Post struct {
 }
 
 func main() {
-	logger, _ := zap.NewProduction()
-	defer func(logger *zap.Logger) {
-		err := logger.Sync()
-		if err != nil {
+	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
 
-		}
-	}(logger)
-	logger.Info("Start.... Sending Request to the Server...")
+	log.Info().Msg("Server Started!")
 
 	resp, err := grequests.Get("https://jsonplaceholder.typicode.com/posts?userId=10", nil)
 	if err != nil {
