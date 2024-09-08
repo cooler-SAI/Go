@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/levigross/grequests"
+	"os"
 )
 
 type Post struct {
@@ -26,7 +27,26 @@ func main() {
 		return
 	}
 
-	for _, post := range posts {
-		fmt.Printf("ID: %d, Title: %s\n", post.ID, post.Title)
+	file, err := os.Create("posts.txt")
+	if err != nil {
+		fmt.Println("Error to create:", err)
+		return
 	}
+	defer func(file *os.File) {
+		err := file.Close()
+		if err != nil {
+
+		}
+	}(file)
+
+	for _, post := range posts {
+		line := fmt.Sprintf("ID: %d, Title: %s\n", post.ID, post.Title)
+		_, err := file.WriteString(line)
+		if err != nil {
+			fmt.Println("Error write to file:", err)
+			return
+		}
+	}
+
+	fmt.Println("All data wrote to posts.txt")
 }
