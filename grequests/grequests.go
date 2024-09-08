@@ -20,7 +20,7 @@ type Post struct {
 func main() {
 	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
 
-	log.Info().Msg("Server Started!")
+	log.Info().Msg("- Server Started!")
 
 	resp, err := grequests.Get("https://jsonplaceholder.typicode.com/posts?userId=10", nil)
 	if err != nil {
@@ -33,6 +33,8 @@ func main() {
 		fmt.Println("Error decoding JSON:", err)
 		return
 	}
+
+	log.Info().Msg("- Writing to file all data...")
 
 	file, err := os.Create("posts.txt")
 	if err != nil {
@@ -55,5 +57,5 @@ func main() {
 		}
 	}
 
-	fmt.Println("All data wrote to posts.txt")
+	log.Info().Msg("- All data wrote to posts.txt")
 }
