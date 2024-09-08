@@ -2,31 +2,14 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"net/http"
-	"os"
+	"github.com/levigross/grequests"
 )
 
 func main() {
-	http.HandleFunc("/", indexHandler)
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "8080"
-		log.Printf("Defaulting to port %s", port)
-	}
-
-	log.Printf("Listening on port %s", port)
-	log.Printf("Open http://localhost:%s in the browser", port)
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
-}
-
-func indexHandler(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/" {
-		http.NotFound(w, r)
+	resp, err := grequests.Get("https://jsonplaceholder.typicode.com/posts", nil)
+	if err != nil {
+		fmt.Println("Error:", err)
 		return
 	}
-	_, err := fmt.Fprint(w, "Hello, World!")
-	if err != nil {
-		w.WriteHeader(http.StatusInternalServerError)
-	}
+	fmt.Println(resp.String())
 }
