@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/levigross/grequests"
+	"go.uber.org/zap"
 	"os"
 )
 
@@ -15,6 +16,15 @@ type Post struct {
 }
 
 func main() {
+	logger, _ := zap.NewProduction()
+	defer func(logger *zap.Logger) {
+		err := logger.Sync()
+		if err != nil {
+
+		}
+	}(logger)
+	logger.Info("Start.... Sending Request to the Server...")
+
 	resp, err := grequests.Get("https://jsonplaceholder.typicode.com/posts?userId=10", nil)
 	if err != nil {
 		fmt.Println("Error:", err)
