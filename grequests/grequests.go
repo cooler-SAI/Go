@@ -16,13 +16,13 @@ type Post struct {
 func main() {
 	resp, err := grequests.Get("https://jsonplaceholder.typicode.com/posts?userId=10", nil)
 	if err != nil {
-		fmt.Println("Ошибка:", err)
+		fmt.Println("Error:", err)
 		return
 	}
 
 	var posts []Post
 	if err := json.Unmarshal(resp.Bytes(), &posts); err != nil {
-		fmt.Println("Ошибка декодирования JSON:", err)
+		fmt.Println("Error decoding JSON:", err)
 		return
 	}
 
