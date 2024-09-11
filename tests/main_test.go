@@ -64,5 +64,19 @@ func TestHello(t *testing.T) {
 }
 
 func TestResult(t *testing.T) {
+	tests := []struct {
+		a, b     int
+		expected int
+	}{
+		{10, 5, 5},  // Positive case
+		{5, 10, -5}, // Negative case
+		{10, 10, 0}, // Zero case
+	}
 
+	for _, tt := range tests {
+		actual := Result(tt.a, tt.b)
+		if actual != tt.expected {
+			t.Errorf("Result(%d, %d) = %d; expected %d", tt.a, tt.b, actual, tt.expected)
+		}
+	}
 }
