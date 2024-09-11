@@ -12,7 +12,11 @@ func IntMin(a, b int) int {
 func Result(a, b int) int {
 	c := a - b
 	if c > 0 {
-		fmt.Printf("result is: %v\n", c)
+		fmt.Printf("Positive result: %v\n", c)
+	} else if c < 0 {
+		fmt.Printf("Negative result: %v\n", c)
+	} else {
+		fmt.Println("Result is zero.")
 	}
 	return c
 }
