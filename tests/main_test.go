@@ -54,3 +54,11 @@ func TestMainOutput(t *testing.T) {
 		t.Errorf("Expected %q but got %q", expected, buf.String())
 	}
 }
+
+func TestHello(t *testing.T) {
+	got := Hello()
+	want := "Hello Tester!"
+	if got != want {
+		t.Errorf("got %q, want %q", got, want)
+	}
+}

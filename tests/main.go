@@ -9,8 +9,13 @@ func IntMin(a, b int) int {
 	return b
 }
 
+func Hello() string {
+	return "Hello Tester!"
+}
+
 func main() {
 	fmt.Println("Hello Tests!")
+	Hello()
 	a := 100
 	b := 200
 
