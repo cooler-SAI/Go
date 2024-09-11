@@ -6,13 +6,14 @@ import (
 	"os"
 )
 
-var logger zerolog.Logger
+var Logger zerolog.Logger
 
 func init() {
-	logger = zerolog.New(os.Stdout).With().Timestamp().Logger()
+	Logger = zerolog.New(os.Stdout).With().Timestamp().Logger()
 }
 
 func IntMin(a, b int) int {
+	Logger.Info().Msgf("Testing IntMin with inputs a=%d, b=%d", a, b)
 	if a < b {
 		return a
 	}
@@ -20,22 +21,25 @@ func IntMin(a, b int) int {
 }
 
 func Result(a, b int) int {
+	Logger.Info().Msgf("Testing Result with inputs a=%d, b=%d", a, b)
 	c := a - b
 	if c > 0 {
-		logger.Info().Msgf("Positive result: %v", c)
+		Logger.Info().Msgf("Positive result: %v", c)
 	} else if c < 0 {
-		logger.Warn().Msgf("Negative result: %v", c)
+		Logger.Warn().Msgf("Negative result: %v", c)
 	} else {
-		logger.Info().Msg("Result is zero.")
+		Logger.Info().Msg("Result is zero.")
 	}
 	return c
 }
 
 func Hello() string {
+	Logger.Info().Msg("Testing Hello function")
 	return "Hello Tester!"
 }
 
 func main() {
+	Logger.Info().Msg("Running main function")
 	fmt.Println("Hello Tests!")
 	Hello()
 	a := 100

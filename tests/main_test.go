@@ -3,17 +3,30 @@ package main
 import (
 	"bytes"
 	"fmt"
+	"github.com/rs/zerolog"
 	"testing"
 )
 
+func setupTestLogger() *bytes.Buffer {
+	var buf bytes.Buffer
+	Logger = zerolog.New(&buf).With().Timestamp().Logger()
+	return &buf
+}
+
 func TestIntMinBasic(t *testing.T) {
+	buf := setupTestLogger()
+
 	ans := IntMin(2, -2)
 	if ans != -2 {
 		t.Errorf("IntMin(2, -2) = %d; want -2", ans)
 	}
+
+	t.Logf("Logs: %s", buf.String())
 }
 
 func TestIntMinTableDriven(t *testing.T) {
+	buf := setupTestLogger()
+
 	var tests = []struct {
 		a, b int
 		want int
@@ -34,43 +47,42 @@ func TestIntMinTableDriven(t *testing.T) {
 			}
 		})
 	}
+
+	t.Logf("Logs: %s", buf.String())
 }
 
 func BenchmarkIntMin(b *testing.B) {
+	buf := setupTestLogger()
+
 	for i := 0; i < b.N; i++ {
 		IntMin(1, 2)
 	}
-}
 
-func TestMainOutput(t *testing.T) {
-	var buf bytes.Buffer
-	_, err := fmt.Fprint(&buf, "Hello Tests!\n")
-	if err != nil {
-		t.Errorf("Unexpected error: %v", err)
-	}
-
-	expected := "Hello Tests!\n"
-	if buf.String() != expected {
-		t.Errorf("Expected %q but got %q", expected, buf.String())
-	}
+	b.Logf("Logs: %s", buf.String())
 }
 
 func TestHello(t *testing.T) {
+	buf := setupTestLogger()
+
 	got := Hello()
 	want := "Hello Tester!"
 	if got != want {
 		t.Errorf("got %q, want %q", got, want)
 	}
+
+	t.Logf("Logs: %s", buf.String())
 }
 
 func TestResult(t *testing.T) {
+	buf := setupTestLogger()
+
 	tests := []struct {
 		a, b     int
 		expected int
 	}{
-		{10, 5, 5},  // Positive case
-		{5, 10, -5}, // Negative case
-		{10, 10, 0}, // Zero case
+		{10, 5, 5},
+		{5, 10, -5},
+		{10, 10, 0},
 	}
 
 	for _, tt := range tests {
@@ -79,4 +91,6 @@ func TestResult(t *testing.T) {
 			t.Errorf("Result(%d, %d) = %d; expected %d", tt.a, tt.b, actual, tt.expected)
 		}
 	}
+
+	t.Logf("Logs: %s", buf.String())
 }
