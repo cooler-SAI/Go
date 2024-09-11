@@ -1,6 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/rs/zerolog"
+	"os"
+)
+
+var logger zerolog.Logger
+
+func init() {
+	logger = zerolog.New(os.Stdout).With().Timestamp().Logger()
+}
 
 func IntMin(a, b int) int {
 	if a < b {
@@ -12,11 +22,11 @@ func IntMin(a, b int) int {
 func Result(a, b int) int {
 	c := a - b
 	if c > 0 {
-		fmt.Printf("Positive result: %v\n", c)
+		logger.Info().Msgf("Positive result: %v", c)
 	} else if c < 0 {
-		fmt.Printf("Negative result: %v\n", c)
+		logger.Warn().Msgf("Negative result: %v", c)
 	} else {
-		fmt.Println("Result is zero.")
+		logger.Info().Msg("Result is zero.")
 	}
 	return c
 }
@@ -31,6 +41,6 @@ func main() {
 	a := 100
 	b := 200
 
-	fmt.Println("the result of a and b is :", IntMin(a, b))
-	fmt.Println("the Double Result of a and b is :", Result(a, b))
+	fmt.Println("The result of a and b is :", IntMin(a, b))
+	fmt.Println("The Double Result of a and b is :", Result(a, b))
 }
