@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"time"
 
 	"github.com/ThreeDotsLabs/watermill"
 	"github.com/ThreeDotsLabs/watermill/message"
@@ -36,8 +37,15 @@ func main() {
 		log.Fatalf("Subscription error: %v", err)
 	}
 
-	for msg := range messages {
-		fmt.Printf("Received message: %s\n", string(msg.Payload))
-		msg.Ack()
-	}
+	// Process messages
+	go func() {
+		for msg := range messages {
+			fmt.Printf("Received message: %s\n", string(msg.Payload))
+			msg.Ack()
+		}
+	}()
+
+	// Give some time for message processing, then exit
+	time.Sleep(2 * time.Second)
+	fmt.Println("Processing complete. Exiting...")
 }
