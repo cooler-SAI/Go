@@ -185,3 +185,14 @@ jobs:
             exit 1
           fi
 
+      - name: Build and Test watermill
+        run: |
+          if [ -d "watermill" ]; then
+            cd watermill
+            go build -v ./...
+            go test -v ./...
+          else
+            echo "Directory watermill does not exist."
+            exit 1
+          fi
+
