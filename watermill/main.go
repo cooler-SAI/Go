@@ -1,51 +1,36 @@
 package main
 
 import (
-	"context"
 	"fmt"
 	"log"
-	"time"
 
 	"github.com/ThreeDotsLabs/watermill"
+	"github.com/ThreeDotsLabs/watermill-kafka/v2/pkg/kafka"
 	"github.com/ThreeDotsLabs/watermill/message"
-	"github.com/ThreeDotsLabs/watermill/pubsub/gochannel"
 )
 
 func main() {
-	// Create a logger
+
 	logger := watermill.NewStdLogger(false, false)
 
-	// Use GoChannel as a transport layer
-	pubSub := gochannel.NewGoChannel(gochannel.Config{}, logger)
+	kafkaConfig := kafka.DefaultSaramaSyncPublisherConfig()
+	kafkaConfig.Producer.Return.Successes = true
 
-	// Publish messages
-	go func() {
-		for i := 0; i < 5; i++ {
-			msg := message.NewMessage(watermill.NewUUID(), []byte(fmt.Sprintf("Message %d", i)))
-			if err := pubSub.Publish("example_topic", msg); err != nil {
-				log.Fatalf("Failed to publish message: %v", err)
-			}
-		}
-	}()
-
-	// Create a context
-	ctx := context.Background()
-
-	// Subscribe to messages using the context
-	messages, err := pubSub.Subscribe(ctx, "example_topic")
+	publisher, err := kafka.NewPublisher(
+		kafka.PublisherConfig{
+			Brokers:   []string{"localhost:9092"},
+			Marshaler: kafka.DefaultMarshaler{},
+		},
+		logger,
+	)
 	if err != nil {
-		log.Fatalf("Subscription error: %v", err)
+		log.Fatalf("Failed to create Kafka publisher: %v", err)
 	}
 
-	// Process messages
-	go func() {
-		for msg := range messages {
-			fmt.Printf("Received message: %s\n", string(msg.Payload))
-			msg.Ack()
-		}
-	}()
+	msg := message.NewMessage(watermill.NewUUID(), []byte("Hello, Kafka!"))
+	if err := publisher.Publish("example_topic", msg); err != nil {
+		log.Fatalf("Failed to publish message: %v", err)
+	}
 
-	// Give some time for message processing, then exit
-	time.Sleep(2 * time.Second)
-	fmt.Println("Processing complete. Exiting...")
+	fmt.Println("Message sent successfully to Kafka!")
 }
