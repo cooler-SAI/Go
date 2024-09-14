@@ -42,6 +42,7 @@ func main() {
 	go func() {
 		for i := 0; i < 5; i++ {
 			msg := message.NewMessage(watermill.NewUUID(), []byte("Message "+strconv.Itoa(i)))
+			msg.Metadata.Set("key", "value")
 			if err := publisher.Publish("example_topic", msg); err != nil {
 				log.Println("Failed to publish message:", err)
 			}
