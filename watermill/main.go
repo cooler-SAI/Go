@@ -1,8 +1,9 @@
 package main
 
 import (
-	"fmt"
+	"context"
 	"log"
+	"strconv"
 
 	"github.com/ThreeDotsLabs/watermill"
 	"github.com/ThreeDotsLabs/watermill-kafka/v2/pkg/kafka"
@@ -10,27 +11,55 @@ import (
 )
 
 func main() {
+	logger := watermill.NewStdLogger(true, true)
 
-	logger := watermill.NewStdLogger(false, false)
+	// Publisher configuration
+	publisherConfig := kafka.PublisherConfig{
+		Brokers:   []string{"localhost:9092"},
+		Marshaler: kafka.DefaultMarshaler{},
+	}
 
-	kafkaConfig := kafka.DefaultSaramaSyncPublisherConfig()
-	kafkaConfig.Producer.Return.Successes = true
-
-	publisher, err := kafka.NewPublisher(
-		kafka.PublisherConfig{
-			Brokers:   []string{"localhost:9092"},
-			Marshaler: kafka.DefaultMarshaler{},
-		},
-		logger,
-	)
+	// Create a new Kafka publisher
+	publisher, err := kafka.NewPublisher(publisherConfig, logger)
 	if err != nil {
-		log.Fatalf("Failed to create Kafka publisher: %v", err)
+		log.Fatal(err)
 	}
 
-	msg := message.NewMessage(watermill.NewUUID(), []byte("Hello, Kafka!"))
-	if err := publisher.Publish("example_topic", msg); err != nil {
-		log.Fatalf("Failed to publish message: %v", err)
+	// Subscriber configuration
+	subscriberConfig := kafka.SubscriberConfig{
+		Brokers:       []string{"localhost:9092"},
+		ConsumerGroup: "example-group",
+		Unmarshaler:   kafka.DefaultMarshaler{},
 	}
 
-	fmt.Println("Message sent successfully to Kafka!")
+	// Create a new Kafka subscriber
+	subscriber, err := kafka.NewSubscriber(subscriberConfig, logger)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Publishing messages
+	go func() {
+		for i := 0; i < 5; i++ {
+			msg := message.NewMessage(watermill.NewUUID(), []byte("Message "+strconv.Itoa(i)))
+			if err := publisher.Publish("example_topic", msg); err != nil {
+				log.Println("Failed to publish message:", err)
+			}
+		}
+	}()
+
+	// Subscribing to messages
+	go func() {
+		messages, err := subscriber.Subscribe(context.Background(), "example_topic")
+		if err != nil {
+			log.Fatal("Failed to subscribe:", err)
+		}
+
+		for msg := range messages {
+			log.Printf("Received message: %s", string(msg.Payload))
+			msg.Ack()
+		}
+	}()
+
+	select {} // Block forever
 }
