@@ -49,16 +49,31 @@ func main() {
 		}
 	}()
 
-	// Subscribing to messages
+	// Subscribing to messages with error handling and retry logic
 	go func() {
-		messages, err := subscriber.Subscribe(context.Background(), "example_topic")
-		if err != nil {
-			log.Fatal("Failed to subscribe:", err)
-		}
+		for {
+			// Subscribe to the Kafka topic
+			messages, err := subscriber.Subscribe(context.Background(), "example_topic")
+			if err != nil {
+				log.Printf("Failed to subscribe: %v, retrying...", err)
+				continue // Retry subscribing after failure
+			}
 
-		for msg := range messages {
-			log.Printf("Received message: %s", string(msg.Payload))
-			msg.Ack()
+			// Process incoming messages
+			for msg := range messages {
+				// Handle message headers (if any)
+				if len(msg.Metadata) > 0 {
+					for key, value := range msg.Metadata {
+						log.Printf("Header - %s: %s", key, value)
+					}
+				}
+
+				// Process message payload
+				log.Printf("Received message: %s", string(msg.Payload))
+
+				// Acknowledge the message (no error check needed)
+				msg.Ack()
+			}
 		}
 	}()
 
