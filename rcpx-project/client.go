@@ -4,12 +4,8 @@ import (
 	"context"
 	"fmt"
 	"github.com/smallnest/rpcx/client"
+	"rcpx-project/shared"
 )
-
-type Args struct {
-	A int
-	B int
-}
 
 func main() {
 	d, _ := client.NewPeer2PeerDiscovery("tcp@localhost:8989", "")
@@ -21,10 +17,8 @@ func main() {
 		}
 	}(clientNew)
 
-	args := &Args{A: 10, B: 20}
+	args := &shared.Args{A: 10, B: 20}
 	var reply int
-
-	// Вызываем метод "Mul"
 	err := clientNew.Call(context.Background(), "Mul", args, &reply)
 	if err != nil {
 		fmt.Printf("Failed to call: %v\n", err)

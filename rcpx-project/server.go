@@ -4,16 +4,12 @@ import (
 	"context"
 	"fmt"
 	"github.com/smallnest/rpcx/server"
+	"rcpx-project/shared"
 )
-
-type Args struct {
-	A int
-	B int
-}
 
 type Arith struct{}
 
-func (t *Arith) Mul(ctx context.Context, args *Args, reply *int) error {
+func (t *Arith) Mul(ctx context.Context, args *shared.Args, reply *int) error {
 	select {
 	case <-ctx.Done():
 		return ctx.Err()
@@ -31,7 +27,7 @@ func main() {
 		return
 	}
 
-	fmt.Println("Server is starting on port 8989...") // Лог о старте сервера
+	fmt.Println("Server is starting on port 8989...")
 	err2 := s.Serve("tcp", ":8989")
 	if err2 != nil {
 		fmt.Printf("Server failed to start: %v\n", err2)
