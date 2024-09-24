@@ -12,6 +12,6 @@ func main() {
 
 	httpHandler := transport.NewHTTPServer(svc)
 
-	log.Println("Start HTTP Server on Port :8080")
+	log.Println("Started HTTP Server on Port :8080")
 	log.Fatal(http.ListenAndServe(":8080", httpHandler))
 }
