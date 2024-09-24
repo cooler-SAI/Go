@@ -196,3 +196,14 @@ jobs:
             exit 1
           fi
 
+      - name: Build and Test go-Kit
+        run: |
+          if [ -d "go-Kit" ]; then
+            cd watermill
+            go build -v ./...
+            go test -v ./...
+          else
+            echo "Directory go-Kit does not exist."
+            exit 1
+          fi
+
