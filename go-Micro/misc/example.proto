@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package example;
+
+option go_package = "go-Micro/misc;example";
+
+service Greeter {
+  rpc SayHello(Request) returns (Response);
+}
+
+message Request {
+  string name = 1;
+}
+
+message Response {
+  string msg = 1;
+}
