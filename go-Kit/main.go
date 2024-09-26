@@ -5,10 +5,14 @@ import (
 	"go-Kit/transport"
 	"log"
 	"net/http"
+	"os"
 )
 
 func main() {
+	logger := log.New(os.Stdout, "http: ", log.LstdFlags)
 	svc := service.NewHelloService()
+
+	svc = service.LoggingMiddleware(logger)(svc)
 
 	httpHandler := transport.NewHTTPServer(svc)
 

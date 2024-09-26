@@ -1,9 +1,7 @@
 package service
 
-import "errors"
-
 type HelloService interface {
-	SayHello(name string) (string, error)
+	Hello(name string) string
 }
 
 type helloService struct{}
@@ -12,9 +10,6 @@ func NewHelloService() HelloService {
 	return &helloService{}
 }
 
-func (s *helloService) SayHello(name string) (string, error) {
-	if name == "" {
-		return "", errors.New("name can not be empty")
-	}
-	return "Hello, " + name + "!", nil
+func (s *helloService) Hello(name string) string {
+	return "Hello, " + name + "!"
 }
