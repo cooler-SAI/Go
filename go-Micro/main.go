@@ -10,7 +10,7 @@ import (
 
 type Greeter struct{}
 
-func (g *Greeter) SayHello(ctx context.Context, req *pb.Request, rsp *pb.Response) error {
+func (g *Greeter) SayHello(_ context.Context, req *pb.Request, rsp *pb.Response) error {
 	rsp.Msg = "Hello " + req.Name
 	return nil
 }
