@@ -23,8 +23,16 @@ type loggingMiddleware struct {
 
 func (mw *loggingMiddleware) Hello(name string) string {
 	defer func(begin time.Time) {
-		mw.logger.Printf("method=hello, name=%s, took=%v\n", name, time.Since(begin))
+		mw.logger.Printf("method=Hello, name=%s, took=%v\n", name, time.Since(begin))
 	}(time.Now())
 
 	return mw.next.Hello(name)
+}
+
+func (mw *loggingMiddleware) SayHello(name string) string {
+	defer func(begin time.Time) {
+		mw.logger.Printf("method=SayHello, name=%s, took=%v\n", name, time.Since(begin))
+	}(time.Now())
+
+	return mw.next.SayHello(name)
 }

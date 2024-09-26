@@ -2,9 +2,8 @@ package endpoint
 
 import (
 	"context"
-	"go-Kit/service"
-
 	"github.com/go-kit/kit/endpoint"
+	"go-Kit/service"
 )
 
 type HelloRequest struct {
@@ -13,16 +12,12 @@ type HelloRequest struct {
 
 type HelloResponse struct {
 	Message string `json:"message"`
-	Err     string `json:"error,omitempty"`
 }
 
 func MakeHelloEndpoint(svc service.HelloService) endpoint.Endpoint {
-	return func(ctx context.Context, request interface{}) (interface{}, error) {
+	return func(_ context.Context, request interface{}) (interface{}, error) {
 		req := request.(HelloRequest)
-		message, err := svc.SayHello(req.Name)
-		if err != nil {
-			return HelloResponse{Message: "", Err: err.Error()}, nil
-		}
-		return HelloResponse{Message: message, Err: ""}, nil
+		message := svc.Hello(req.Name) // Используем метод Hello, а не SayHello
+		return HelloResponse{Message: message}, nil
 	}
 }
