@@ -1,0 +1,14 @@
+type (
+    HelloRequest {
+        Name string `path:"name"`
+    }
+
+    HelloResponse {
+        Message string `json:"message"`
+    }
+)
+
+service hello-api {
+    @handler helloHandler
+    get /hello/:name (HelloRequest) returns (HelloResponse)
+}
