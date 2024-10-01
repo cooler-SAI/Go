@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e192a965-50fb-4efe-8fe0-0c5d09770897" name="Changes" comment="Go/Learning: go-zero - update all project">
+    <list default="true" id="e192a965-50fb-4efe-8fe0-0c5d09770897" name="Changes" comment="Go/Learning: go-zero - fix up build, misc fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/greet.api" beforeDir="false" afterPath="$PROJECT_DIR$/greet.api" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +96,8 @@
     <MESSAGE value="Go/Learning: more updates run and conf fix" />
     <MESSAGE value="Go/Learning: go-zero - fixed run project" />
     <MESSAGE value="Go/Learning: go-zero - update all project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: go-zero - update all project" />
+    <MESSAGE value="Go/Learning: go-zero - fix up build, misc fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Go/Learning: go-zero - fix up build, misc fixes" />
   </component>
   <component name="VgoProject">
     <auto-vendoring-mode>false</auto-vendoring-mode>
