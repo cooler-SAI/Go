@@ -218,3 +218,14 @@ jobs:
             exit 1
           fi
 
+      - name: Build and Test go-zero
+        run: |
+          if [ -d "go-zero" ]; then
+            cd go-zero
+            go build -v ./...
+            go test -v ./...
+          else
+            echo "Directory go-zero does not exist."
+            exit 1
+          fi
+
