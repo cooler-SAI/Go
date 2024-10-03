@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb91dce2-f57c-4a95-8f4e-b4e31a349fa0" name="Changes" comment="Go/Main: set up build controls" />
+    <list default="true" id="eb91dce2-f57c-4a95-8f4e-b4e31a349fa0" name="Changes" comment="Go/Main: set up build controls, new one" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +80,8 @@
     <MESSAGE value="Go/Main: set up builds" />
     <MESSAGE value="Go/Main: set up tests" />
     <MESSAGE value="Go/Main: set up build controls" />
-    <option name="LAST_COMMIT_MESSAGE" value="Go/Main: set up build controls" />
+    <MESSAGE value="Go/Main: set up build controls, new one" />
+    <option name="LAST_COMMIT_MESSAGE" value="Go/Main: set up build controls, new one" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
