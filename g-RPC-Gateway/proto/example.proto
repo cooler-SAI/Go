@@ -4,6 +4,8 @@ package example;
 
 option go_package = "./proto";
 
+import "google/api/annotations.proto";
+
 message HelloRequest {
   string name = 1;
 }
@@ -13,5 +15,11 @@ message HelloResponse {
 }
 
 service HelloService {
-  rpc SayHello (HelloRequest) returns (HelloResponse);
+  rpc SayHello (HelloRequest) returns (HelloResponse) {
+
+    option (google.api.http) = {
+      post: "/v1/example/hello"
+      body: "*"
+    };
+  }
 }
