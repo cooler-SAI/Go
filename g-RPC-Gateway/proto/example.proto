@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package example;
 
+
 option go_package = "./api;api";
 
 message HelloRequest {
@@ -13,5 +14,10 @@ message HelloResponse {
 }
 
 service HelloService {
-  rpc SayHello(HelloRequest) returns (HelloResponse);
+  rpc SayHello(HelloRequest) returns (HelloResponse) {
+    option (google.api.http) = {
+      post: "/v1/example/hello"
+      body: "*"
+    };
+  }
 }
