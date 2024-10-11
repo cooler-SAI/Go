@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package example;
+
+service Haberdasher {
+  rpc MakeHat(Size) returns (Hat);
+}
+
+message Size {
+  int32 inches = 1;
+}
+
+message Hat {
+  string color = 1;
+  int32 inches = 2;
+}
