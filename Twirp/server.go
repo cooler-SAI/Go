@@ -1,11 +1,15 @@
 package main
 
 import (
+	"Twirp/proto"
 	"context"
+	"fmt"
+	"github.com/twitchtv/twirp"
 	"log"
 	"net/http"
-
-	"Twirp/proto"
+	"os"
+	"os/signal"
+	"syscall"
 )
 
 type greeterServer struct{}
@@ -18,8 +22,17 @@ func (s *greeterServer) SayHello(_ context.Context, req *proto.HelloRequest) (*p
 
 func main() {
 	server := &greeterServer{}
-	twirpHandler := proto.NewGreeterServer(server)
+	twirpHandler := proto.NewGreeterServer(server, twirp.WithServerPathPrefix("/twirp"))
 
-	log.Println("Starting server on :8080")
-	log.Fatal(http.ListenAndServe(":8080", twirpHandler))
+	go func() {
+		log.Println("Server Started. Press Ctrl + C to stop.")
+		log.Fatal(http.ListenAndServe(":8080", twirpHandler))
+	}()
+
+	sigs := make(chan os.Signal, 1)
+	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+
+	<-sigs
+
+	fmt.Println("Server Stopped")
 }
