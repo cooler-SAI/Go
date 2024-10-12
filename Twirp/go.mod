@@ -1,4 +1,4 @@
-module twirp_project
+module Twirp
 
 go 1.23.2
 

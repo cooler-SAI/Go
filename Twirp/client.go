@@ -5,12 +5,12 @@ import (
 	"log"
 	"net/http"
 
-	"twirp_project/proto"
+	"Twirp/proto"
 )
 
 func main() {
 
-	client := proto.NewGreeterProtobufClient("http://localhost:8080/twirp", &http.Client{})
+	client := proto.NewGreeterProtobufClient("http://localhost:8080", &http.Client{})
 
 	response, err := client.SayHello(context.Background(), &proto.HelloRequest{Name: "Andrey"})
 	if err != nil {

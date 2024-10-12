@@ -5,8 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/twitchtv/twirp"
-	"twirp_project/proto"
+	"Twirp/proto"
 )
 
 type greeterServer struct{}
@@ -19,7 +18,7 @@ func (s *greeterServer) SayHello(_ context.Context, req *proto.HelloRequest) (*p
 
 func main() {
 	server := &greeterServer{}
-	twirpHandler := proto.NewGreeterServer(server, twirp.WithServerPathPrefix("/twirp"))
+	twirpHandler := proto.NewGreeterServer(server)
 
 	log.Println("Starting server on :8080")
 	log.Fatal(http.ListenAndServe(":8080", twirpHandler))
