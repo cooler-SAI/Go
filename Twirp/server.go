@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 
-	"Twirp/proto"
 	"github.com/twitchtv/twirp"
+	"twirp_project/proto"
 )
 
 type greeterServer struct{}
