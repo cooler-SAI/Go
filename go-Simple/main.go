@@ -2,6 +2,11 @@ package main
 
 import "fmt"
 
+func changeValue(point *int) {
+	*point = 500
+
+}
+
 func main() {
 	fmt.Println("Hello go-Simple")
 
@@ -13,4 +18,7 @@ func main() {
 
 	*point = 100
 	fmt.Println("The changed point is", *point)
+
+	changeValue(point)
+	fmt.Println("The changed by func point is", *point)
 }
