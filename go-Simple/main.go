@@ -7,6 +7,21 @@ func changeValue(point *int) {
 
 }
 
+func changeArray(array *[5]int, value int) {
+	for i := 0; i < len(*array); i++ {
+		(*array)[i] = value
+	}
+
+}
+
+func changeArrayMulti(array *[5]int, value int) {
+	changedValue := 1000
+	for i := 0; i < len(*array); i++ {
+		(*array)[i] = value + changedValue
+	}
+
+}
+
 func main() {
 	fmt.Println("Hello go-Simple")
 
@@ -23,4 +38,14 @@ func main() {
 	fmt.Println("The changed by func point is", *point)
 
 	fmt.Println("End of program...")
+
+	arr := [5]int{1, 2, 3, 4, 5}
+	fmt.Println("Original array is: ", arr)
+
+	changeArray(&arr, 500)
+	fmt.Println("Changed array is: ", arr)
+
+	changeArrayMulti(&arr, 10)
+	fmt.Println("Changed array Multi is: ", arr)
+
 }
