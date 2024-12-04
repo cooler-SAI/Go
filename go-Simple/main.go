@@ -21,4 +21,6 @@ func main() {
 
 	changeValue(point)
 	fmt.Println("The changed by func point is", *point)
+
+	fmt.Println("End of program...")
 }
