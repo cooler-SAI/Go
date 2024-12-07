@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"go-Simple/misc"
+)
 
 func changeValue(point *int) {
 	*point = 500
@@ -47,5 +50,11 @@ func main() {
 
 	changeArrayMulti(&arr, 10)
 	fmt.Println("Changed array Multi is: ", arr)
+
+	totalMeters := 90.0
+	costPerPlinth := 850.0
+	plinthCount, totalCost := misc.CalculatePlinth(totalMeters, costPerPlinth)
+	fmt.Printf("Needs plinths: %d\n", plinthCount)
+	fmt.Printf("TOtal Cost: %.2f RUB\n", totalCost)
 
 }
