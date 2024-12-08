@@ -59,7 +59,7 @@ func main() {
 
 	firstNumber := 2500
 	secondNumber := 5000
-	misc.CheckResult(firstNumber, secondNumber)
-	fmt.Println("Check result:", firstNumber, secondNumber)
+	totalNum := misc.CheckResult(firstNumber, secondNumber)
+	fmt.Println("Check result:", totalNum)
 
 }
