@@ -57,4 +57,9 @@ func main() {
 	fmt.Printf("Needs plinths: %d\n", plinthCount)
 	fmt.Printf("TOtal Cost: %.2f RUB\n", totalCost)
 
+	firstNumber := 2500
+	secondNumber := 5000
+	misc.CheckResult(firstNumber, secondNumber)
+	fmt.Println("Check result:", firstNumber, secondNumber)
+
 }

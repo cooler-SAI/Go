@@ -8,3 +8,8 @@ func CalculatePlinth(totalMeters float64, costPerPlinth float64) (int, float64) 
 	totalCost := float64(plinthCount) * costPerPlinth
 	return plinthCount, totalCost
 }
+
+func CheckResult(firstNum int, secondNum int) int {
+	result := firstNum + secondNum
+	return result
+}
