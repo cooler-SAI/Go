@@ -17,7 +17,11 @@ func main() {
 	sum, avg := misc.SumAndAverage(numbers)
 	fmt.Printf("Sum: %d, Avg: %.2f\n", sum, avg)*/
 
-	input := "hello"
+	/*input := "hello"
 	reversed, uniqueCount := misc.ReverseAndCountUnique(input)
-	fmt.Printf("Reversed: %s, Unique Count: %d\n", reversed, uniqueCount)
+	fmt.Printf("Reversed: %s, Unique Count: %d\n", reversed, uniqueCount)*/
+
+	inputSlice := []int{1, 2, 3, 4, 5}
+	result := misc.FilterEven(inputSlice)
+	fmt.Println(result)
 }

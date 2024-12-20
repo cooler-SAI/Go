@@ -1,6 +1,8 @@
 package misc
 
-import "math"
+import (
+	"math"
+)
 
 func CalculatePlinth(totalMeters float64, costPerPlinth float64) (int, float64) {
 	plinthLength := 2.7
@@ -44,4 +46,15 @@ func ReverseAndCountUnique(s string) (string, int) {
 	}
 
 	return reversed, len(uniqueChars)
+}
+
+func FilterEven(numbers []int) []int {
+	var evenNumbers []int
+
+	for _, number := range numbers {
+		if number%2 == 0 {
+			evenNumbers = append(evenNumbers, number)
+		}
+	}
+	return evenNumbers
 }
