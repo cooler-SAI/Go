@@ -29,3 +29,18 @@ func SumAndAverage(numbers []int) (int, float64) {
 
 	return sum, average
 }
+
+func ReverseAndCountUnique(s string) (string, int) {
+
+	reversed := ""
+	for i := len(s) - 1; i >= 0; i-- {
+		reversed += string(s[i])
+	}
+
+	uniqueChars := make(map[rune]struct{})
+	for _, char := range s {
+		uniqueChars[char] = struct{}{}
+	}
+
+	return reversed, len(uniqueChars)
+}
