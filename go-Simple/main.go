@@ -12,5 +12,6 @@ func main() {
 	fmt.Println(result, result2)
 
 	result3 := misc.Max(10, 20)
-	fmt.Println(result3)
+	result4 := misc.Max(-10, -20)
+	fmt.Println(result3, result4)
 }
