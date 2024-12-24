@@ -14,4 +14,7 @@ func main() {
 	result3 := misc.Max(10, 20)
 	result4 := misc.Max(-10, -20)
 	fmt.Println(result3, result4)
+
+	result5 := misc.IsEven(100)
+	fmt.Println(result5)
 }
