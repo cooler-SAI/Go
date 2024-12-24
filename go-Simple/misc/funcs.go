@@ -14,3 +14,11 @@ func Max(a int, b int) int {
 func IsEven(n int) bool {
 	return n%2 == 0
 }
+
+func PrintNTimes(s string, n int) []string {
+	result := make([]string, n)
+	for i := 0; i < n; i++ {
+		result[i] = s
+	}
+	return result
+}

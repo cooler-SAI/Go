@@ -16,5 +16,9 @@ func main() {
 	fmt.Println(result3, result4)
 
 	result5 := misc.IsEven(100)
-	fmt.Println(result5)
+	result6 := misc.IsEven(101)
+	fmt.Println(result5, result6)
+
+	result7 := misc.PrintNTimes("Hello", 10)
+	fmt.Println(result7)
 }
