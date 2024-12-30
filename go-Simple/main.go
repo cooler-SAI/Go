@@ -12,6 +12,8 @@ func main() {
 
 	books.SearchBooks("F.M. Dostoevsky", "author")
 
+	books.DeleteBook("F.M. Dostoevsky")
+
 	books.PrintBooks()
 
 }

@@ -34,3 +34,14 @@ func PrintBooks() {
 		fmt.Printf("- %s (%s, %d, %s)\n", book.title, book.author, book.year, book.genre)
 	}
 }
+
+func DeleteBook(title string) {
+	for i, book := range library {
+		if book.title == title {
+			library = append(library[:i], library[i+1:]...)
+			fmt.Println("Deleted book:", title)
+			return
+		}
+	}
+	fmt.Println("Book not found...sorry.")
+}
