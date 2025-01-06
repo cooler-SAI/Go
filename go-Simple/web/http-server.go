@@ -11,6 +11,6 @@ func HandleRoot(w http.ResponseWriter, _ *http.Request) {
 
 func HandleEcho(w http.ResponseWriter, r *http.Request) {
 	path := r.URL.Path
-	echoText := path[6:] // убираем '/echo/'
+	echoText := path[6:]
 	_, _ = fmt.Fprintf(w, "Echo: %s\n", echoText)
 }
