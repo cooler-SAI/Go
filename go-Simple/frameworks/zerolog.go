@@ -1,14 +1,16 @@
 package frameworks
 
 import (
-	"github.com/rs/zerolog"
 	"os"
+
+	"github.com/rs/zerolog"
 )
 
 var Logger zerolog.Logger
 
 func InitLogger() {
+
 	zerolog.TimeFieldFormat = zerolog.TimeFormatUnix
 
-	Logger = zerolog.New(os.Stdout).With().Timestamp().Logger()
+	Logger = zerolog.New(zerolog.ConsoleWriter{Out: os.Stderr}).With().Timestamp().Logger()
 }

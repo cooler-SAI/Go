@@ -1,11 +1,12 @@
 package main
 
 import (
-	"fmt"
+	"go-Simple/frameworks"
 )
 
 func main() {
 
-	fmt.Println("Hello World")
+	frameworks.InitLogger()
 
+	frameworks.Logger.Info().Msg("Hello World")
 }
