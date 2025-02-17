@@ -13,4 +13,6 @@ func main() {
 
 	functions.SimpleMulti()
 
+	functions.SimpleSlice()
+
 }

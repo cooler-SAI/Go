@@ -34,3 +34,16 @@ func SimpleMulti() {
 	fmt.Println("Result is: ", product)
 
 }
+
+func SimpleSlice() {
+
+	numbers := []int{1, 2, 3, 4, 5}
+	fmt.Println(numbers)
+
+	sum := 0
+	for _, number := range numbers {
+		sum += number
+	}
+
+	fmt.Println("Result of sum is: ", sum)
+}
