@@ -47,3 +47,15 @@ func SimpleSlice() {
 
 	fmt.Println("Result of sum is: ", sum)
 }
+
+func SimpleMap() {
+	ages := map[string]int{"Alice": 18, "Bob": 25, "Christy": 33}
+	fmt.Println(ages)
+
+	ages["Anny"] = 28
+
+	for name, age := range ages {
+		fmt.Println(name, age)
+	}
+
+}
