@@ -79,3 +79,20 @@ func SimpleStruct() {
 	release(newFilm)
 
 }
+
+func PeopleSimple() {
+	type Person struct {
+		Name string
+		Age  int
+	}
+
+	newPerson := Person{
+		Name: "Anna",
+		Age:  20,
+	}
+
+	printPeople := func(p Person) {
+		fmt.Printf("Name: %s, Age: %d\n", p.Name, p.Age)
+	}
+	printPeople(newPerson)
+}
