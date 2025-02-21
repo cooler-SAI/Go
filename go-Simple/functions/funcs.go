@@ -59,3 +59,23 @@ func SimpleMap() {
 	}
 
 }
+
+func SimpleStruct() {
+
+	type Cinema struct {
+		Name        string
+		ReleaseDate string
+	}
+
+	newFilm := Cinema{
+		Name:        "New Film",
+		ReleaseDate: "1.20.2025",
+	}
+
+	release := func(c Cinema) {
+		fmt.Printf("%s Release Date: %s\n", c.Name, c.ReleaseDate)
+	}
+
+	release(newFilm)
+
+}
