@@ -10,6 +10,11 @@ type Person struct {
 	LastName  string
 }
 
+func ChangeName(p *Person) {
+	p.FirstName = "Alex"
+	p.LastName = "Bob"
+}
+
 func main() {
 
 	frameworks.InitLogger()
@@ -19,6 +24,8 @@ func main() {
 		LastName:  "Doe",
 	}
 
+	fmt.Print(p)
+	ChangeName(&p)
 	fmt.Print(p)
 
 }
