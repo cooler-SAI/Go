@@ -96,3 +96,13 @@ func PeopleSimple() {
 	}
 	printPeople(newPerson)
 }
+
+type Person struct {
+	FirstName string
+	LastName  string
+}
+
+func ChangeName(p *Person) {
+	p.FirstName = "Alex"
+	p.LastName = "Bob"
+}
