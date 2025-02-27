@@ -51,3 +51,8 @@ func SimpleReader() {
 		fmt.Println("Error reading file:", err)
 	}
 }
+
+func ExitProgram() {
+	fmt.Println("Program Closed, thanks for used me :-)")
+	os.Exit(0)
+}
