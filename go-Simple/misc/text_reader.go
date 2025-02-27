@@ -11,7 +11,7 @@ func handler(w http.ResponseWriter, _ *http.Request) {
 		return
 	}
 }
-func main() {
+func Reader() {
 
 	http.HandleFunc("/", handler)
 	err := http.ListenAndServe(":8080", nil)
