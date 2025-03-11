@@ -7,34 +7,30 @@ import (
 	"strings"
 )
 
-func Reader() {
-	file, err := os.Open("names.txt")
+func Reader(filename string) ([]string, error) {
+	file, err := os.Open(filename)
 	if err != nil {
-		fmt.Println("Can't open file, sorry...", err)
-		return
+		return nil, fmt.Errorf("can't open file: %w", err)
 	}
 
 	defer func(file *os.File) {
-		err := file.Close()
-		if err != nil {
+		if err := file.Close(); err != nil {
 			fmt.Println("Can't close file, sorry...", err)
 		}
 	}(file)
 
 	scanner := bufio.NewScanner(file)
+	var filteredNames []string
 	for scanner.Scan() {
 		name := scanner.Text()
 		if strings.HasPrefix(name, "A") {
-			fmt.Println(name)
+			filteredNames = append(filteredNames, name)
 		}
-
 	}
 
 	if err := scanner.Err(); err != nil {
-		_, err := fmt.Fprintln(os.Stderr, "reading standard input:", err)
-		if err != nil {
-			return
-		}
-
+		return nil, fmt.Errorf("reading file: %w", err)
 	}
+
+	return filteredNames, nil
 }
