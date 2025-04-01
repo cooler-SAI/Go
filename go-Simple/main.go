@@ -7,6 +7,12 @@ type Product struct {
 	Name      string
 	Price     float64
 	Available bool
+	Category  Category
+}
+
+type Category struct {
+	ID   int
+	Name string
 }
 
 func (p *Product) Discount(percentage float64) {
@@ -48,5 +54,16 @@ func main() {
 
 	product.SetAvailable(false)
 	fmt.Println(product)
+
+	category := Category{ID: 1, Name: "Dairy"}
+	product2 := Product{
+		ID:        1,
+		Name:      "Juice",
+		Price:     100,
+		Available: true,
+		Category:  category,
+	}
+	product2.Discount(20)
+	fmt.Println(product2.String())
 
 }
