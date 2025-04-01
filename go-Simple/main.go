@@ -23,12 +23,15 @@ func (p *Product) IsAvailable() bool {
 
 func main() {
 	product := Product{
-		ID:    1,
-		Name:  "Milk",
-		Price: 100,
+		ID:        1,
+		Name:      "Milk",
+		Price:     100,
+		Available: true,
 	}
 	product.Discount(10)
 	fmt.Println(product.String())
 	fmt.Println(product)
+
+	fmt.Println("Is available:", product.IsAvailable())
 
 }
