@@ -12,6 +12,10 @@ func (p *Product) Discount(percentage float64) {
 	p.Price = p.Price * (1 - percentage/100)
 }
 
+func (p *Product) String() string {
+	return fmt.Sprintf("ID: %d, Name: %s, Price: %.2f", p.ID, p.Name, p.Price)
+}
+
 func main() {
 	product := Product{
 		ID:    1,
@@ -19,6 +23,7 @@ func main() {
 		Price: 100,
 	}
 	product.Discount(10)
+	fmt.Println(product.String())
 	fmt.Println(product)
 
 }
