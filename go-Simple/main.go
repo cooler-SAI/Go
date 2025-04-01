@@ -22,8 +22,12 @@ func (p *Product) IsAvailable() bool {
 	return p.Available
 }
 
-func (p *Product) UpdatePrice(NewPrice float64) {
-	p.Price = NewPrice
+func (p *Product) UpdatePrice(newPrice float64) {
+	p.Price = newPrice
+}
+
+func (p *Product) SetAvailable(available bool) {
+	p.Available = available
 }
 
 func main() {
@@ -40,6 +44,9 @@ func main() {
 	fmt.Println("Is available:", product.IsAvailable())
 
 	product.UpdatePrice(100)
+	fmt.Println(product)
+
+	product.SetAvailable(false)
 	fmt.Println(product)
 
 }
