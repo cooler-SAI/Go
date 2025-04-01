@@ -14,7 +14,8 @@ func (p *Product) Discount(percentage float64) {
 }
 
 func (p *Product) String() string {
-	return fmt.Sprintf("ID: %d, Name: %s, Price: %.2f, Available: %t", p.ID, p.Name, p.Price, p.Available)
+	return fmt.Sprintf("ID: %d, Name: %s, Price: %.2f, Available: %t", p.ID,
+		p.Name, p.Price, p.Available)
 }
 
 func (p *Product) IsAvailable() bool {
