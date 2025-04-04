@@ -8,26 +8,33 @@ import (
 	"time"
 )
 
+func interactWithUser(reader *bufio.Reader) {
+	fmt.Print("What is your name? ")
+	name, _ := reader.ReadString('\n')
+	name = strings.TrimSpace(name)
+
+	if name == "" {
+		name = "Stranger"
+		fmt.Println("Hello, Stranger! Nice to meet you.")
+	} else {
+		fmt.Printf("Hello, %s! Nice to meet you.\n", name)
+
+		nameLength := len(name)
+		if nameLength > 10 {
+			fmt.Printf("Wow, that's a long name (%d letters)!\n", nameLength)
+		} else {
+			fmt.Printf("Nice name! (%d letters)\n", nameLength)
+		}
+	}
+}
+
 func main() {
 	fmt.Println("misc up")
 
 	reader := bufio.NewReader(os.Stdin)
 
-	fmt.Print("Enter text: ")
-	text, _ := reader.ReadString('\n')
+	interactWithUser(reader)
 
-	text = strings.Trim(text, "\n")
-
-	fmt.Printf("text: %s\n", text)
-
-	textLength := len(text)
-	if textLength < 3 {
-		fmt.Println("text message too short")
-	} else if textLength > 3 {
-		fmt.Println("text message too long")
-	}
 	currentTime := time.Now()
-
-	fmt.Printf("Current time: %s\n", currentTime.Format("2006-01-02 15:04:05"))
-
+	fmt.Printf("Current date and time: %s\n", currentTime.Format(time.DateTime))
 }
