@@ -10,7 +10,14 @@ import (
 
 func interactWithUser(reader *bufio.Reader) {
 	fmt.Print("What is your name? ")
-	name, _ := reader.ReadString('\n')
+	name, err := reader.ReadString('\n')
+	if err != nil {
+		_, err := fmt.Fprintf(os.Stderr, "Error reading input: %v\n", err)
+		if err != nil {
+			return
+		}
+		return
+	}
 	name = strings.TrimSpace(name)
 
 	if name == "" {
