@@ -36,7 +36,7 @@ func main() {
 		log.Info().Str("userName", name).Msg("User provided a name.")
 		// Replaced fmt.Printf with zerolog's Msgf for the user greeting
 		// This message will also appear on stderr with log formatting
-		log.Info().Msgf("Good to see YOu, %s! Welcome to the world of Go!", name)
+		log.Info().Msgf("Good to see YOU, %s! Welcome to the world of Go!", name)
 	} else {
 		log.Warn().Msg("User did not provide a name.")
 		// Replaced fmt.Println with zerolog for the alternative user message
